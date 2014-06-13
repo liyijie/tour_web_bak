@@ -13,3 +13,346 @@
  *= require_tree .
  *= require_self
  */
+/*common*/
+tml,body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td
+  {
+  margin: 0;
+  padding: 0;
+}
+
+dl,dt,dd {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  zoom: 1;
+}
+
+body,button,div,input,select,textarea {
+  font: 13px/1.5 tahoma, arial, simsun, sans-serif;
+  font-family: Arial, \5FAE\8F6F\96C5\9ED1, Helvetica, sans-serif;
+  _font: 12px/1.5 tahoma, arial, simsun, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,button,input,select,textarea {
+  font-size: 100%;
+}
+
+ul,ol,li {
+  list-style: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  color:#000000;
+  text-decoration: none;
+}
+
+a:focus {
+  color:#000000;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color:#000000;
+  text-decoration: underline;
+  outline: none;
+}
+
+.na:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.bg_1 {
+  background: #ececea;
+}
+.color_w {
+  color:#ffffff;
+}
+
+.float_left {
+  float:left;
+}
+.clear_both {
+  clear:both;
+}
+.float_right {
+  float:right;
+}
+
+.clear100 {
+  clear:both;
+  width: 100%;
+}
+
+.overflow_h {
+  overflow: hidden;
+}
+
+.text_align_c {
+  text-align: center;
+}
+
+.space {
+  clear:both; 
+  width:100%; 
+  overflow: hidden; 
+  margin-top:10px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.root1440 .window {
+  position: relative;
+  clear: both;
+  width: 1200px;
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.window {
+  position: relative;
+  clear: both;
+  width: 960px;
+  min-width: 960px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.box {
+  clear:both;
+  width:100%;
+  border:1px solid #cacaca;
+  background-color: #ffffff;
+}
+
+.box .p_title {
+  padding:10px 0px 0px 15px;
+}
+
+.box .p_title .span {
+  color:787878;
+  font-size: 15px;
+}
+
+.box .content {
+  clear:both;
+  padding:10px;
+}
+
+.list {
+  clear:both;
+  padding:10px;
+  border-top: 1px solid #c8c8c8;
+  overflow: hidden;
+}
+
+.list .pic {
+  float: left;
+  width: 300px;
+}
+
+.list .ctx {
+  float:left;
+  width: 615px;
+}
+
+.list .ctx dl {
+  height: 115px;
+}
+
+.list .ctx dl dt {
+  height: 30px;
+  line-height: 30px;
+  color: #009fc6;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list ul .t1,.t2,.t3,.t4 {
+  float:left;
+}
+
+.list ul .t1 {
+  width:70px;
+}
+
+.list ul .t2 {
+  color: #009da7;
+  width: 390px;
+}
+
+.list ul .t3 {
+  width:70px;
+  color:#ff6600;
+  font-weight: bold;
+}
+
+.list ul .t4 {
+  width:60px;
+  background-color: #fdaf00;
+  text-align: center;
+  color: #ffffff;
+}
+
+.list_line {
+  clear:both;
+  border-top: 1px solid #c8c8c8;
+  padding:2px 10px 0px 10px;
+  text-align: right;
+  color: #0065bb;
+  cursor: pointer;
+}
+
+/*register*/
+.register {
+  background:url(log_bg.jpg) no-repeat;
+  background-color:#F1F1F1;
+}
+
+.register .start {
+  margin-top:370px;
+}
+
+.register .main {
+  clear:both; 
+  width:100%; 
+  overflow:hidden;
+  padding-top: 370px;
+
+}
+
+.register .main .content {
+  clear:both; 
+  width:400px; 
+  margin:0 auto;
+}
+
+.register .main .content li {
+  clear:both;
+  margin-top:10px;
+}
+
+.register .main .content .font {
+  color:#000; 
+  font-weight:bold; 
+  text-align:left;
+}
+
+.register .main .content span {
+  margin-left:10px;
+  font-size:12px;
+  color:#777777;
+}
+
+input {
+  width:218px;height:29px;
+}
+
+.btnReg {
+  background:#50AEFF; 
+  color:#ffffff; 
+  width:100px; 
+  border : 0px; 
+  height:30px; 
+  line-height:30px;
+}
+
+/*login*/
+.login {
+  background:url(log_bg.jpg) no-repeat;
+  background-color:#F1F1F1;
+}
+
+.login .start {
+  margin-top:370px;
+}
+
+.login .main {
+  clear:both; 
+  width:100%; 
+  overflow:hidden;
+  padding-top: 370px;
+}
+
+
+.login .main .content {
+  clear:both; 
+  width:480px;
+  margin:0 auto;
+}
+
+.login .main .left {
+  float:left; 
+  width:220px; 
+  text-align:right; 
+  padding-right:20px;
+}
+
+.login .main li {
+  clear:both;
+  margin-top:10px;
+}
+
+.login .main .font {
+  color:#000; 
+  font-weight:bold; 
+  text-align:left;
+}
+
+input {
+  width:218px;height:29px;
+}
+
+.btnLogin {
+  background:#50AEFF; 
+  color:#ffffff; 
+  width:100px; 
+  border : 0px; 
+  height:30px; 
+  line-height:30px;
+}
+
+.login .main .right {
+  float:right; 
+  width:220px; 
+  padding-left:20px;
+}

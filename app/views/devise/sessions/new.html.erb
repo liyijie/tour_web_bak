@@ -1,17 +1,37 @@
-<h2>Sign in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="login">
+  <div class="window">
+    <div class="main">
+      <div class="content">
+        <div class="left">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <ul>
+            <li class="font"></li>
+            <li>
+              <%= f.email_field :email, autofocus: true, placeholder: "邮箱" %>
+            </li>
+            <li>
+              <%= f.password_field :password, autocomplete: "off", placeholder: "密码" %>
+            </li>
+            <li>
+              <%= f.submit "登录", class: "btnLogin" %>
+            </li>
+          </ul>
+          <% end %>
+        </div>
+        <div class="right">
+          <ul>
+            <li class="font"></li>
+            <li>
+              <%= image_tag "weibo.png" %>
+            </li>
+            <li>
+              <%= image_tag "qq.png" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

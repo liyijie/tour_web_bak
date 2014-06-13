@@ -1,18 +1,28 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="register">
+  <div class="window">
+    <div class="main">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="content">
+        <ul>
+          <li class="font">使用邮箱注册</li>
+          <li>
+            <%= f.email_field :email, autofocus: true, placeholder: "邮箱" %>
+            <span>用于登录和找回密码</span>
+          </li>
+          <li>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "密码" %>
+            <span>6~16个字符，区分大小写</span>
+          </li>
+          <li>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "确认密码" %>
+            <span>请再次填写密码</span>
+          </li>
+          <li>
+            <%= f.submit "注册", class: "btnReg" %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
