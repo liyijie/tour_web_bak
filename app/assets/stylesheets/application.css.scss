@@ -14,7 +14,7 @@
  *= require_self
  */
 /*common*/
-tml,body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td
+tml,html,body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td
   {
   margin: 0;
   padding: 0;
@@ -139,6 +139,10 @@ img {
   display: none;
 }
 
+.margintop10 {
+  margin-top: 10px;
+}
+
 .root1440 .window {
   position: relative;
   clear: both;
@@ -217,11 +221,12 @@ img {
 
 .list ul .t2 {
   color: #009da7;
-  width: 390px;
+  width: 370px;
 }
 
 .list ul .t3 {
-  width:70px;
+  width:90px;
+  text-align:center;
   color:#ff6600;
   font-weight: bold;
 }
@@ -238,8 +243,181 @@ img {
   border-top: 1px solid #c8c8c8;
   padding:2px 10px 0px 10px;
   text-align: right;
+}
+
+.list_line .showall {
   color: #0065bb;
+}
+
+.list_line .arrow {
+  margin-left:0px;
+  padding-left:0px;
+  vertical-align: top;
+}
+
+
+.nav { width:100%; background: #ffffff; }
+.nav li { float:left;}
+.topbar {float:right;}
+.topbar a, .topbar li {color:#55a6c0;}
+.nav .search {clear:both; float:right; margin-top:15px; border:1px solid #000;}
+.nav .search input {border:0px; height:29px;}
+.nav .menu { clear:both; width:100%; background-color: #55C0A5; height:40px; line-height: 40px; }
+.nav .menu li { 
+  background-color: #55C0A5; 
+  height:35px; 
+  line-height: 35px; 
+  margin-top:5px; 
+  font-size: 15px; 
+  color: #ffffff;  
+  padding:0px 10px 0px 10px;
   cursor: pointer;
+}
+.nav .menu li:hover, .nav .menu .hover {color: #000000; background-color: #ffffff; }
+.nav .menu .order {float:right; height: 40px; line-height: 40px; color: #ffffff;}
+.nav .menu .order a {color: #ffffff;}
+
+.top {overflow: hidden;}
+.top li {color: #ffffff;}
+.top .op {
+  background-color: #000;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  -webkit-opacity: 0.25;
+  -moz-opacity: 0.25;
+  -khtml-opacity: 0.25;
+  opacity: .25;
+  filter: alpha(opacity = 25);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+}
+.top_size {font-size: 16px;}
+.top1 {float: left; width: 218px; height: 450px; }
+.top1 div {
+  position: absolute; 
+  top: 420px; 
+  width:213px;
+  height:70px; 
+}
+.top1 ul {
+  position: absolute; 
+  top: 420px; 
+  width:213px;
+  height:70px;
+  z-index: 100; 
+  padding:10px;
+}
+.top2 {
+  float: left;
+  width: 500px; 
+  height: 226px; 
+}
+.top2 div {
+  position: absolute; 
+  height:70px; 
+  width:496px;
+  top: 196px; 
+}
+.top2 ul {
+  position: absolute; 
+  top: 196px; 
+  width: 496px;
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.top3 {
+  width: 218px; 
+  height: 450px; 
+  float: left;
+}
+.top3 div {
+  position: absolute; 
+  height: 70px; 
+  width: 215px; 
+  top: 420px;
+}
+.top3 ul {
+  position: absolute; 
+  top: 420px;
+  width: 215px; 
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.top4 {
+  float: left;
+  width: 198px; 
+  height: 222px; 
+}
+.top4 div {
+  position: absolute; 
+  height: 70px; 
+  width: 194px; 
+  top: 421px;
+}
+.top4 ul {
+  position: absolute; 
+  top: 420px;
+  width: 194px; 
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.top5 {
+  float: left;
+  width: 300px; height: 224px; 
+}
+.top5 div {
+  position: absolute; 
+  height: 70px; 
+  width: 297px; 
+  top: 421px;
+}
+.top5 ul {
+  position: absolute; 
+  top: 420px;
+  width: 297px; 
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.hotel {
+  float: left; width:530px;
+}
+.hotel dd { font-size: 16px; font-weight: bold; }
+.hotel dd { height: 30px; line-height: 30px; }
+.hotel .remark {color :#9E9E9E;}
+.hotel .info {
+  width: 192px; float: right;
+}
+.price {
+  color: #FF6200; font-size: 14px; font-weight: bold
+}
+.hotel_list {
+  float: right; border-left: 3px solid #E2E2E2; width: 380px;overflow: hidden;
+  margin-bottom: 10px;
+}
+.hotel_list li {
+  float: left; padding: 10px;
+}
+
+
+.footer .link {
+  color: #9d9d9d;
+  padding: 10px;
+  font-weight: bold;
+}
+.footer .link a {
+  color: #9d9d9d;
+  font-weight: bold;
+}
+.footer .copyright {
+  background-color: #D0D0CF; height: 60px; text-align: center; padding-top: 20px;
+  color: #616161;
 }
 
 /*register*/
