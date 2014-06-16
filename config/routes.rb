@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :tickets
 
-  resources :tours
+  resources :tours do
+    resources :tickets
+  end
 
   get 'home/index'
 
