@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tour.title %>
+</p>
+
+<p>
+  <strong>Sub title:</strong>
+  <%= @tour.sub_title %>
+</p>
+
+<p>
+  <strong>Addr:</strong>
+  <%= @tour.addr %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tour.price %>
+</p>
+
+<p>
+  <strong>Work range:</strong>
+  <%= @tour.work_range %>
+</p>
+
+<p>
+  <strong>Hint:</strong>
+  <%= @tour.hint %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @tour.desc %>
+</p>
+
+<p>
+  <strong>Traffic:</strong>
+  <%= @tour.traffic %>
+</p>
+
+<p>
+  <strong>Seq:</strong>
+  <%= @tour.seq %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @tour.position %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

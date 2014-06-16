@@ -1,0 +1,57 @@
+<%= form_for(@tour) do |f| %>
+  <% if @tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% @tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_title %><br>
+    <%= f.text_field :sub_title %>
+  </div>
+  <div class="field">
+    <%= f.label :addr %><br>
+    <%= f.text_field :addr %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :work_range %><br>
+    <%= f.text_field :work_range %>
+  </div>
+  <div class="field">
+    <%= f.label :hint %><br>
+    <%= f.text_area :hint %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_area :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic %><br>
+    <%= f.text_area :traffic %>
+  </div>
+  <div class="field">
+    <%= f.label :seq %><br>
+    <%= f.text_field :seq %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
