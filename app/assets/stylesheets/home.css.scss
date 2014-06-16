@@ -1,3 +1,118 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top_size {font-size: 16px;}
+.top1 {float: left; width: 218px; height: 450px; }
+.top1 div {
+  position: absolute; 
+  top: 420px; 
+  width:213px;
+  height:70px; 
+}
+.top1 ul {
+  position: absolute; 
+  top: 420px; 
+  width:213px;
+  height:70px;
+  z-index: 100; 
+  padding:10px;
+}
+.top2 {
+  float: left;
+  width: 500px; 
+  height: 226px; 
+}
+.top2 div {
+  position: absolute; 
+  height:70px; 
+  width:496px;
+  top: 196px; 
+}
+.top2 ul {
+  position: absolute; 
+  top: 196px; 
+  width: 496px;
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.top3 {
+  width: 218px; 
+  height: 450px; 
+  float: left;
+}
+.top3 div {
+  position: absolute; 
+  height: 70px; 
+  width: 215px; 
+  top: 420px;
+}
+.top3 ul {
+  position: absolute; 
+  top: 420px;
+  width: 215px; 
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.top4 {
+  float: left;
+  width: 198px; 
+  height: 222px; 
+}
+.top4 div {
+  position: absolute; 
+  height: 70px; 
+  width: 194px; 
+  top: 421px;
+}
+.top4 ul {
+  position: absolute; 
+  top: 420px;
+  width: 194px; 
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.top5 {
+  float: left;
+  width: 300px; height: 224px; 
+}
+.top5 div {
+  position: absolute; 
+  height: 70px; 
+  width: 297px; 
+  top: 421px;
+}
+.top5 ul {
+  position: absolute; 
+  top: 420px;
+  width: 297px; 
+  height: 70px;
+  z-index: 100; 
+  padding: 10px;
+}
+
+.hotel {
+  float: left; width:530px;
+}
+.hotel dd { font-size: 16px; font-weight: bold; }
+.hotel dd { height: 30px; line-height: 30px; }
+.hotel .remark {color :#9E9E9E;}
+.hotel .info {
+  width: 192px; float: right;
+}
+.price {
+  color: #FF6200; font-size: 14px; font-weight: bold
+}
+.hotel_list {
+  float: right; border-left: 3px solid #E2E2E2; width: 380px;overflow: hidden;
+  margin-bottom: 10px;
+}
+.hotel_list li {
+  float: left; padding: 10px;
+}
