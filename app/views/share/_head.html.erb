@@ -1,0 +1,27 @@
+<div class="nav">
+  <div class="window">
+    <%= image_tag "002.jpg" %>
+    <ul class="topbar">
+      <%= render "devise/menu/registration_items" %>
+      <li>&nbsp;|&nbsp;</li>
+      <%= render "devise/menu/login_items" %>
+    </ul>
+    <div class="search">
+      <input type="text" />
+      <%= image_tag "search.jpg" %>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="window">
+      <ul class="float_left">
+        <li class="hover">首页</li>
+        <li>景点</li>
+        <li>酒店</li>
+        <li>美食</li>
+      </ul>
+      <div class="order">
+        <a href="#">我的订单</a>&nbsp;|&nbsp;<a href="#">手机APP</a>
+      </div>
+    </div>
+  </div>
+</div>
