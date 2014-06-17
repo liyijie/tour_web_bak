@@ -35,6 +35,9 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # i18n
 gem 'rails-i18n', '~> 4.0.0' 
 
+# handle multiple models in a single form
+gem "nested_form"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
