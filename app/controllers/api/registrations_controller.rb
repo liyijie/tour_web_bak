@@ -6,8 +6,7 @@ class Api::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   def create
-    build_resource(email: params[:user][:email], password: params[:user][:password], 
-        password_confirmation: params[:user][:password_confirmation])
+    build_resource(params[:user].to_hash)
     # resource.skip_confirmation!
     if resource.save
       sign_in resource
