@@ -18,15 +18,12 @@
 
 # });
 
-$->
-	$(".showall") -> toggle 
-		()-> 
-			$(this) -> parent -> parent -> children ".hide" -> slideDown 300
-			$(this) -> children "img" -> attr "src","images/arrow_up.png"
+$ ->
+	$(".showall").toggle -> 
+			$(this).parent.parent.children(".hide").slideDown(300)
+			$(this).children("img").attr("src","images/arrow_up.png")
 		,
-		()->
-			$(this) -> parent -> parent.children ".list:get(1)" -> slideUp 300
-			$(this) -> children "img" -> attr "src", "images/arrow_down.png"
-
-
+		->
+			$(this).parent.parent.children(".list:get(1)").slideUp(300)
+			$(this).children("img").attr("src", "images/arrow_down.png")
 
