@@ -1,4 +1,4 @@
-<%= nested_form_for(@tour) do |f| %>
+<%= nested_form_for(@tour, :html => { :multipart => true }) do |f| %>
   <% if @tour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
@@ -54,10 +54,8 @@
 
 
   <%= f.fields_for :tickets do |ticket_form| %>
-    <div class="field">
-      <%= ticket_form.label :type %><br>
-      <%= ticket_form.text_field :type %>
-    </div>
+    <h1>This is a Ticket</h1>
+    
     <div class="field">
       <%= ticket_form.label :title %><br>
       <%= ticket_form.text_field :title %>

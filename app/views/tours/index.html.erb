@@ -6,72 +6,36 @@
     </div>
     <div class="content">
       <ul class="list">
-        <li class="pic">
-          <img src="" width="280px" height="200px" />
-        </li>
-        <li class="ctx">
-          <dl>
-            <dt>黄果输瀑布</dt>
-            <dd>地址：贵州省安顺市镇宁布衣族自治县</dd>
-            <dd>特色：中华第一大瀑布</dd>
-          </dl>
-          <ul>
-            <li class="list">
-              <ul>
-                <li class="t1">特惠票</li>
-                <li class="t2">贵州黄果树风景名胜区门票</li>
-                <li class="t3">￥180</li>
-                <li class="t4">预订</li>
-              </ul>
-            </li>
-            <li class="list">
-              <ul>
-                <li class="t1">特惠票</li>
-                <li class="t2">贵州黄果树风景名胜区门票</li>
-                <li class="t3">￥180</li>
-                <li class="t4">预订</li>
-              </ul>
-            </li>
-            <li class="list hide">
-              <ul>
-                <li class="t1">特惠票</li>
-                <li class="t2">贵州黄果树风景名胜区门票</li>
-                <li class="t3">￥180</li>
-                <li class="t4">预订</li>
-              </ul>
-            </li>
-            <li class="list hide">
-              <ul>
-                <li class="t1">特惠票</li>
-                <li class="t2">贵州黄果树风景名胜区门票</li>
-                <li class="t3">￥180</li>
-                <li class="t4">预订</li>
-              </ul>
-            </li>
-            <li class="list hide">
-              <ul>
-                <li class="t1">特惠票</li>
-                <li class="t2">贵州黄果树风景名胜区门票</li>
-                <li class="t3">￥180</li>
-                <li class="t4">预订</li>
-              </ul>
-            </li>
-            <li class="list hide">
-              <ul>
-                <li class="t1">特惠票</li>
-                <li class="t2">贵州黄果树风景名胜区门票</li>
-                <li class="t3">￥180</li>
-                <li class="t4">预订</li>
-              </ul>
-            </li>
-            <li class="list_line">
-              <a class="showall na" href="#">
-                查看全部（6）
-                <img src="images/arrow_down.png" />
-              </a>
-            </li>
-          </ul>
-        </li>
+        <% @tours.each do |tour| %>
+          <li class="pic">
+            <%= link_to image_tag(tour.image_thumb), tour %>
+            <!-- <img src="" width="280px" height="200px" /> -->
+          </li>
+          <li class="ctx">
+            <dl>
+              <dt><%= link_to tour.title, tour %></dt>
+              <dd>地址：<%= tour.addr %></dd>
+              <dd>特色：<%= tour.sub_title %></dd>
+            </dl>
+            <ul>
+              <li class="list">
+              <% tour.tickets.each do |ticket| %>
+                <ul>
+                  <li class="t1"><%= ticket.type %></li>
+                  <li class="t2"><%= ticket.title %></li>
+                  <li class="t3">￥<%= ticket.price %></li>
+                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket) %></li>
+                </ul>
+              <% end %>
+              <li class="list_line">
+                <a class="showall na" href="#">
+                  查看全部（6）
+                  <img src="images/arrow_down.png" />
+                </a>
+              </li>
+              </li>
+            </ul>
+        <% end %>
       </ul>
     </div>
   </div>
