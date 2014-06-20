@@ -31,6 +31,7 @@ class ToursController < ApplicationController
         format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
         format.json { render :show, status: :created, location: @tour }
       else
+        
         format.html { render :new }
         format.json { render json: @tour.errors, status: :unprocessable_entity }
       end

@@ -2,8 +2,303 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.list {
+  clear:both;
+  padding:10px;
+  border-top: 1px solid #c8c8c8;
+  overflow: hidden;
+}
+
+.list .pic {
+  float: left;
+  width: 300px;
+}
+
+.list .ctx {
+  float:left;
+  width: 615px;
+}
+
+.list .ctx dl {
+  height: 115px;
+}
+
+.list .ctx dl dt {
+  height: 30px;
+  line-height: 30px;
+  color: #009fc6;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list ul .t1,.t2,.t3,.t4 {
+  float:left;
+}
+
+.list ul .t1 {
+  width:70px;
+}
+
+.list ul .t2 {
+  color: #009da7;
+  width: 370px;
+}
+
+.list ul .t3 {
+  width:90px;
+  text-align:center;
+  color:#ff6600;
+  font-weight: bold;
+}
+
+.list ul .t4 {
+  width:60px;
+  background-color: #fdaf00;
+  text-align: center;
+  color: #ffffff;
+  border: 0px;
+}
+
+.list_line {
+  clear:both;
+  border-top: 1px solid #c8c8c8;
+  padding:2px 10px 0px 10px;
+  text-align: right;
+}
+
+.list_line .showall {
+  color: #0065bb;
+}
+
+.list_line .arrow {
+  margin-left:0px;
+  padding-left:0px;
+  vertical-align: top;
+}
+
 .tour_img {
 	width:280px;
 	height:200px;
 	cursor: pointer;
 }
+
+.tour_layout {
+  clear:both;
+  overflow: hidden;
+  background: #D2D2D2;
+  width: 950px;
+  padding: 5px;
+  .content { 
+    clear:both;
+    overflow: hidden;
+    background: #ffffff;
+    .left {
+      float:left;
+      width: 480px;
+      margin: 5px 0px 5px 5px;
+    }
+    .right {
+      float:left;
+      width: 445px;
+      padding: 5px 5px 5px 10px;
+      dt {
+      	height:40px;
+      	line-height: 40px;
+      }
+      .price {
+      	clear:both;
+      	padding-top: 10px;
+      	color:#FF6600;
+      	font-size:28px;
+      	line-height: 28px;
+      }
+    }
+    .title {
+		clear:both;
+		width: 100%;
+		padding: 5px;
+	    span {
+	    	font-size: 20px;
+			vertical-align: middle;
+	    }
+    }
+    .hint {
+    	clear:both;
+    	width: 100%;
+    	border-bottom: 1px solid #F5F5F5;
+    	height: 40px;
+    	line-height: 40px;
+    	padding-left: 35px;
+    }
+  }
+}
+
+.ticket_table_tr {
+	clear:both;
+	overflow: hidden;
+	height: 30px;
+  	width: 100%;
+	li {
+    	float:left;
+    	height: 30px;
+    	line-height: 30px;
+    	text-align: center;
+    }
+    .td1 {width: 15%;}
+	.td2 {width: 35%;}
+	.td3 {width: 10%;}
+	.td4 {width: 10%;}
+	.td5 {width: 15%;}
+	.td6 {width: 15%;}
+}
+.ticket_table_th {
+	background-color: #EEEEEE;
+	border-bottom: 1px solid #55C0A5;
+	li {
+		color: #999999;
+		font-size: 14px;
+	}
+}
+
+.ticket_font_color1 {
+	color: #0065BB;
+}
+.ticket_font_color2 {
+	color: #ff7e00;
+}
+.ticket_font_color3 {
+	color: #ff7e00;
+}
+.ticket_font_color4 {
+	color: #007e3a;
+}
+
+.show_detail {
+	float:left;
+	width: 690px;
+	overflow: hidden;
+	margin-top: 10px;
+	.tab {
+		clear: both;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		ul {
+			clear:both;
+			overflow: hidden;
+		}		
+		li {
+			float:left;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			cursor: pointer;
+			border:1px solid #DEDFDE;
+		}
+		.li_left {
+			margin-left: 10px;
+		}
+		li:hover, .li_hover {
+			font-weight: bold;
+			border-bottom: 1px solid #ffffff;
+			border-top:1px solid #55c0a5;
+		}
+	}
+	.content {
+		clear:both;
+		border: 1px solid #DEDFDE;
+		margin-top: -1px;
+		overflow: hidden;
+		.layout {
+			clear:both;
+			margin: 10px 0px 10px 0px;
+			overflow: hidden;
+			.left {
+				float:left;
+				width:30px;
+				font-size:14px;
+				color:#FFF;
+				font-weight: bold;
+				background-color:#55C0A5;
+				padding:10px;
+				.font {
+					font-size:14px;
+					color:#FFF;
+					font-weight: bold;
+				}
+			}
+			.right {
+				float: right;
+				width: 610px;
+				padding: 0px 10px 0px 10px;
+				.font_bold {
+					font-size:14px;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+.tour_other {
+	float:right;
+	width: 240px;
+	margin-top: 10px;
+	border: 1px solid #D2D2D2;
+	background: #ffffff;
+	padding:10px;
+	overflow: hidden;
+	.title {
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.price_color {
+		color:#FF6600;
+	}
+	.line {
+		clear: both;
+		border-top: 1px solid #D2D2D2;
+		margin-top: 10px;
+	}
+	.item {
+		clear:both;
+		overflow: hidden;
+		margin-top: 10px;
+	}
+	.content {
+		float:left;
+		margin-left:15px;
+	}
+}
+
+
+.btn_order {
+	border: 0px;
+	background-color: #fdaf00;
+	color: #ffffff;
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	cursor: pointer;
+}
+
+
+.dt_font_size {
+	font-size:26px
+}
+
+.dt_font_color {
+	color:#0065BB;
+}
+
+.tour_line {
+	clear:both;
+	width:100%;
+	border-top:3px solid #D2D2D2;
+}
+
+.a_detail_color {
+	color:#666666;
+}
+
