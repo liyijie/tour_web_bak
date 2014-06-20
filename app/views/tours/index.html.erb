@@ -9,7 +9,6 @@
         <% @tours.each do |tour| %>
           <li class="pic">
             <%= link_to image_tag(tour.image_thumb, class: "tour_img"), tour %>
-            <!-- <img src="" width="280px" height="200px" /> -->
           </li>
           <li class="ctx">
             <dl>
@@ -24,15 +23,15 @@
                   <li class="t1"><%= ticket.type %></li>
                   <li class="t2"><%= ticket.title %></li>
                   <li class="t3">￥<%= ticket.price %></li>
-                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket), :class => 't4' %></li>
+                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket), class: 't4' %></li>
                 </ul>
               <% end %>
+              </li>
               <li class="list_line">
                 <a class="showall na" href="####">
-                  查看全部（6）
-                  <img src="images/arrow_down.png" />
+                  查看全部（<%= tour.tickets.count %>）
+                  <%= image_tag "arrow_down.png" %>
                 </a>
-              </li>
               </li>
             </ul>
         <% end %>
