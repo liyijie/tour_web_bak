@@ -24,11 +24,11 @@ $ ->
 		isShow = $(this).attr("isShow");
 		if isShow isnt "undefined" and isShow isnt "show"
 			$(this).parent().parent().children(".list:gt(1)").slideDown(300)
-			$(this).children("img").attr("src","images/arrow_up.png")
+			$(this).children("img").attr("src","assets/arrow_up.png")
 			$(this).attr("isShow", "show")
 		else
 			$(this).parent().parent().children(".list:gt(1)").slideUp(300)
-			$(this).children("img").attr("src", "images/arrow_down.png")
+			$(this).children("img").attr("src", "assets/arrow_down.png")
 			$(this).attr("isShow", "hide")
 		
 
