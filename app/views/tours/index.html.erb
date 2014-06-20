@@ -1,5 +1,5 @@
 <div class="window">
-  <div class="box">
+  <div class="box margintop10">
     <div class="p_title">
       <%= image_tag "icon_jd.png" %>
       <span>旅游景点</span>
@@ -8,7 +8,7 @@
       <ul class="list">
         <% @tours.each do |tour| %>
           <li class="pic">
-            <%= link_to image_tag(tour.image_thumb), tour %>
+            <%= link_to image_tag(tour.image_thumb), tour, :class => 'tour_img' %>
             <!-- <img src="" width="280px" height="200px" /> -->
           </li>
           <li class="ctx">
@@ -24,11 +24,11 @@
                   <li class="t1"><%= ticket.type %></li>
                   <li class="t2"><%= ticket.title %></li>
                   <li class="t3">￥<%= ticket.price %></li>
-                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket) %></li>
+                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket), :class => 't4' %></li>
                 </ul>
               <% end %>
               <li class="list_line">
-                <a class="showall na" href="#">
+                <a class="showall na" href="####">
                   查看全部（6）
                   <img src="images/arrow_down.png" />
                 </a>

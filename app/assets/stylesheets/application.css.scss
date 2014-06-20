@@ -52,12 +52,14 @@ a {
 
 a:focus {
   color:#000000;
+  background: #ffffff;
   text-decoration: none;
   outline: none;
 }
 
 a:hover {
   color:#000000;
+  background: #ffffff;
   text-decoration: underline;
   outline: none;
 }
@@ -236,6 +238,7 @@ img {
   background-color: #fdaf00;
   text-align: center;
   color: #ffffff;
+  border: 0px;
 }
 
 .list_line {
@@ -260,7 +263,7 @@ img {
 .nav li { float:left;}
 .topbar {float:right;}
 .topbar a, .topbar li {color:#55a6c0;}
-.nav .search {clear:both; float:right; margin-top:15px; border:1px solid #000;}
+.nav .search {clear:both; float:right; margin-top:30px; border:1px solid #000;}
 .nav .search input {border:0px; height:29px;}
 .nav .menu { clear:both; width:100%; background-color: #55C0A5; height:40px; line-height: 40px; }
 .nav .menu li { 
@@ -311,15 +314,11 @@ img {
   background-color:#F1F1F1;
 }
 
-.register .start {
-  margin-top:370px;
-}
-
 .register .main {
   clear:both; 
   width:100%; 
   overflow:hidden;
-  padding-top: 370px;
+  padding-top: 400px;
 
 }
 
@@ -365,15 +364,11 @@ input {
   background-color:#F1F1F1;
 }
 
-.login .start {
-  margin-top:370px;
-}
-
 .login .main {
   clear:both; 
   width:100%; 
   overflow:hidden;
-  padding-top: 370px;
+  padding-top: 400px;
 }
 
 

@@ -38,6 +38,9 @@ gem 'rails-i18n', '~> 4.0.0'
 # handle multiple models in a single form
 gem "nested_form"
 
+# for windows
+gem 'tzinfo-data'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
