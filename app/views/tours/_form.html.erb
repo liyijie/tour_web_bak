@@ -76,12 +76,12 @@
   <%= f.fields_for :images do |image_form| %>
     <h1>This is a Image</h1>
       
-      <%= image_form.file_field :photo %>
-      <%= image_form.link_to_remove "Remove this Image" %>
-    <% end %>
-    <p><%= f.link_to_add "Add a Image", :images %></p>
+    <%= image_form.file_field :photo %>
+    <%= image_form.link_to_remove "Remove this Image" %>
+  <% end %>
+  <p><%= f.link_to_add "Add a Image", :images %></p>
 
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

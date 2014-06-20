@@ -17,8 +17,8 @@
               <dd>特色：<%= tour.sub_title %></dd>
             </dl>
             <ul>
-              <% tour.tickets.each do |ticket| %>
-              <li class="list">
+              <% tour.tickets.each_with_index do |ticket, index| %>
+              <li class="list<%= " hide" if(index > 1) %>">
                 <ul>
                   <li class="t1"><%= ticket.type %></li>
                   <li class="t2"><%= ticket.title %></li>
@@ -27,12 +27,14 @@
                 </ul>
               </li>
               <% end %>
-              <li class="list_line">
-                <a class="showall na" href="####">
-                  查看全部（<%= tour.tickets.count %>）
-                  <%= image_tag "arrow_down.png" %>
-                </a>
-              </li>
+              <% if tour.tickets.count > 2 %>
+                <li class="list_line">
+                  <a class="showall na" href="####">
+                    查看全部（<%= tour.tickets.count %>）
+                    <%= image_tag "arrow_down.png" %>
+                  </a>
+                </li>
+              <% end %>
             </ul>
         <% end %>
       </ul>
