@@ -21,16 +21,15 @@
 $ ->
 
 	$(".showall").click -> 
-		isShow = false
-		isShow = true if $(this).attr("isShow")
-		if !isShow
-			$(this).parent().parent().children(".hide").slideDown(300)
+		isShow = $(this).attr("isShow");
+		if isShow isnt "undefined" and isShow isnt "show"
+			$(this).parent().parent().children(".list:gt(1)").slideDown(300)
 			$(this).children("img").attr("src","images/arrow_up.png")
-			$(this).attr("isShow", true)
+			$(this).attr("isShow", "show")
 		else
 			$(this).parent().parent().children(".list:gt(1)").slideUp(300)
 			$(this).children("img").attr("src", "images/arrow_down.png")
-			$(this).attr("isShow", false)
+			$(this).attr("isShow", "hide")
 		
 
 
