@@ -6,6 +6,6 @@ class Tour < ActiveRecord::Base
   accepts_nested_attributes_for :images, :allow_destroy => true
 
   def image_thumb
-    images.first.photo.url if images.first
+    images.first.photo.url(:medium) if images.first
   end
 end
