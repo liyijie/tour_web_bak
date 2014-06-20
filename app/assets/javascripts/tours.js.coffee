@@ -19,11 +19,19 @@
 # });
 
 $ ->
-	$(".showall").toggle -> 
-			$(this).parent.parent.children(".hide").slideDown(300)
+
+	$(".showall").click -> 
+		isShow = false
+		isShow = true if $(this).attr("isShow")
+		if !isShow
+			$(this).parent().parent().children(".hide").slideDown(300)
 			$(this).children("img").attr("src","images/arrow_up.png")
-		,
-		->
-			$(this).parent.parent.children(".list:get(1)").slideUp(300)
+			$(this).attr("isShow", true)
+		else
+			$(this).parent().parent().children(".list:gt(1)").slideUp(300)
 			$(this).children("img").attr("src", "images/arrow_down.png")
+			$(this).attr("isShow", false)
+		
+
+
 

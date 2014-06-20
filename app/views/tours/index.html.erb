@@ -17,16 +17,16 @@
               <dd>特色：<%= tour.sub_title %></dd>
             </dl>
             <ul>
-              <li class="list">
               <% tour.tickets.each do |ticket| %>
+              <li class="list">
                 <ul>
                   <li class="t1"><%= ticket.type %></li>
                   <li class="t2"><%= ticket.title %></li>
                   <li class="t3">￥<%= ticket.price %></li>
-                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket), class: 't4' %></li>
+                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket), class: "t4" %></li>
                 </ul>
-              <% end %>
               </li>
+              <% end %>
               <li class="list_line">
                 <a class="showall na" href="####">
                   查看全部（<%= tour.tickets.count %>）
