@@ -57,6 +57,10 @@
     <h1>This is a Ticket</h1>
     
     <div class="field">
+      <%= ticket_form.label :style %><br>
+      <%= ticket_form.text_field :style %>
+    </div>
+    <div class="field">
       <%= ticket_form.label :title %><br>
       <%= ticket_form.text_field :title %>
     </div>

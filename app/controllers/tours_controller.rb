@@ -72,7 +72,7 @@ class ToursController < ApplicationController
     def tour_params
       params.require(:tour).permit(
         :title, :sub_title, :addr, :price, :work_range, :hint, :desc, :traffic, :seq, :position, 
-        tickets_attributes: [:id, :title, :desc, :price, :_destroy],
+        tickets_attributes: [:id, :title, :style, :desc, :price, :_destroy],
         images_attributes: [:id, :photo, :_destroy],
         )
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617075456) do
+ActiveRecord::Schema.define(version: 20140620103414) do
 
   create_table "images", force: true do |t|
     t.integer  "imageable_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140617075456) do
   add_index "images", ["position"], name: "index_images_on_position"
 
   create_table "tickets", force: true do |t|
-    t.string   "type"
+    t.string   "style"
     t.string   "title"
     t.text     "desc"
     t.float    "price"
