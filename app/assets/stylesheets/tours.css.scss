@@ -36,12 +36,12 @@
 }
 
 .list ul .t1 {
-  width:70px;
+  width:100px;
 }
 
 .list ul .t2 {
   color: #009da7;
-  width: 370px;
+  width: 340px;
 }
 
 .list ul .t3 {
@@ -114,6 +114,7 @@
       dt {
       	height:40px;
       	line-height: 40px;
+      	word-break:keep-all;
       }
       .price {
       	clear:both;
