@@ -71,7 +71,8 @@ class ToursController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
       params.require(:tour).permit(
-        :title, :sub_title, :addr, :price, :work_range, :hint, :desc, :traffic, :seq, :position, 
+        :title, :sub_title, :addr, :price, :work_range, 
+        :hint, :desc, :traffic, :seq, :position, :city,
         tickets_attributes: [:id, :title, :style, :desc, :price, :_destroy],
         images_attributes: [:id, :photo, :_destroy],
         )
