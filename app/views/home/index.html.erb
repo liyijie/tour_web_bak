@@ -9,48 +9,49 @@
 				<a href="#" style="color: #60C4AB">更多</a>
 			</div>
 			<div class="content top">
+				<% tours = Tour.limit(5) %>
 				<div class="top1">
-          <%= image_tag "003.jpg" %>
+					<%= link_to image_tag(tours[0].image_large), tours[0] %>
 					<div class="op"></div>
 					<ul>
-						<li>文字描1</li>
-						<li class="top_size">黄果树景区 ￥80</li>
+						<li><%= tours[0].sub_title %></li>
+						<li class="top_size"><%= "#{tours[0].title} ￥#{tours[0].price}" %></li>
 					</ul>
 				</div>
 				<div class="float_left">
 					<div class="top2">
-            <%= image_tag "004.jpg" %>
+            <%= link_to image_tag(tours[1].image_large), tours[1] %>
 						<div class="op"></div>
 						<ul>
-							<li>文字描1</li>
-							<li class="top_size">黄果树景区 ￥80</li>
+							<li><%= tours[1].sub_title %></li>
+							<li class="top_size"><%= "#{tours[1].title} ￥#{tours[1].price}" %></li>
 						</ul>
 					</div>
 					<div class="clear_both">
 						<div class="top4">
-              <%= image_tag "006.jpg" %>
+              <%= link_to image_tag(tours[2].image_large), tours[2] %>
 							<div class="op"></div>
 							<ul>
-								<li>文字描1</li>
-								<li class="top_size">黄果树景区 ￥80</li>
+								<li><%= tours[2].sub_title %></li>
+								<li class="top_size"><%= "#{tours[2].title} ￥#{tours[2].price}" %></li>
 							</ul>
 						</div>
 						<div class="top5">
-              <%= image_tag "007.jpg" %>
+              <%= link_to image_tag(tours[3].image_large), tours[3] %>
 							<div class="op"></div>
 							<ul>
-								<li>文字描1</li>
-								<li class="top_size">黄果树景区 ￥80</li>
+								<li><%= tours[3].sub_title %></li>
+								<li class="top_size"><%= "#{tours[3].title} ￥#{tours[3].price}" %></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="top3">
-          <%= image_tag "005.jpg" %>
+          <%= link_to image_tag(tours[4].image_large), tours[4] %>
 					<div class="op"></div>
 					<ul>
-						<li>文字描1</li>
-						<li class="top_size">黄果树景区 ￥80</li>
+						<li><%= tours[4].sub_title %></li>
+						<li class="top_size"><%= "#{tours[4].title} ￥#{tours[4].price}" %></li>
 					</ul>
 				</div>
 			</div>
