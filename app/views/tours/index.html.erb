@@ -5,8 +5,8 @@
       <span>旅游景点</span>
     </div>
     <div class="content">
-      <ul class="list">
-        <% @tours.each do |tour| %>
+      <% @tours.each do |tour| %>
+        <ul class="list">
           <li class="pic">
             <%= link_to image_tag(tour.image_thumb, class: "tour_img"), tour %>
           </li>
@@ -36,8 +36,9 @@
                 </li>
               <% end %>
             </ul>
-        <% end %>
-      </ul>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>
