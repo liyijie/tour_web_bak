@@ -158,17 +158,7 @@
 </div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
 <script type="text/javascript">
-  var map = new BMap.Map("bMap");
-  map.disableScrollWheelZoom();
-  map.addControl(new BMap.NavigationControl());
-  map.addControl(new BMap.PanoramaControl());
-  var myGeo = new BMap.Geocoder();
-  myGeo.getPoint("<%= @tour.addr %>", function(point){
-    if (point) {
-      map.centerAndZoom(point, 16);
-      map.addOverlay(new BMap.Marker(point));
-    }
-  }, "<%= @tour.city %>");  
+    
 
     $('#slider').nivoSlider({
       controlNav: false
@@ -178,4 +168,15 @@
       $(".tab_link").removeClass('li_hover');
       $(this).addClass('li_hover');
     });
+    var map = new BMap.Map("bMap");
+    map.disableScrollWheelZoom();
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.PanoramaControl());
+    var myGeo = new BMap.Geocoder();
+    myGeo.getPoint("<%= @tour.addr %>", function(point){
+      if (point) {
+        map.centerAndZoom(point, 16);
+        map.addOverlay(new BMap.Marker(point));
+      }
+    }, "<%= @tour.city %>");
 </script>

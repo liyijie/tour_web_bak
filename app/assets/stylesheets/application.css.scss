@@ -14,7 +14,7 @@
  *= require_self
  */
 /*common*/
-tml,html,body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td
+html,body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td
   {
   margin: 0;
   padding: 0;
@@ -209,7 +209,8 @@ img {
   padding:0px 10px 0px 10px;
   cursor: pointer;
 }
-.nav .menu li:hover, .nav .menu .hover {color: #000000; background-color: #ffffff; }
+.nav .menu li a:hover {color:#ffffff; underline:none; }
+.nav .menu li a{color:#ffffff; underline:none;}
 .nav .menu .order {float:right; height: 40px; line-height: 40px; color: #ffffff;}
 .nav .menu .order a {color: #ffffff;}
 

@@ -11,33 +11,33 @@
 			<div class="content top">
 				<% tours = Tour.limit(5) %>
 				<div class="top1">
-					<%= link_to image_tag(tours[0].image_large), tours[0] %>
+					<%= link_to image_tag(tours[0].image_large, class: "top1"), tours[0] %>
 					<div class="op"></div>
 					<ul>
 						<li><%= tours[0].sub_title %></li>
 						<li class="top_size"><%= "#{tours[0].title} ￥#{tours[0].price}" %></li>
 					</ul>
 				</div>
-				<div class="float_left">
+				<div class="float_left top_intenal">
 					<div class="top2">
-            <%= link_to image_tag(tours[1].image_large), tours[1] %>
+            <%= link_to image_tag(tours[1].image_large, class: "top2"), tours[1] %>
 						<div class="op"></div>
 						<ul>
 							<li><%= tours[1].sub_title %></li>
 							<li class="top_size"><%= "#{tours[1].title} ￥#{tours[1].price}" %></li>
 						</ul>
 					</div>
-					<div class="clear_both">
+					<div class="clear_both top_intenal_top">
 						<div class="top4">
-              <%= link_to image_tag(tours[2].image_large), tours[2] %>
+              <%= link_to image_tag(tours[2].image_large, class: "top4"), tours[2] %>
 							<div class="op"></div>
 							<ul>
 								<li><%= tours[2].sub_title %></li>
 								<li class="top_size"><%= "#{tours[2].title} ￥#{tours[2].price}" %></li>
 							</ul>
 						</div>
-						<div class="top5">
-              <%= link_to image_tag(tours[3].image_large), tours[3] %>
+						<div class="top5 top_intenal">
+              <%= link_to image_tag(tours[3].image_large, class: "top5"), tours[3] %>
 							<div class="op"></div>
 							<ul>
 								<li><%= tours[3].sub_title %></li>
@@ -46,8 +46,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="top3">
-          <%= link_to image_tag(tours[4].image_large), tours[4] %>
+				<div class="top3 top_intenal">
+          <%= link_to image_tag(tours[4].image_large, class: "top3"), tours[4] %>
 					<div class="op"></div>
 					<ul>
 						<li><%= tours[4].sub_title %></li>
