@@ -151,7 +151,9 @@
           <div class="right">
             <dl>
               <dd>
-                <%= image_tag "022.jpg" %></dd>
+                <div id="bMap">
+                </div>
+              </dd>
               <dt class="font_bold">交通信息</dt>
               <dt class="font_bold">自驾线路</dt>
               <dd>
@@ -195,3 +197,15 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+<script type="text/javascript">
+  // 百度地图API功能
+  var map = new BMap.Map("bMap");
+  map.enableScrollWheelZoom();
+  map.addControl(new BMap.NavigationControl());
+  map.addControl(new BMap.PanoramaControl());
+  var point = new BMap.Point(116.404, 39.915);
+  map.centerAndZoom(point,15);
+  var marker = new BMap.Marker(point);  // 创建标注
+  map.addOverlay(marker);        
+</script>
