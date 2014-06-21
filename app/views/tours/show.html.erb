@@ -19,8 +19,9 @@
           <dt>
             景点地址&nbsp;
             <%= @tour.addr %>
+            <a class="hand dt_font_color" href="#map">
             <%= image_tag "016.jpg", class: "hand" %>
-            <span class="hand dt_font_color">查看地图</span>
+            查看地图</a>
           </dt>
           <dt>营业时间 <%= @tour.work_range %></dt>
         </dl>
@@ -151,6 +152,7 @@
           <div class="right">
             <dl>
               <dd>
+                <a name="map"></a>
                 <div id="bMap">
                 </div>
               </dd>
