@@ -3,7 +3,13 @@
   <div class="tour_layout margintop10">
     <div class="content">
       <div class="left">
-        <%= image_tag @tour.image_large, class: "tour_show_img" %>
+        <div class="slider-wrapper theme-default">
+          <div id="slider" class="nivoSlider">
+            <% @tour.images.each do |image| %>
+              <%= image_tag image.photo.url, class: "tour_show_img" %>
+            <% end %>
+          </div>
+        </div>
       </div>
       <div class="right">
         <dl>
@@ -212,4 +218,8 @@
       map.addOverlay(new BMap.Marker(point));
     }
   }, "上海市");  
+
+  $(document).ready(function() {
+    $('#slider').nivoSlider();
+  });
 </script>
