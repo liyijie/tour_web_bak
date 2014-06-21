@@ -12,4 +12,8 @@ class Tour < ActiveRecord::Base
   def image_large
     images.first.photo.url if images.first
   end
+
+  def relate_tours(num)
+    Tour.where(city: city).where.not(id: id).limit(num)
+  end
 end

@@ -130,30 +130,21 @@
   </div>
   <div class="tour_other">
     <span class="title">周边景点推荐</span>
-    <div class="item">
-      <div class="float_left">
-        <%= image_tag "018.jpg" %>
+    <% @tour.relate_tours(5).each do |relate_tour| %>
+      <div class="line"></div>
+      <div class="item">
+        <div class="float_left">
+          <%= link_to image_tag(relate_tour.image_thumb), relate_tour %>
+        </div>
+        <div class="content">
+          <dl>
+            <dt><%= link_to relate_tour.title, relate_tour %></dt>
+            <dt>票价：<span class="price_color">¥<%= relate_tour.price %></span>
+            </dt>
+          </dl>
+        </div>
       </div>
-      <div class="content">
-        <dl>
-          <dt>龙宫</dt>
-          <dt>票价：<span class="price_color">￥180</span>
-          </dt>
-        </dl>
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="item">
-      <div class="float_left">
-        <%= image_tag "018.jpg" %>
-      </div>
-      <div class="content">
-        <dl>
-          <dt>龙宫</dt>
-          <dt>票价：<span class="price_color">￥180</span></dt>
-        </dl>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>

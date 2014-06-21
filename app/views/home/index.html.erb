@@ -1,12 +1,11 @@
 <div>
-	<!-- <img src="images/001.jpg" width="100%" /> -->
   <%= image_tag "001.jpg", class: "full_image" %>
 	<div class="window">
 		<div class="box margintop10">
 			<div class="p_title">
         <%= image_tag "icon_top.png" %>
 				<span>热门景点推荐</span>&nbsp;/&nbsp;
-				<a href="#" style="color: #60C4AB">更多</a>
+				<%= link_to "更多", tours_path, style: "color: #60C4AB" %>
 			</div>
 			<div class="content top">
 				<% tours = Tour.limit(5) %>
