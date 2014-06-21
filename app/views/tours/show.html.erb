@@ -85,13 +85,13 @@
   <div class="show_detail">
     <div class="tab">
       <ul>
-        <li class="li_hover">
+        <li class="tab_link li_hover">
           <a href="#ydxz">预订须知</a>
         </li>
-        <li class="li_left">
+        <li class="tab_link li_left">
           <a href="#jdjj">景点介绍</a>
         </li>
-        <li class="li_left">
+        <li class="tab_link li_left">
           <a href="#dtjt">地图交通</a>
         </li>
       </ul>
@@ -168,6 +168,13 @@
   }, "<%= @tour.city %>");  
 
   $(document).ready(function() {
-    $('#slider').nivoSlider();
+    $('#slider').nivoSlider({
+      controlNav: false
+    });
+
+    $(".tab_link").click(function(event) {
+      $(".tab_link").removeClass('li_hover');
+      $(this).addClass('li_hover');
+    });
   });
 </script>
