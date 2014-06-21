@@ -3,7 +3,7 @@
   <div class="tour_layout margintop10">
     <div class="content">
       <div class="left">
-        <%= image_tag "014.jpg" %></div>
+        <%= image_tag @tour.image_large %></div>
       <div class="right">
         <dl>
           <dt>
@@ -22,7 +22,7 @@
             <%= image_tag "016.jpg", class: "hand" %>
             <span class="hand dt_font_color">查看地图</span>
           </dt>
-          <dt>营业时间&nbsp;8:00-18:00</dt>
+          <dt>营业时间 <%= @tour.work_range %></dt>
         </dl>
         <div class="tour_line"></div>
         <div class="price">
@@ -47,28 +47,31 @@
           <li class="td6">&nbsp;</li>
         </ul>
       </div>
-      <div class="hint">贵州黄果树风景名胜区【编号：1651564】</div>
+      <div class="hint"><%= @tour.title %>【编号：<%= @tour.seq %>】</div>
       <div class="ticket_table_tr">
-        <ul>
-          <li class="td1">[特惠券]</li>
-          <li class="td2 ticket_font_color1 text_align_l">
-            贵州黄果树风景名胜区门票
-            <a class="a_detail_color">详情</a>
-          </li>
-          <li class="td3 ticket_font_color2"> <em>¥</em>
-            180
-          </li>
-          <li class="td4 ticket_font_color3"> <em>¥</em>
-            -20
-          </li>
-          <li class="td5 ticket_font_color4">在线支付</li>
-          <li class="td6">
-            <!-- 样式不对 
-            <%= button_to "预订", class: "btn_order" %>
-            -->
-            <input type="button" value="预订" class="btn_order" />
-          </li>
-        </ul>
+        <% @tour.tickets.each do |ticket| %>
+          <ul>
+            <li class="td1"><%= ticket.style %></li>
+            <li class="td2 ticket_font_color1 text_align_l">
+              <%= ticket.title %>
+              <a class="a_detail_color">详情</a>
+            </li>
+            <li class="td3 ticket_font_color2"> <em>¥</em>
+              <%= ticket.price %>
+            </li>
+            <li class="td4 ticket_font_color3"> <em>¥</em>
+              -20
+            </li>
+            <li class="td5 ticket_font_color4">在线支付</li>
+            <li class="td6">
+              <!-- 样式不对 
+              <%= button_to "预订", class: "btn_order" %>
+              -->
+              <input type="button" value="预订" class="btn_order" />
+            </li>
+          </ul>
+        <% end %>
+        
       </div>
     </div>
   </div>

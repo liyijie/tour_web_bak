@@ -8,4 +8,8 @@ class Tour < ActiveRecord::Base
   def image_thumb
     images.first.photo.url(:medium) if images.first
   end
+
+  def image_large
+    images.first.photo.url if images.first
+  end
 end
