@@ -3,7 +3,8 @@
   <div class="tour_layout margintop10">
     <div class="content">
       <div class="left">
-        <%= image_tag @tour.image_large %></div>
+        <%= image_tag @tour.image_large, class: "tour_show_img" %>
+      </div>
       <div class="right">
         <dl>
           <dt>
@@ -55,7 +56,6 @@
             <li class="td1"><%= ticket.style %></li>
             <li class="td2 ticket_font_color1 text_align_l">
               <%= ticket.title %>
-              <a class="a_detail_color">详情</a>
             </li>
             <li class="td3 ticket_font_color2"> <em>¥</em>
               <%= ticket.price %>
@@ -202,14 +202,14 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
 <script type="text/javascript">
   var map = new BMap.Map("bMap");
-  map.enableScrollWheelZoom();
+  map.disableScrollWheelZoom();
   map.addControl(new BMap.NavigationControl());
   map.addControl(new BMap.PanoramaControl());
   var myGeo = new BMap.Geocoder();
-  myGeo.getPoint("<%= @tour.addr %>", function(point){
+  myGeo.getPoint("东方明珠", function(point){
     if (point) {
       map.centerAndZoom(point, 16);
       map.addOverlay(new BMap.Marker(point));
     }
-  }, "<%= @tour.city %>");  
+  }, "上海市");  
 </script>
