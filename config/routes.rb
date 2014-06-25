@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :rooms
-
-  resources :hotels
+  resources :hotels do
+    resources :rooms
+  end
 
   resources :tours do
     resources :tickets
