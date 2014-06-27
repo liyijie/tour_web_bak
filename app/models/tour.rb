@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: tours
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  sub_title  :string(255)
+#  addr       :string(255)
+#  price      :float
+#  work_range :string(255)
+#  hint       :text
+#  desc       :text
+#  traffic    :text
+#  seq        :string(255)
+#  position   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  city       :string(255)
+#
+
 class Tour < ActiveRecord::Base
   has_many :tickets
   has_many :images, as: :imageable

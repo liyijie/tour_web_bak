@@ -41,6 +41,9 @@ gem "nested_form"
 # for windows
 gem 'tzinfo-data'
 
+# Annotation
+gem 'annotate', ">=2.6.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
