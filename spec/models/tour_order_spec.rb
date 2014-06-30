@@ -16,6 +16,7 @@ require 'rails_helper'
 RSpec.describe TourOrder, :type => :model do
   context "Relations" do
     it { should belong_to(:user) } 
-    it { should have_many(:order_infos) } 
+    it { should have_one(:order_info) } 
+
   end
 end

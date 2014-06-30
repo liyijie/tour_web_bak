@@ -13,5 +13,5 @@
 
 class TourOrder < ActiveRecord::Base
   belongs_to :user
-  has_many :order_infos, as: :order
+  has_one :order_info, as: :order
 end

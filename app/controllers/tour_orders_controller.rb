@@ -69,6 +69,6 @@ class TourOrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_order_params
-      params.require(:tour_order).permit(:total_price, :number, :state, :user_id, :order_infos_id)
+      params.require(:tour_order).permit(:total_price, :number, :state, :user_id)
     end
 end
