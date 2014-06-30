@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: hotels
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  addr       :string(255)
+#  tel        :string(255)
+#  desc       :text
+#  traffic    :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require "rails_helper"
 
 describe Hotel do

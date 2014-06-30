@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @tour_order.total_price %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @tour_order.number %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @tour_order.state %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tour_order.user %>
+</p>
+
+<p>
+  <strong>Order infos:</strong>
+  <%= @tour_order.order_infos %>
+</p>
+
+<%= link_to 'Edit', edit_tour_order_path(@tour_order) %> |
+<%= link_to 'Back', tour_orders_path %>

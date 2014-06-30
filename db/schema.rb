@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630062212) do
+ActiveRecord::Schema.define(version: 20140630092918) do
 
   create_table "hotels", force: true do |t|
     t.string   "name"
@@ -48,7 +48,11 @@ ActiveRecord::Schema.define(version: 20140630062212) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
+    t.string   "order_type"
   end
+
+  add_index "order_infos", ["order_id", "order_type"], name: "index_order_infos_on_order_id_and_order_type"
 
   create_table "rooms", force: true do |t|
     t.string   "name"
@@ -69,6 +73,17 @@ ActiveRecord::Schema.define(version: 20140630062212) do
     t.datetime "updated_at"
     t.integer  "tour_id"
   end
+
+  create_table "tour_orders", force: true do |t|
+    t.float    "total_price"
+    t.integer  "number"
+    t.string   "state"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tour_orders", ["user_id"], name: "index_tour_orders_on_user_id"
 
   create_table "tours", force: true do |t|
     t.string   "title"

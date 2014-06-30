@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tour_orders
+
   resources :hotels do
     resources :rooms
   end

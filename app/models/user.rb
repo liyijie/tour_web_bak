@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
 
 
   before_save :ensure_authentication_token
+  has_many :tour_orders
    
   def ensure_authentication_token
     if authentication_token.blank?
