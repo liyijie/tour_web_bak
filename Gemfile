@@ -44,6 +44,13 @@ gem 'tzinfo-data'
 # Annotation
 gem 'annotate', ">=2.6.0"
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
