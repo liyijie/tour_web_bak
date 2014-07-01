@@ -5,7 +5,6 @@ RSpec.describe "tour_orders/edit", :type => :view do
     @tour_order = assign(:tour_order, TourOrder.create!(
       :total_price => 1.5,
       :number => 1,
-      :state => "MyString",
       :user => nil
     ))
   end

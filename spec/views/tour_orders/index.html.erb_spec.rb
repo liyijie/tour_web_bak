@@ -6,13 +6,11 @@ RSpec.describe "tour_orders/index", :type => :view do
       TourOrder.create!(
         :total_price => 1.5,
         :number => 1,
-        :state => "State",
         :user => nil,
       ),
       TourOrder.create!(
         :total_price => 1.5,
         :number => 1,
-        :state => "State",
         :user => nil,
       )
     ])
@@ -22,7 +20,6 @@ RSpec.describe "tour_orders/index", :type => :view do
     render
     assert_select "tr>td", :text => 1.5.to_s, :count => 2
     assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => "State".to_s, :count => 2
     assert_select "tr>td", :text => nil.to_s, :count => 2
   end
 end

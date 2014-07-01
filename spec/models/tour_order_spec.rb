@@ -19,4 +19,16 @@ RSpec.describe TourOrder, :type => :model do
     it { should have_one(:order_info) } 
 
   end
+
+  context "state machine" do
+    before(:each) do
+      @order = TourOrder.new
+    end
+
+    it "should be paid from initial" do
+      @order.state.should == "in_progress"
+      @order.pay
+      @order.state.should == "paid"
+    end
+  end
 end

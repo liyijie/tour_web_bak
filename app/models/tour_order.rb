@@ -12,6 +12,22 @@
 #
 
 class TourOrder < ActiveRecord::Base
+  # extend StateMachine::MacroMethods
   belongs_to :user
   has_one :order_info, as: :order
+
+  state_machine :initial =>  :in_progress do
+    state :in_progress
+    state :complete
+    state :paid
+    state :canceled
+
+    event :complete do
+      transition :in_progress => :complete
+    end
+
+    event :pay do
+      transition [:in_progress, :complete] => :paid
+    end
+  end
 end

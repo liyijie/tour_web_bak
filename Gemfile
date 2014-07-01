@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Authentication
 gem 'devise'
 
+# State Machine for state
+gem 'state_machine'
+
 # File Attachment Upload
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
