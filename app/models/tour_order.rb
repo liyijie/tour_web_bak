@@ -12,22 +12,31 @@
 #
 
 class TourOrder < ActiveRecord::Base
-  # extend StateMachine::MacroMethods
+  include AASM
+  
   belongs_to :user
   has_one :order_info, as: :order
 
-  state_machine :initial =>  :in_progress do
-    state :in_progress
+  aasm :column => :state do
+    state :in_progress, :initial => true
     state :complete
     state :paid
     state :canceled
 
     event :complete do
-      transition :in_progress => :complete
+      transitions :from => :in_progress, :to => :complete
     end
 
     event :pay do
-      transition [:in_progress, :complete] => :paid
+      transitions :from => [:in_progress, :complete], :to => :paid
     end
+
+    event :cancel do
+      transitions :from => :paid, :to => :canceled
+    end
+  end
+
+  def human_state
+    I18n.t "order_state.#{state}"
   end
 end

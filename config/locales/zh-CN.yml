@@ -1,0 +1,10 @@
+zh-CN:
+  activerecord:
+    attributes:
+      tour_order:
+        aasm_state: 状态
+        aasm_state/in_progress: Cleaning Up
+        aasm_state/paid: Cleaning Up
+  order_state:
+    in_progress: 处理中
+    paid: 已支付

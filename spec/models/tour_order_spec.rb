@@ -22,7 +22,7 @@ RSpec.describe TourOrder, :type => :model do
 
   context "state machine" do
     before(:each) do
-      @order = TourOrder.new
+      @order = TourOrder.create
     end
 
     it "should be paid from initial" do

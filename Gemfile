@@ -30,7 +30,8 @@ gem 'spring',        group: :development
 gem 'devise'
 
 # State Machine for state
-gem 'state_machine'
+# gem 'state_machine'
+gem 'aasm'
 
 # File Attachment Upload
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
