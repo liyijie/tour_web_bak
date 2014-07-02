@@ -244,6 +244,59 @@ img {
   color: #616161;
 }
 
+
+.layout {
+  clear:both;
+  overflow: hidden;
+  background: #D2D2D2;
+  width: 950px;
+  padding: 5px;
+  .content { 
+    clear:both;
+    overflow: hidden;
+    background: #ffffff;
+    .left {
+      float:left;
+      width: 480px;
+      margin: 5px 0px 5px 5px;
+    }
+    .right {
+      float:left;
+      width: 445px;
+      padding: 5px 5px 5px 10px;
+      dt {
+        height:40px;
+        line-height: 40px;
+        word-break:keep-all;
+      }
+      .price {
+        clear:both;
+        padding-top: 10px;
+        color:#FF6600;
+        font-size:28px;
+        line-height: 28px;
+      }
+    }
+    .title {
+      clear:both;
+      width: 100%;
+      padding: 5px;
+      span {
+        font-size: 20px;
+        vertical-align: middle;
+      }
+    }
+    .hint {
+      clear:both;
+      width: 100%;
+      border-bottom: 1px solid #F5F5F5;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 35px;
+    }
+  }
+}
+
 /*register*/
 .register {
   background:url(log_bg.jpg) no-repeat;
@@ -330,10 +383,6 @@ input {
   color:#000; 
   font-weight:bold; 
   text-align:left;
-}
-
-input {
-  width:218px;height:29px;
 }
 
 .btnLogin {

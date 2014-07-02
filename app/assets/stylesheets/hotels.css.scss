@@ -130,3 +130,63 @@
 		cursor: pointer;
 	}
 }
+
+.hotel_show_title {
+	clear:both;
+	padding:10px;
+	overflow: hidden;
+	.name {
+		float: left;
+		.span_c {
+			font-size: 15px;
+			font-weight: bold;
+		}
+		img {
+			width: 12px;
+			height: 12px;
+		}
+	}
+	.right_price {
+		float: right;
+		height: 35px;
+		line-height: 35px;
+		.price {
+			color: #ff663a;
+			font-weight: bold;
+			font-size: 25px;
+		}
+		.p1 {
+			vertical-align: top;
+		}
+		.p2 {
+			color: #ff663a;
+			vertical-align: bottom;
+		}
+	}
+}
+
+.hotel_show_desc {
+	clear:both;
+	padding:0px 10px 10px 10px;
+	overflow: hidden;
+}
+
+.f_color_order {
+	color: #10a200;
+}
+
+.btn_new_order {
+	padding: 10px 15px 10px 15px;
+	background-color: #ffb000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 15px;
+	border: 1px solid #e77c00;
+	width: 120px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.hotel_show_pic {
+	
+}

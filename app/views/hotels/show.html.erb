@@ -1,32 +1,39 @@
-
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
-
-<p>
-  <strong>Addr:</strong>
-  <%= @hotel.addr %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @hotel.tel %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @hotel.desc %>
-</p>
-
-<p>
-  <strong>Traffic:</strong>
-  <%= @hotel.traffic %>
-</p>
-
-<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
-<%= link_to 'Back', hotels_path %>
+<div class="window">
+  <%= image_tag "hotel_detail.png" %>
+  <div class="layout margintop10">
+    <div class="content">
+      <div class="hotel_show_title">
+        <div class="name">
+          <span class="span_c"><%= @hotel.name %></span>
+          <span>Howard Johnson Plaza Hotel Guiyang</span>
+          <div class="clear_both">
+            <%= image_tag "star.png" %>
+            <%= image_tag "star.png" %>
+            <%= image_tag "star.png" %>
+            <%= image_tag "star.png" %>
+            <%= image_tag "star.png" %>
+          </div>
+        </div>
+        <div class="right_price">
+          <span class="p1">￥</span>
+          <span class="price">658</span>
+          <span class="p2">起</span>
+        </div>
+      </div>
+      <div class="hotel_show_desc">
+        <div class="float_left">
+          <%= @hotel.addr %>
+        </div>
+        <div class="float_right">
+          <span class="f_color_order">
+            最新预订：41分钟前&nbsp;&nbsp;&nbsp;
+          </span>
+          <input type="button" value="立即预订" class="btn_new_order" />
+        </div>
+      </div>
+      <div class="hotel_show_pic">
+        
+      </div>
+    </div>
+  </div>
+</div>
