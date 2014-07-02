@@ -1,3 +1,128 @@
 // Place all the styles related to the hotels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.search_bar {
+	clear: both;
+	background-color: #3d9f95;
+	overflow: hidden;
+	padding: 20px 0px 20px 0px;
+	div {
+		float: left;
+		margin-left: 11px;
+		background-color: #ffffff;
+	}
+	.input {
+		width: 170px;
+		border: 0px;
+	}
+	.input.width {
+		width: 220px;
+	}
+}
+
+.area_bar {
+	float: right;
+	padding-right: 10px;
+	li {
+		float: left;
+		margin-left: 10px;
+		color: #747474;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	li:hover, li.hover {
+		color: #55c0a5;
+	}
+}
+
+.hotels_list {
+	clear: both;
+	width: 100%;
+	overflow: hidden;
+	img {
+		width: 130px;
+		height: 130px;
+	}
+	ul {
+		clear: both;
+		border-top: 1px solid #dfdfdf;
+		overflow: hidden;
+		padding-top: 10px;
+		li {
+			float: left;
+			dd {
+				margin-top: 5px;
+			}
+			.name {
+				font-weight: bold;
+				font-size: 14px;
+				color: #0066cc;
+				margin-top: 0px;
+			}
+			.address {
+				text-decoration: underline;
+			}
+			.dian {
+				margin-top: 10px;
+				color: #999999;
+			}
+		}
+		li.left {
+			margin-left: 20px;
+		}
+		li.right {
+			float: right;
+			padding-right: 5px;
+			dd {
+				text-align: right;
+				.price {
+					color: #ff663a;
+					font-weight: bold;
+					font-size: 25px;
+				}
+				.p1 {
+					vertical-align: top;
+				}
+				.p2 {
+					color: #ff663a;
+					vertical-align: bottom;
+				}
+				.fan {
+					border: 1px solid #fba62c;
+					background-color:#fba62c;
+					color: #fff; 
+				}
+				.f_price {
+					color: #fba62c;
+					border: 1px solid #fba62c;
+					margin-left: 0px;
+				}
+			}
+			dd.height {
+				height: 35px;
+				line-height: 35px;
+			}
+		}
+	}
+}
+
+.dialogDiv {
+	position: absolute;
+	z-index: 99;
+	display: none;
+}
+
+#cityDiv {
+	clear:both;
+	width: 200px;
+	border: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	li {
+		float: left;
+		margin-left: 20px;
+		cursor: pointer;
+	}
+}

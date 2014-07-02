@@ -175,9 +175,11 @@ img {
   width:100%;
   border:1px solid #cacaca;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .box .p_title {
+  clear:both;
   padding:10px 0px 0px 15px;
 }
 
