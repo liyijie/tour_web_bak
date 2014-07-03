@@ -19,14 +19,7 @@
     <%= f.label :number %><br>
     <%= f.number_field :number %>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+  <%= hidden_field_tag "ticket_id", @tour_order.ticket_id %>
 
   <%= f.fields_for :order_info do |info_form|%>
     <div class="field">

@@ -9,6 +9,7 @@
 #  user_id     :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  ticket_id   :integer
 #
 
 require 'rails_helper'
@@ -17,6 +18,7 @@ RSpec.describe TourOrder, :type => :model do
   context "Relations" do
     it { should belong_to(:user) } 
     it { should have_one(:order_info) } 
+    it { should belong_to(:ticket) } 
 
   end
 
@@ -30,5 +32,10 @@ RSpec.describe TourOrder, :type => :model do
       @order.pay
       @order.state.should == "paid"
     end
+  end
+
+  context "validation" do
+    it { should validate_presence_of(:ticket) }
+    it { should validate_presence_of(:user) }
   end
 end

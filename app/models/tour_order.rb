@@ -9,6 +9,7 @@
 #  user_id     :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  ticket_id   :integer
 #
 
 class TourOrder < ActiveRecord::Base
@@ -16,6 +17,10 @@ class TourOrder < ActiveRecord::Base
   
   belongs_to :user
   has_one :order_info, as: :order, dependent: :destroy
+  belongs_to :ticket
+
+  validates_presence_of :ticket
+  validates_presence_of :user
 
   accepts_nested_attributes_for :order_info
 

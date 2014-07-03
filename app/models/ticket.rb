@@ -15,4 +15,5 @@
 
 class Ticket < ActiveRecord::Base
   belongs_to :tour
+  has_many :tour_orders
 end

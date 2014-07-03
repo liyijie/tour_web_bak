@@ -74,7 +74,8 @@
               <!-- 样式不对 
               <%= button_to "预订", class: "btn_order" %>
               -->
-              <input type="button" value="预订" class="btn_order" />
+              <%= link_to "预订", new_tour_order_path(ticket_id: ticket.id), class: "btn_order" %>
+              <!-- <input type="button" value="预订" class="btn_order" /> -->
             </li>
           </ul>
         <% end %>

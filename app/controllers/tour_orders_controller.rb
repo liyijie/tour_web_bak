@@ -1,5 +1,6 @@
 class TourOrdersController < ApplicationController
   before_action :set_tour_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tour_orders
   # GET /tour_orders.json
@@ -14,7 +15,8 @@ class TourOrdersController < ApplicationController
 
   # GET /tour_orders/new
   def new
-    @tour_order = TourOrder.new
+    @ticket = Ticket.find(params[:ticket_id])
+    @tour_order = @ticket.tour_orders.build
     @tour_order.build_order_info
   end
 
@@ -25,7 +27,9 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders
   # POST /tour_orders.json
   def create
-    @tour_order = TourOrder.new(tour_order_params)
+    @ticket = Ticket.find(params[:ticket_id])
+    @tour_order = @ticket.tour_orders.build(tour_order_params)
+    @tour_order.user_id = current_user.id
 
     respond_to do |format|
       if @tour_order.save
@@ -71,7 +75,7 @@ class TourOrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_order_params
       params.require(:tour_order).permit(
-        :total_price, :number, :state, :user_id,
+        :total_price, :number,
         order_info_attributes: [:id, :name, :tel, :email]
         )
     end
