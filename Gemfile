@@ -33,6 +33,9 @@ gem 'devise'
 # gem 'state_machine'
 gem 'aasm'
 
+# commentable
+gem 'acts_as_commentable_with_threading'
+
 # File Attachment Upload
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 

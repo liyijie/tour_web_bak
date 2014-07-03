@@ -38,10 +38,16 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_commentable_with_threading (1.2.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      awesome_nested_set (>= 2.0)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    awesome_nested_set (2.1.6)
+      activerecord (>= 3.0.0)
     bcrypt (3.1.7)
     bcrypt (3.1.7-x86-mingw32)
     builder (3.2.2)
@@ -170,6 +176,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  acts_as_commentable_with_threading
   annotate (>= 2.6.0)
   coffee-rails (~> 4.0.0)
   devise
