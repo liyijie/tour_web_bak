@@ -167,11 +167,30 @@
             </tr>
           </table>
         </div>
-      </div>
-    </div>
-    <div class="dianping">
-      <div class="title">
-        住客点评
+        <div class="dianping">
+          <div class="title">
+            住客点评
+          </div>
+          <div class="content">
+            <ul>
+              <li class="first">
+                整体评价
+                <%= image_tag "star.png" %>
+                <%= image_tag "star.png" %>
+                <%= image_tag "star.png" %>
+                <%= image_tag "star.png" %>
+                <%= image_tag "star.png" %>
+                <span class="font_color_blue">4.5分</span>
+              </li>
+              <li style="text-align: left;">
+                <input id="radAll" type="radio" /><label for="radAll">全部</label>
+                <input id="radGood" type="radio" /><label for="radGood">好评</label>
+                <input id="radMid" type="radio" /><label for="radMid">中评</label>
+                <input id="radBad" type="radio" /><label for="radBad">差评</label>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

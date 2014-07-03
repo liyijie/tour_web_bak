@@ -283,9 +283,32 @@
 		clear: both;
 		background-color: #55c0a5;
 		color: #fff;
-		font-size: 18px;
+		font-size: 17px;
 		padding: 7px 10px 7px 25px;
 		width: 75px;
+	}
+	.content {
+		clear: both;
+		overflow: hidden;
+		margin-top: 10px;
+		li {
+			clear: both;
+			width: 922px;
+			text-align: left;
+			input {
+				width: 25px;
+				vertical-align:middle;
+			}
+			label {
+				vertical-align:middle;
+			}
+		}
+		li.first {
+			height: 40px;
+			line-height: 40px;
+			padding: 7px 7px 7px 15px;
+			text-align: left;
+		}
 	}
 }
 
