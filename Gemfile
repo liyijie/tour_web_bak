@@ -34,6 +34,7 @@ gem 'devise'
 gem 'aasm'
 
 # commentable
+gem "awesome_nested_set", :git => "git://github.com/collectiveidea/awesome_nested_set.git"
 gem 'acts_as_commentable_with_threading'
 
 # File Attachment Upload
