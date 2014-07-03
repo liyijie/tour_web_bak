@@ -15,7 +15,9 @@ class TourOrder < ActiveRecord::Base
   include AASM
   
   belongs_to :user
-  has_one :order_info, as: :order
+  has_one :order_info, as: :order, dependent: :destroy
+
+  accepts_nested_attributes_for :order_info
 
   aasm :column => :state do
     state :in_progress, :initial => true

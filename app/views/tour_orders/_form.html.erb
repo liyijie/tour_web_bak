@@ -1,4 +1,4 @@
-<%= form_for(@tour_order) do |f| %>
+<%= nested_form_for(@tour_order) do |f| %>
   <% if @tour_order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tour_order.errors.count, "error") %> prohibited this tour_order from being saved:</h2>
@@ -27,6 +27,22 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
+
+  <%= f.fields_for :order_info do |info_form|%>
+    <div class="field">
+      <%= info_form.label :name %><br>
+      <%= info_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= info_form.label :tel %><br>
+      <%= info_form.text_field :tel %>
+    </div>
+    <div class="field">
+      <%= info_form.label :email %><br>
+      <%= info_form.email_field :email %>
+    </div> 
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
