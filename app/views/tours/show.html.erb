@@ -39,7 +39,7 @@
       </div>
     </div>
   </div>
-  <div class="tour_layout margintop10">
+  <div class="layout margintop10">
     <div class="content">
       <div class="title">
         <%= image_tag "023.jpg" %>
@@ -71,9 +71,6 @@
             </li>
             <li class="td5 ticket_font_color4">在线支付</li>
             <li class="td6">
-              <!-- 样式不对 
-              <%= button_to "预订", class: "btn_order" %>
-              -->
               <%= link_to "预订", new_tour_order_path(ticket_id: ticket.id), class: "btn_order" %>
               <!-- <input type="button" value="预订" class="btn_order" /> -->
             </li>
@@ -96,8 +93,8 @@
           <a href="#dtjt">地图交通</a>
         </li>
       </ul>
-      <div class="content">
-        <div class="layout">
+      <div class="tab_content">
+        <div class="tab_layout">
           <div class="left">
             <a name="ydxz" class="font">预订须知</a>
           </div>
@@ -105,7 +102,7 @@
             <p><%= @tour.hint %></p>
           </div>
         </div>
-        <div class="layout">
+        <div class="tab_layout">
           <div class="left">
             <a name="jdjj" class="font">景点简介</a>
           </div>
@@ -113,7 +110,7 @@
             <p><%= @tour.desc %></p>
           </div>
         </div>
-        <div class="layout">
+        <div class="tab_layout">
           <div class="left">
             <a name="dtjt" class="font">地图交通</a>
           </div>

@@ -18,14 +18,14 @@
     </div>
     <div>
       <sapn>入住</sapn>
-      <input type="text" class="input" />
+      <input type="text" id="cal_start" class="input_cxcalendar input" readonly="readonly" />
     </div>
     <div>
       <sapn>离店</sapn>
-      <input type="text" class="input" />
+      <input type="text" id="cal_end" class="input_cxcalendar input" readonly="readonly" />
     </div>
     <div>
-      <input type="text" class="input width" placeholder="酒店名、地标、商圈、可组合搜索" />
+      <input type="text" class="input width" placeholder="酒店名、地址、可组合搜索" />
     </div>
     <div>
       <%= image_tag "btn_search.png" %>
@@ -66,9 +66,7 @@
                 <%= image_tag "star.png" %>
               </dd>
               <dd>
-                <!-- <%= hotel.addr %> 区和地区 -->
-                <span class="address">某某地区</span>&nbsp;&nbsp;
-                <span class="address">云岩区</span>
+                <span class="address"><%= hotel.addr %> </span>
               </dd>
               <dd>
                 <span>4.5分</span>&nbsp;|&nbsp;

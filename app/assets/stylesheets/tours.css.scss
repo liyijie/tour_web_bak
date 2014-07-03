@@ -60,9 +60,8 @@
 }
 
 .list ul .price_font {
-	width:60px;
-	height: 21px;
-	line-height: 21px;
+	width:80px;
+	height: 25px;
   	background-color: #fdaf00;
   	text-align: center;
   	color: #ffffff;
@@ -163,15 +162,16 @@
 			border-top:1px solid #55c0a5;
 		}
 	}
-	.content {
+	.tab_content {
 		clear:both;
 		border: 1px solid #DEDFDE;
 		margin-top: -1px;
 		overflow: hidden;
-		.layout {
+		.tab_layout {
 			clear:both;
 			margin: 10px 0px 10px 0px;
 			overflow: hidden;
+			background-color: #fff;
 			.left {
 				float:left;
 				width:30px;
@@ -187,12 +187,15 @@
 				}
 			}
 			.right {
-				float: right;
+				float: left;
 				width: 610px;
 				padding: 0px 10px 0px 10px;
 				.font_bold {
 					font-size:14px;
 					font-weight: bold;
+				}
+				p {
+					line-height: 23px;
 				}
 			}
 		}
@@ -242,13 +245,13 @@
 	height: 250px;
 }
 
-.btn_order {
+.btn_order, .btn_order:hover,
+.btn_order:visited {
 	border: 0px;
 	background-color: #fdaf00;
 	color: #ffffff;
-	width: 50px;
-	height: 25px;
-	line-height: 25px;
+	width: 80px;
+	padding: 5px 10px 5px 10px;
 	cursor: pointer;
 }
 

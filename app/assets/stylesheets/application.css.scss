@@ -151,6 +151,9 @@ img {
 .margintop10 {
   margin-top: 10px;
 }
+.marginleft10 {
+  margin-left: 10px;
+}
 
 .root1440 .window {
   position: relative;
@@ -294,6 +297,43 @@ img {
       line-height: 40px;
       padding-left: 35px;
     }
+  }
+}
+
+.tab_div {
+  clear: both;
+  overflow: hidden;
+  .tab {
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    ul {
+      clear:both;
+      overflow: hidden;
+    }   
+    li {
+      float:left;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      border:1px solid #DEDFDE;
+    }
+    li.left {
+      margin-left: 10px;
+    }
+    li:hover, li.hover {
+      font-weight: bold;
+      border-bottom: 1px solid #ffffff;
+      border-top: 1px solid #55c0a5;
+    }
+  }
+  .tab_content {
+    clear:both;
+    border: 1px solid #DEDFDE;
+    margin-top: -1px;
+    overflow: hidden;
+    padding: 10px;
   }
 }
 

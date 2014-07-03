@@ -32,8 +32,155 @@
         </div>
       </div>
       <div class="hotel_show_pic">
-        
+        <ul>
+          <li class="pic">
+            <%= image_tag "025.png" %>
+            <div class="desc">
+              酒店图片共有26张
+            </div>
+          </li>
+          <li class="pic_list">
+            <div class="float_left img_size_1">
+              <%= image_tag "026.png", class: "img_size_1" %>
+            </div>
+            <div class="float_left img_size_2 margin_left_5">
+              <%= image_tag "027.png", class: "img_size_2" %>
+            </div>
+            <div class="clear_both float_left img_size_2 margin_top_5">
+              <%= image_tag "028.png", class: "img_size_2" %>
+            </div>
+            <div class="float_left img_size_1 margin_left_5 margin_top_5">
+              <%= image_tag "029.png", class: "img_size_1" %>
+            </div>
+          </li>
+          <li class="dp_map">
+            <div class="dp">
+              <div>
+                <span class="font_size font_color_blue">4.5</span>
+                <span>/5分 95%用户推荐</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font_color_blue">
+                  源自1398位住客点评
+                </span>
+              </div>
+              <div>
+                <input type="button" value="查看所有点评" class="btn_dp font_color_blue" />
+              </div>
+            </div>
+            <div class="map">
+              <div id="mapView"></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+  <div class="tab_div margintop10">
+    <div class="tab">
+      <ul>
+        <li class="tab_link hover">
+          <a href="#fxyd">房型预订</a>
+        </li>
+        <li class="tab_link left">
+          <a href="#xxjs">详细介绍</a>
+        </li>
+        <li class="tab_link left">
+          <a href="#zkdp">住客点评</a>
+        </li>
+      </ul>
+      <div class="tab_content">
+        <div class="fxyd">
+          <div class="bar">
+            <span>入住</span>
+            <input type="text" id="cal_start" class="input_cxcalendar" />
+            <span class="marginleft10">退房</span>
+            <input type="text" id="cal_end" class="input_cxcalendar" />
+            <input type="button" id="btnHotelSearch" value="确定" />
+          </div>
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <th class="text_align_l" width="150px">&nbsp;房型</th>
+              <th></th>
+              <th>床型</th>
+              <th>早餐</th>
+              <th>宽带</th>
+              <th>政策</th>
+              <th>房价(含服务费)</th>
+              <th></th>
+            </tr>
+            <tr>
+              <td rowspan="2" class="first">
+                <div class="float_left">
+                  <%= image_tag "030.png" %>
+                </div>
+                <div class="float_left marginleft10">
+                  <span class="span_name font_color_blue">豪华客房</span>
+                  <span>查看详情</span>
+                </div>
+              </td>
+              <td class="price_type">
+                携程标准价
+              </td>
+              <td>
+                大/双
+              </td>
+              <td>
+                双早
+              </td>
+              <td>
+                <span class="kd">有线免费</span>
+              </td>
+              <td>
+                <span class="zc">不可取消</span>
+              </td>
+              <td>
+                ￥<span class="price">658</span>
+                <span class="fan">直返</span><span class="f_price">30元</span>
+              </td>
+              <td>
+                <input type="button" value="预订" class="btnHotelShowOrder" />
+                <span class="yf">预付</span>
+              </td>
+            </tr>
+            <tr class="second">
+              <td class="price_type">
+                携程标准价<span class="span_li">礼</span>
+              </td>
+              <td>
+                大/双
+              </td>
+              <td>
+                双早
+              </td>
+              <td>
+                <span class="kd">有线免费</span>
+              </td>
+              <td>
+                <span class="zc">不可取消</span>
+              </td>
+              <td>
+                ￥<span class="price">658</span>
+              </td>
+              <td>
+                <input type="button" value="预订" class="btnHotelShowOrder" />
+                <span class="jz">紧张</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="dianping">
+      <div class="title">
+        住客点评
+      </div>
+    </div>
+  </div>
+  
 </div>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+<script type="text/javascript">
+  var map = new BMap.Map("mapView");
+  map.disableScrollWheelZoom();
+  map.addControl(new BMap.NavigationControl());
+</script>

@@ -21,4 +21,8 @@ $ ->
 			if target.closest(".dialogDiv").length is 0
 				$(".dialogDiv").hide()
 	)
+
+
+	$("#cal_start").cxCalendar()
+	$("#cal_end").cxCalendar()
 	
