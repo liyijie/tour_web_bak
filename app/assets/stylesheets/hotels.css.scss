@@ -257,6 +257,10 @@
 			.font_size {
 				font-size: 20px;
 				font-weight: bold;
+				color: #3a66cc;
+			}
+			.font_color {
+				color: #3a66cc;
 			}
 			.btn_dp {
 				margin-left: 15px;
@@ -271,6 +275,11 @@
 			clear: both;
 			overflow: hidden;
 			padding: 5px;
+			#mapView {
+				clear: both;
+				overflow: hidden;
+				height: 150px;
+			}
 		}
 	}
 }
@@ -279,7 +288,7 @@
 	clear:both;
 	overflow: hidden;
 	margin-top: 10px;
-	.title {
+	.dp_title {
 		clear: both;
 		background-color: #55c0a5;
 		color: #fff;
@@ -287,14 +296,11 @@
 		padding: 7px 10px 7px 25px;
 		width: 75px;
 	}
-	.content {
+	.dp_content {
 		clear: both;
 		overflow: hidden;
 		margin-top: 10px;
-		li {
-			clear: both;
-			width: 922px;
-			text-align: left;
+		div {
 			input {
 				width: 25px;
 				vertical-align:middle;
@@ -302,12 +308,88 @@
 			label {
 				vertical-align:middle;
 			}
+			.user_info {
+				float: left;
+				width: 150px;
+				padding:15px;
+				min-height: 100px;
+				img {
+					width: 80px;
+					height: 80px;
+				}
+				.u_name {
+					clear: both;
+					color: #00ada7;
+					font-size: 14px;
+				}
+				.u_level {
+					clear: both;
+					font-size: 12px;
+					color: #555555;
+				}
+				.u_dianping {
+					clear:both;
+					margin-top: 10px;
+					overflow: hidden;
+					img {
+						width: 12px;
+						height: 11px;
+					}
+					span {
+						color: #999999;
+					}
+				}
+			}
+			.user_cnt {
+				float: left;
+				min-height: 100px;
+				.u_title {
+					clear:both;
+					clear: both;
+					font-size: 14px;
+					color: #00ada7;
+					margin-top: 20px;
+				}
+				p {
+					color : #666666;
+				}
+				.line_h {
+					clear: both;
+					padding: 0px 0px 7px 0px;
+				}
+			}
+			.bottom {
+				clear: both;
+				margin-right: 15px;
+				margin-bottom: 5px;
+				text-align: right;
+			}
 		}
-		li.first {
+		.line {
+			clear: both;
+			overflow: hidden;
+			text-align: left;
+			border: 1px solid #eeeeee;
+			border-bottom: 0px;
+		}
+		.first {
 			height: 40px;
 			line-height: 40px;
 			padding: 7px 7px 7px 15px;
-			text-align: left;
+		}
+		.bottom {
+			border-bottom: 1px;
+			vertical-align:middle;
+			img {
+				width: 12px;
+				height: 12px;
+			}
+			span {
+				color: #00ada7;
+			}
+		}
+		.line.bottom {
+			border-bottom: 1px solid #eeeeee;
 		}
 	}
 }
@@ -343,6 +425,10 @@
 			.span_name {
 				width: 65px;
 				display: table;
+			}
+			.span_detail {
+				font-size: 12px;
+				cursor: pointer;
 			}
 			span.zc {
 				color: #000;
@@ -399,4 +485,46 @@
 .span_li {
 	color: #fff;
 	background-color: #ffb000;
+}
+
+.hoteldetail {
+	clear: both;
+	margin-top: 20px;
+	background-color: #55c0a5;
+	color: #fff;
+	font-size: 17px;
+	padding: 7px 10px 7px 25px;
+	width: 75px;
+}
+
+.detailcontent{
+	padding: 10px 10px 10px 0px;	
+}
+.detailcontent .detailsubhead{
+	font-size: 18px;
+	font-weight:bold;
+	color: #55C0A5;
+	padding:0px 0px 15px 20px;
+}
+.detailcontent .detailinfo{
+	padding: 0px 0px 10px 10px;.
+	font-family: "宋体";
+	font-size: 12px
+}
+
+.detailcontent .detaildash{
+	border-bottom: 1px dashed #CCCCCC;	
+	margin-bottom: 10px;
+}
+.detailcontent .detailsolid{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.detailcontent .detailinfo.intent2{
+	text-indent: 2em;
+}
+.detailcontent .detailinfo.intent7{
+	text-indent: 7em;
 }

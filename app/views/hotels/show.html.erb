@@ -56,9 +56,9 @@
           <li class="dp_map">
             <div class="dp">
               <div>
-                <span class="font_size font_color_blue">4.5</span>
+                <span class="font_size">4.5</span>
                 <span>/5分 95%用户推荐</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span class="font_color_blue">
+                <span class="font_color">
                   源自1398位住客点评
                 </span>
               </div>
@@ -114,7 +114,10 @@
                 </div>
                 <div class="float_left marginleft10">
                   <span class="span_name font_color_blue">豪华客房</span>
-                  <span>查看详情</span>
+                  <span class="span_detail">
+                    查看详情&nbsp;
+                    <%= image_tag "arrow_down.png" %>
+                  </span>
                 </div>
               </td>
               <td class="price_type">
@@ -167,28 +170,169 @@
             </tr>
           </table>
         </div>
+        <div class="clear_both">
+          <div class="hoteldetail">
+            住客详情
+          </div>
+          <div class="detailcontent">
+            <dt class="detailsubhead">酒店介绍</dt>
+            <dd class="detailinfo">
+              酒店 2003年开业 2012年装修 310间房 电话：0851-5418888 传真：0851-6517777  纠错
+            </dd>
+            <dd class="detailinfo intent2">
+              贵州天怡豪生大酒店位于“林城”————贵阳，地处“天然氧吧”黔灵公园右侧，邻近省图书馆、博物馆等文化中心区。酒店距国家级风景名胜区黄果树大瀑布仅需2小时车程，交通便捷。
+            </dd> 
+
+            <div class="detailsolid">       
+            </div>  
+
+            <dt class="detailsubhead">酒店设施</dt>
+            <dd class="detailinfo detaildash">
+              <strong>网络设施</strong>
+              有可无线上网的公共区域 免费
+            </dd>
+            <dd class="detailinfo detaildash">
+              <strong>停车场</strong> 
+              免费停车场   
+            </dd>
+            <dd class="detailinfo">
+              <strong>酒店设施</strong>
+              免费停车场 免费旅游交通图（可赠送）穿梭机场班车 免费 免费洗漱用品（6样以上） 免费瓶装水 免费报纸 中餐厅 更多>
+            </dd>
+
+            <div class="detailsolid">       
+            </div>
+
+            <dt class="detailsubhead">酒店政策</dt>
+            <dd class="detailinfo detaildash">
+              <strong>入住和离店</strong>
+              入住时间：14:00以后    离店时间：12:00以前
+            </dd>
+            <dd class="detailinfo detaildash">
+              <strong>取消政策</strong>
+              不同类型的客房附带不同的取消预订和预先付费政策 选择上述客房时，请参阅“客房政策”。
+            </dd>
+            <dd class="detailinfo">
+              <strong>押金/预付款</strong>
+              入住时需要出示政府核发的身份证（带照片）。
+            </dd>
+            <dd class="detailinfo intent7 detaildash">
+              请携带信用卡和现金以支付押金或额外费用。
+            </dd>
+            <dd class="detailinfo detaildash"> 
+              <strong>宠物</strong>
+              允许携带宠物。酒店会收取额外费用。
+            </dd>
+            <dd class="detailinfo">
+              <strong>特殊条款</strong>
+              信用卡授权解除需时1-3个月。视不同国家、城市之银行操作时间而定。
+            </dd>
+            <div class="detailsolid">       
+            </div>
+          </div>
+        </div>
         <div class="dianping">
-          <div class="title">
+          <div class="dp_title">
             住客点评
           </div>
-          <div class="content">
-            <ul>
-              <li class="first">
-                整体评价
-                <%= image_tag "star.png" %>
-                <%= image_tag "star.png" %>
-                <%= image_tag "star.png" %>
-                <%= image_tag "star.png" %>
-                <%= image_tag "star.png" %>
-                <span class="font_color_blue">4.5分</span>
-              </li>
-              <li style="text-align: left;">
-                <input id="radAll" type="radio" /><label for="radAll">全部</label>
-                <input id="radGood" type="radio" /><label for="radGood">好评</label>
-                <input id="radMid" type="radio" /><label for="radMid">中评</label>
-                <input id="radBad" type="radio" /><label for="radBad">差评</label>
-              </li>
-            </ul>
+          <div class="dp_content">
+            <div class="line first">
+              整体评价
+              <%= image_tag "star.png" %>
+              <%= image_tag "star.png" %>
+              <%= image_tag "star.png" %>
+              <%= image_tag "star.png" %>
+              <%= image_tag "star.png" %>
+              <span class="font_color_blue">4.5分</span>
+            </div>
+            <div class="line">
+              <input id="radAll" name="radType" type="radio" checked="checked" /><label for="radAll">全部</label>
+              <input id="radGood" name="radType" type="radio" /><label for="radGood">好评</label>
+              <input id="radMid" name="radType" type="radio" /><label for="radMid">中评</label>
+              <input id="radBad" name="radType" type="radio" /><label for="radBad">差评</label>
+            </div>
+            <div class="line">
+              <div class="user_info">
+                <div class="clear_both">
+                  <%= image_tag "031.png" %>
+                </div>
+                <div class="u_name">lfny0040</div>
+                <div class="u_level">点评新手</div>
+                <div class="u_dianping">
+                  <%= image_tag "032.png" %>
+                  <span>1篇点评</span>
+                </div>
+              </div>
+              <div class="user_cnt">
+                <div class="u_title">
+                  很棒的哟
+                </div>
+                <div class="line_h">
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                </div>
+                <div>
+                  <p>很棒的哟！下次去了还会继续入住！喜欢在48层看贵阳夜景，美美的！</p>
+                </div>
+                <div>
+                  <p>2014年06月入住</p>
+                </div>
+              </div>
+              <div class="bottom">
+                <a href="#" class="na">
+                  <%= image_tag "033.png" %>
+                  <span>有用</span>&nbsp;&nbsp;
+                </a>
+                <a href="#" class="na">
+                  <%= image_tag "034.png" %>
+                  <span>评论</span>
+                </a>
+              </div>
+            </div>
+            <div class="line bottom">
+              <div class="user_info">
+                <div class="clear_both">
+                  <%= image_tag "031.png" %>
+                </div>
+                <div class="u_name">lfny0040</div>
+                <div class="u_level">点评新手</div>
+                <div class="u_dianping">
+                  <%= image_tag "032.png" %>
+                  <span>1篇点评</span>
+                </div>
+              </div>
+              <div class="user_cnt">
+                <div class="u_title">
+                  很棒的哟
+                </div>
+                <div class="line_h">
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                  <%= image_tag "star.png" %>
+                </div>
+                <div>
+                  <p>很棒的哟！下次去了还会继续入住！喜欢在48层看贵阳夜景，美美的！</p>
+                </div>
+                <div>
+                  <p>2014年06月入住</p>
+                </div>
+              </div>
+              <div class="bottom">
+                <a href="#" class="na">
+                  <%= image_tag "033.png" %>
+                  <span>有用</span>&nbsp;&nbsp;
+                </a>
+                <a href="#" class="na">
+                  <%= image_tag "034.png" %>
+                  <span>评论</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -201,5 +345,4 @@
 <script type="text/javascript">
   var map = new BMap.Map("mapView");
   map.disableScrollWheelZoom();
-  map.addControl(new BMap.NavigationControl());
 </script>
