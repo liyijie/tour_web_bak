@@ -24,7 +24,7 @@
                   <li class="t1"><%= ticket.style %></li>
                   <li class="t2"><%= ticket.title %></li>
                   <li class="t3">￥<%= ticket.price %></li>
-                  <li class="t4"><%= button_to "预订", tour_ticket_path(tour, ticket), class: "price_font" %></li>
+                  <li class="t4"><%= link_to "预订", new_tour_order_path(ticket_id: ticket.id), class: "price_font" %></li>
                 </ul>
               </li>
               <% end %>
