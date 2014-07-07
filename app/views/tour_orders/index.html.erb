@@ -39,6 +39,7 @@
               <th>订单状态</th>
               <th width="130px">操作</th>
             </tr>
+            <% @tour_orders.each do |tour_order| %>
             <tr>
               <td>
                 <%= image_tag "035.png" %>
@@ -49,11 +50,11 @@
                 13:48:00
               </td>
               <td>
-                ￥180<br/>
+                ￥<%= tour_order.total_price %><br/>
                 在线支付
               </td>
               <td>
-                已完成
+                <%= tour_order.state %>
               </td>
               <td>
                 <a href="#" class="op_font_color">查看</a>
@@ -63,6 +64,7 @@
                 <a href="#" class="op_font_color">退订</a>
               </td>
             </tr>
+            <% end %>
           </table>
         </div>
         <div id="tourDiv" class="order_list_div hide">
@@ -139,36 +141,3 @@
     </tr>
   </table>
 </div>
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Total price</th>
-      <th>Number</th>
-      <th>State</th>
-      <th>User</th>
-      <th>Order infos</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tour_orders.each do |tour_order| %>
-      <tr>
-        <td><%= tour_order.total_price %></td>
-        <td><%= tour_order.number %></td>
-        <td><%= tour_order.state %></td>
-        <td><%= tour_order.user %></td>
-        <td><%= link_to 'Show', tour_order %></td>
-        <td><%= link_to 'Edit', edit_tour_order_path(tour_order) %></td>
-        <td><%= link_to 'Destroy', tour_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tour order', new_tour_order_path %>
