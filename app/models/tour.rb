@@ -15,12 +15,13 @@
 #  position   :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  city       :string(255)
 #
 
 class Tour < ActiveRecord::Base
   has_many :tickets
   has_many :images, as: :imageable
+
+  belongs_to :city
 
   accepts_nested_attributes_for :tickets, :allow_destroy => true
   accepts_nested_attributes_for :images, :allow_destroy => true
