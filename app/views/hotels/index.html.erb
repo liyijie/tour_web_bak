@@ -6,14 +6,9 @@
     </div>
     <div id="cityDiv" class="dialogDiv">
       <ul>
-        <li>贵阳</li>
-        <li>遵义</li>
-        <li>凯里</li>
-        <li>安顺</li>
-        <li>都匀</li>
-        <li>毕节</li>
-        <li>铜仁</li>
-        
+        <% @cities.each do |city| %>
+          <li><%= city.name %></li>
+        <% end %>
       </ul>
     </div>
     <div>
@@ -37,14 +32,9 @@
       <span>热门酒店</span>
       <div class="area_bar">
         <ul>
-          <li>贵阳</li>
-          <li>遵义</li>
-          <li>凯里</li>
-          <li>安顺</li>
-          <li>都匀</li>
-          <li>毕节</li>
-          <li>铜仁</li>
-          <li>更多</li>
+          <% @cities.each do |city| %>
+            <li><%= city.name %></li>
+          <% end %>
         </ul>
       </div>
     </div>

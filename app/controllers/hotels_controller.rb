@@ -5,6 +5,7 @@ class HotelsController < ApplicationController
   # GET /hotels.json
   def index
     @hotels = Hotel.all
+    @cities = City.all
   end
 
   # GET /hotels/1
@@ -69,6 +70,6 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :addr, :tel, :desc, :traffic)
+      params.require(:hotel).permit(:name, :addr, :tel, :desc, :traffic, :city_id)
     end
 end

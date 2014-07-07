@@ -10,6 +10,7 @@
 #  traffic    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  city_id    :integer
 #
 
 require "rails_helper"
