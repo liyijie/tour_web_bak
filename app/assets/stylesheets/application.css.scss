@@ -73,6 +73,20 @@ a:hover {
   cursor: pointer;
 }
 
+a.org, a.org:visited, a.org:link {
+  cursor: pointer;
+  background: transparent;
+  color:#373737;
+  text-decoration: none;
+}
+a.org:hover, a.org.hover
+a.org:active, a.org.active {
+  cursor: pointer;
+  background: transparent;
+  color:#f57c17;
+  text-decoration: none;
+}
+
 sup {
   vertical-align: text-top;
 }

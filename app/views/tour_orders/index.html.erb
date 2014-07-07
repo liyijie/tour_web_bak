@@ -1,4 +1,146 @@
-<h1>Listing tour_orders</h1>
+<div class="window">
+  <table class="order_table margintop10" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="left" valign="top">
+        <ul>
+          <li>
+            <a href="#" class="org active menu_font_size">我的订单</a>
+          </li>
+          <li>
+            <a href="#" class="org menu_font_size">个人信息</a>
+          </li>
+        </ul>
+      </td>
+      <td class="split">
+      </td>
+      <td class="right">
+        <div class="menu">
+          <ul>
+            <li class="first">
+              <a id="btnAll" class="org active menu_font_size">所有订单</a>
+            </li>
+            <li>
+              <a id="btnTour" class="org menu_font_size">景点订单</a>
+            </li>
+            <li>
+              <a id="btnHotel" class="org menu_font_size">酒店订单</a>
+            </li>
+            <li class="last">
+              <a href="#"><%= image_tag "icon_del.png" %>订单回收站</a>
+            </li>
+          </ul>
+        </div>
+        <div id="orderDiv" class="order_list_div">
+          <table class="order_list_table" cellpadding="0" cellspacing="0">
+            <tr>
+              <th width="250px">订单信息</th>
+              <th>订单时间</th>
+              <th>订单金额</th>
+              <th>订单状态</th>
+              <th width="130px">操作</th>
+            </tr>
+            <tr>
+              <td>
+                <%= image_tag "035.png" %>
+                <span>订单号：7302057</span>
+              </td>
+              <td>
+                2014-06-12<br/>
+                13:48:00
+              </td>
+              <td>
+                ￥180<br/>
+                在线支付
+              </td>
+              <td>
+                已完成
+              </td>
+              <td>
+                <a href="#" class="op_font_color">查看</a>
+                <span class="op_font_color">|</span>
+                <a href="#" class="op_font_color">删除</a>
+                <span class="op_font_color">|</span>
+                <a href="#" class="op_font_color">退订</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="tourDiv" class="order_list_div hide">
+          <table class="order_list_table" cellpadding="0" cellspacing="0">
+            <tr>
+              <th width="250px">订单信息</th>
+              <th>订单时间</th>
+              <th>订单金额</th>
+              <th>订单状态</th>
+              <th width="130px">操作</th>
+            </tr>
+            <tr>
+              <td>
+                <%= image_tag "035.png" %>
+                <span>订单号：7302057</span>
+              </td>
+              <td>
+                2014-06-12<br/>
+                13:48:00
+              </td>
+              <td>
+                ￥180<br/>
+                在线支付
+              </td>
+              <td>
+                已完成
+              </td>
+              <td>
+                <a href="#" class="op_font_color">查看</a>
+                <span class="op_font_color">|</span>
+                <a href="#" class="op_font_color">删除</a>
+                <span class="op_font_color">|</span>
+                <a href="#" class="op_font_color">退订</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="hotelDiv" class="order_list_div hide">
+          <table class="order_list_table" cellpadding="0" cellspacing="0">
+            <tr>
+              <th width="250px">订单信息</th>
+              <th>订单时间</th>
+              <th>订单金额</th>
+              <th>订单状态</th>
+              <th width="130px">操作</th>
+            </tr>
+            <tr>
+              <td>
+                <%= image_tag "035.png" %>
+                <span>订单号：7302057</span>
+              </td>
+              <td>
+                2014-06-12<br/>
+                13:48:00
+              </td>
+              <td>
+                ￥180<br/>
+                在线支付
+              </td>
+              <td>
+                已完成
+              </td>
+              <td>
+                <a href="#" class="op_font_color">查看</a>
+                <span class="op_font_color">|</span>
+                <a href="#" class="op_font_color">删除</a>
+                <span class="op_font_color">|</span>
+                <a href="#" class="op_font_color">退订</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
 
 <table>
   <thead>

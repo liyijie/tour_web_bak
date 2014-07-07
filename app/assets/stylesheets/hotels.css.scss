@@ -291,10 +291,12 @@
 	.dp_title {
 		clear: both;
 		background-color: #55c0a5;
-		color: #fff;
-		font-size: 17px;
 		padding: 7px 10px 7px 25px;
 		width: 75px;
+		.font {
+			color: #fff;
+			font-size: 17px;
+		}
 	}
 	.dp_content {
 		clear: both;
@@ -491,10 +493,12 @@
 	clear: both;
 	margin-top: 20px;
 	background-color: #55c0a5;
-	color: #fff;
-	font-size: 17px;
 	padding: 7px 10px 7px 25px;
 	width: 75px;
+	.font {
+		color: #fff;
+		font-size: 17px;
+	}
 }
 
 .detailcontent{
