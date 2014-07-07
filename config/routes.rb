@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :cities
+
   resources :tour_orders
 
   resources :hotels do
