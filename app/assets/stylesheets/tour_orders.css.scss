@@ -83,3 +83,104 @@
 		color:#157268;
 	}
 }
+
+.falls_title{
+	font-size: 25px;
+}
+.online_payment{
+	font-size: 18px;
+}
+.falls_title,
+.online_paymen,
+.huangguoshu_falls{
+	padding: 0px 0px 10px 0px;	
+}
+
+.book_attention{	
+	line-height: 20px;
+	font-size: 12px;
+	padding: 5px 10px 5px 10px;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: #ECECEA;	
+	border-left:  2px solid #72D0B8;
+}
+.book_attention .attention{
+	float:left;
+	width: 250px;
+}
+
+.tourinfo,
+.payment{
+	line-height: 30px;
+	font-size: 12px;
+	padding: 5px 0px 0px 20px;
+}
+.tourinfo .tourdate{
+	float:left;
+	width:300px;
+}
+
+.payment{
+	line-height: 30px;
+	font-size: 18px;
+}
+.payment .money{
+	color: #FF7300;	
+}
+
+.info_title{
+	font-size: 20px;	
+	float: none;
+	padding: 30px 0px 10px 0px;
+	margin-right: 20px;
+	border-bottom: 1px solid  #72D0B8;
+}
+
+.contactinfo,
+.reminderinfo{	
+	line-height: 20px;
+	font-size:12px;
+	padding: 10px 10px 0px 0px
+}
+.contactinfo .info_item{
+	padding:0px 0px 10px 0px;
+	font-size:12px;
+}
+.contactinfo .info_item.intent1{
+	text-indent: 1em;
+}
+.contactinfo .redstar{
+	color: #FF7300
+}
+.contactinfo input[type=text]{
+	height: 25px;
+	width: 250px;
+}
+
+.reminderinfo .agreement{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.reminderinfo .agreement .clauses{
+	color: #72D0B8;
+}
+.reminderinfo .agreement .checkbox{	
+	vertical-align: middle;
+	margin-top: 0px;
+}
+
+.submit_order{
+	text-align: center;
+	margin: 0 auto;
+}
+.submit_order .submit{
+	color: white;	
+	font-size: 20px;
+	padding: 5px 10px 5px 10px;
+	width: 100px;
+	background-color: #FF7300;	
+	border: none;
+	cursor: pointer;
+}
