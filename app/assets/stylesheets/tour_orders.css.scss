@@ -88,7 +88,7 @@
 	font-size: 25px;
 }
 .online_payment{
-	font-size: 18px;
+	font-size: 16px;
 }
 .falls_title,
 .online_paymen,
@@ -149,12 +149,13 @@
 	font-size:12px;
 }
 .contactinfo .info_item.intent1{
-	text-indent: 1em;
+	text-indent: 8px;
 }
 .contactinfo .redstar{
 	color: #FF7300
 }
-.contactinfo input[type=text]{
+.contactinfo input[type=text],
+.contactinfo input[type=email]{
 	height: 25px;
 	width: 250px;
 }
@@ -168,19 +169,42 @@
 }
 .reminderinfo .agreement .checkbox{	
 	vertical-align: middle;
-	margin-top: 0px;
+	width: 15px;
 }
 
 .submit_order{
 	text-align: center;
 	margin: 0 auto;
 }
-.submit_order .submit{
+.submit_order .btnEnter{
 	color: white;	
-	font-size: 20px;
-	padding: 5px 10px 5px 10px;
-	width: 100px;
+	font-size: 14px;
+	width: 120px;
+	height: 35px;
+	line-height: 35px;
 	background-color: #FF7300;	
 	border: none;
 	cursor: pointer;
+}
+
+.radio {
+	width: 15px;
+	vertical-align: top;
+}
+
+.tick_num {
+	border: 1px solid #d8d8d8;
+	width: 28px;
+	height: 28px;
+	vertical-align: top;
+	cursor: pointer;
+}
+.input_num {
+	height: 28px;
+	border: 0px;
+	border-top: 1px solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+	width: 35px;
+	text-align: center;
+	vertical-align: top;
 }

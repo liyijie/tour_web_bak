@@ -1,42 +1,93 @@
 <%= nested_form_for(@tour_order) do |f| %>
-  <% if @tour_order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tour_order.errors.count, "error") %> prohibited this tour_order from being saved:</h2>
-
-      <ul>
-      <% @tour_order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :total_price %><br>
-    <%= f.text_field :total_price %>
+<%= hidden_field_tag "ticket_id", @tour_order.ticket_id %>
+<div class="window">
+  <div class="huangguoshu_falls">
+    <span class="falls_title">黄果树瀑布</span>
+    <span class="online_payment">（网上支付）</span>
   </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
+  <div class="book_attention">
+    <dt>预订须知：</dt>
+    <dt>
+      <span class="attention">提前预订时间：当天08点前</span>
+      <span>门票有效期：出游当前有效</span>
+    </dt>
+    <dt>
+      <span class="attention">入园方式：短信换票入园</span>
+      <span>退票说明：可退改，退改日期为1天前15点</span>
+    </dt>
   </div>
-  <%= hidden_field_tag "ticket_id", @tour_order.ticket_id %>
-
+  <div class="tourinfo">
+    <span class="title2 tourdate">
+      出游日期：<input type="text" />
+    </span>
+    <span class="title2">门票数量：</span>
+    <%= image_tag "num_down.png", class: "tick_num", alt: "" %><%= f.text_field :number, value: "1", class: "input_num" %><%= image_tag "num_up.png", class: "tick_num", alt: "" %>
+    <dt class="title2 clear_both">
+      配送信息：
+      <input id="radio" type="radio" class="radio" checked="checked" />
+      <label for="radio">景区门口售票处自取</label>
+    </dt>
+  </div>
+  <div class="payment">
+    <dt>
+      门票单价：
+      <span class="money">¥180</span>
+    </dt>
+    <dt>
+      应付：
+      <span class="money">
+        <strong>¥180</strong>
+      </span>
+    </dt>
+  </div>
+  <dt class="info_title">联系人信息</dt>
   <%= f.fields_for :order_info do |info_form|%>
-    <div class="field">
-      <%= info_form.label :name %><br>
-      <%= info_form.text_field :name %>
-    </div>
-    <div class="field">
-      <%= info_form.label :tel %><br>
+  <div class="contactinfo">
+    <dd class="info_item">
+      <span class="redstar">*</span>
+      预订人姓名：
+      <%= info_form.text_field :name, placeholder: "请输入2-15个汉字" %>
+    </dd>
+    <dd class="info_item">
+      <span class="redstar">*</span>
+      预订人手机：
       <%= info_form.text_field :tel %>
-    </div>
-    <div class="field">
-      <%= info_form.label :email %><br>
+    </dd>
+    <dd class="info_item">
+      * 取票人姓名：
+      <input type="text" placeholder="请输入2-15个汉字">
+      <a class="copy_contactinfo" href="#">[复制预订人信息]</a>
+    </dd>
+    <dd class="info_item">
+      * 取票人手机：
+      <input type="text">
+    </dd>
+    <dd class="info_item intent1">
+      取票人邮箱：
       <%= info_form.email_field :email %>
-    </div> 
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+    </dd>
   </div>
+  <% end %>
+  <dt class="info_title">说明信息</dt>
+  <div class="reminderinfo">
+    <dd>
+      优惠政策：A、免费政策：七彩蝶园1.2米以下儿童免票；B、亲子票中儿童指=1.2米或持学生证的学生；C、优惠政策：6-18岁之间学生持学生证购票49元/人，学生票需游客到景区自行购买；65岁以上老年人凭相关证件预定老人票；本单属于特殊优惠，不找零、不兑现、不提供发票，不与其他优惠活动共享。
+    </dd>
+    <dd>
+      温馨提示：1、建议穿轻便的运动鞋，休闲一点的衣服；2、出门需要带的物品：相关证件，雨伞，晕车药等；3、女士特别注意事项：带上防晒霜；4、老人、小孩需要注意：建议有家人陪同，在景区游览要结伴而行。
+    </dd>
+    <dd class="agreement">
+      <span>
+        <input id="btnOk" class="checkbox" type="checkbox" checked="checked" />
+        <label for="btnOk">
+          <span>我已阅读并接受</span>
+        </label>
+        <a class="clauses" href="">合同条款、补充条款及其其他所有内容</a>
+      </span>
+    </dd>
+  </div>
+  <div class="submit_order">
+    <%= submit_tag "提交订单", class: "btnEnter" %>
+  </div>
+</div>
 <% end %>
