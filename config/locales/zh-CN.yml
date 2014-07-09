@@ -1,4 +1,6 @@
 zh-CN:
   order_state:
-    in_progress: 处理中
+    in_progress: 待付款
     paid: 已支付
+    cancel: 已取消
+    completed: 已完成

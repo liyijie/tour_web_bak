@@ -42,22 +42,20 @@
             <% @tour_orders.each do |tour_order| %>
             <tr>
               <td>
-                <%= image_tag "035.png" %>
-                <span>订单号：7302057</span>
+                <%= image_tag tour_order.ticket.tour.image_thumb %>
+                <span>订单号：<%= tour_order.id %></span>
               </td>
               <td>
-                2014-06-12<br/>
-                13:48:00
+                <%= tour_order.created_at.strftime("%Y-%m-%d %H:%M:%S") %><br/>
               </td>
               <td>
                 ￥<%= tour_order.total_price %><br/>
-                在线支付
               </td>
               <td>
-                <%= tour_order.state %>
+                <%= tour_order.human_state %>
               </td>
               <td>
-                <a href="#" class="op_font_color">查看</a>
+                <%= link_to("查看", tour_order , class: "op_font_color") %>
                 <span class="op_font_color">|</span>
                 <a href="#" class="op_font_color">删除</a>
                 <span class="op_font_color">|</span>
@@ -65,76 +63,6 @@
               </td>
             </tr>
             <% end %>
-          </table>
-        </div>
-        <div id="tourDiv" class="order_list_div hide">
-          <table class="order_list_table" cellpadding="0" cellspacing="0">
-            <tr>
-              <th width="250px">订单信息</th>
-              <th>订单时间</th>
-              <th>订单金额</th>
-              <th>订单状态</th>
-              <th width="130px">操作</th>
-            </tr>
-            <tr>
-              <td>
-                <%= image_tag "035.png" %>
-                <span>订单号：7302057</span>
-              </td>
-              <td>
-                2014-06-12<br/>
-                13:48:00
-              </td>
-              <td>
-                ￥180<br/>
-                在线支付
-              </td>
-              <td>
-                已完成
-              </td>
-              <td>
-                <a href="#" class="op_font_color">查看</a>
-                <span class="op_font_color">|</span>
-                <a href="#" class="op_font_color">删除</a>
-                <span class="op_font_color">|</span>
-                <a href="#" class="op_font_color">退订</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div id="hotelDiv" class="order_list_div hide">
-          <table class="order_list_table" cellpadding="0" cellspacing="0">
-            <tr>
-              <th width="250px">订单信息</th>
-              <th>订单时间</th>
-              <th>订单金额</th>
-              <th>订单状态</th>
-              <th width="130px">操作</th>
-            </tr>
-            <tr>
-              <td>
-                <%= image_tag "035.png" %>
-                <span>订单号：7302057</span>
-              </td>
-              <td>
-                2014-06-12<br/>
-                13:48:00
-              </td>
-              <td>
-                ￥180<br/>
-                在线支付
-              </td>
-              <td>
-                已完成
-              </td>
-              <td>
-                <a href="#" class="op_font_color">查看</a>
-                <span class="op_font_color">|</span>
-                <a href="#" class="op_font_color">删除</a>
-                <span class="op_font_color">|</span>
-                <a href="#" class="op_font_color">退订</a>
-              </td>
-            </tr>
           </table>
         </div>
       </td>

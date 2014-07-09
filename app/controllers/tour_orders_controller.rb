@@ -1,5 +1,6 @@
 class TourOrdersController < ApplicationController
-  before_action :set_tour_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_tour_order, only: [:show, :edit, :update, :destroy, 
+            :pay, :cancel, :refund, :complete]
   before_action :authenticate_user!
 
   # GET /tour_orders
@@ -63,6 +64,58 @@ class TourOrdersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tour_orders_url, notice: 'Tour order was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # POST /tour_orders/1/pay
+  # POST /tour_orders/1/pay.json
+  def pay
+    @tour_order.pay
+    if @tour_order.save
+      format.html { redirect_to @tour_order, notice: 'Tour order was successfully paid.' }
+      format.json { render :show, status: :ok, location: @tour_order }
+    else
+      format.html { redirect_to @tour_order }
+      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    end
+  end
+
+  # POST /tour_orders/1/cancel
+  # POST /tour_orders/1/cancel.json
+  def cancel
+    @tour_order.cancel
+    if @tour_order.save
+      format.html { redirect_to @tour_order, notice: 'Tour order was successfully canceled.' }
+      format.json { render :show, status: :ok, location: @tour_order }
+    else
+      format.html { redirect_to @tour_order }
+      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    end
+  end
+
+  # POST /tour_orders/1/refund
+  # POST /tour_orders/1/refund.json
+  def refund
+    @tour_order.refund
+    if @tour_order.save
+      format.html { redirect_to @tour_order, notice: 'Tour order was successfully refunded.' }
+      format.json { render :show, status: :ok, location: @tour_order }
+    else
+      format.html { redirect_to @tour_order }
+      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    end
+  end
+
+  # POST /tour_orders/1/complete
+  # POST /tour_orders/1/complete.json
+  def complete
+    @tour_order.complete
+    if @tour_order.save
+      format.html { redirect_to @tour_order, notice: 'Tour order was successfully completed.' }
+      format.json { render :show, status: :ok, location: @tour_order }
+    else
+      format.html { redirect_to @tour_order }
+      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
     end
   end
 

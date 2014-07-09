@@ -21,7 +21,6 @@
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <!-- <%= options_from_collection_for_select(City.all, :id, :name) %> -->
     <%= collection_select(:tour, :city_id, City.all, :id, :name) %>
   </div>
   <div class="field">

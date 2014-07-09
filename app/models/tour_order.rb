@@ -26,19 +26,23 @@ class TourOrder < ActiveRecord::Base
 
   aasm :column => :state do
     state :in_progress, :initial => true
-    state :complete
+    state :completed
     state :paid
     state :canceled
 
     event :complete do
-      transitions :from => :in_progress, :to => :complete
+      transitions :from => :paid, :to => :completed
     end
 
     event :pay do
-      transitions :from => [:in_progress, :complete], :to => :paid
+      transitions :from => :in_progress, :to => :paid
     end
 
     event :cancel do
+      transitions :from => :in_progress, :to => :canceled
+    end
+
+    event :refund do
       transitions :from => :paid, :to => :canceled
     end
   end
