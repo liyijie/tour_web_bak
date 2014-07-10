@@ -47,25 +47,25 @@
     <dd class="info_item">
       <span class="redstar">*</span>
       预订人姓名：
-      <%= info_form.text_field :name, placeholder: "请输入2-15个汉字" %>
+      <%= info_form.text_field :name, id: "txtName", placeholder: "请输入2-15个汉字" %>
     </dd>
     <dd class="info_item">
       <span class="redstar">*</span>
       预订人手机：
-      <%= info_form.text_field :tel %>
+      <%= info_form.text_field :tel, id: "txtTel" %>
     </dd>
     <dd class="info_item">
       * 取票人姓名：
-      <%= info_form.text_field :notify_user, placeholder: "请输入2-15个汉字" %>
-      <a class="copy_contactinfo" href="#">[复制预订人信息]</a>
+      <%= info_form.text_field :notify_user, id: "txtNUser", placeholder: "请输入2-15个汉字" %>
+      <span class="copy_contactinfo na" id="btnCopy">[复制预订人信息]</span>
     </dd>
     <dd class="info_item">
       * 取票人手机：
-      <%= info_form.text_field :notify_tel %>
+      <%= info_form.text_field :notify_tel, id: "txtNTel" %>
     </dd>
     <dd class="info_item intent1">
       取票人邮箱：
-      <%= info_form.email_field :email %>
+      <%= info_form.email_field :email, id: "txtEmail" %>
     </dd>
   </div>
   <% end %>
