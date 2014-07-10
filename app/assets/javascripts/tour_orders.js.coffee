@@ -19,6 +19,29 @@ $ ->
 		$(".hotelDiv").show()
 		$(this).addClass("active");
 
+	$("#btnTicketMin").click ->
+		ticketNum = parseInt($("#txtTicketNum").val(),10)
+		ticketPrice = parseInt($("#ticketPrice").html(),10)
+		if ticketNum > 1
+			ticketNum -= 1;
+			$("#txtTicketNum").val(ticketNum)
+			$("#totalTicketPrice").html(ticketPrice * ticketNum)
+
+	$("#btnTicketAdd").click ->
+		ticketNum = parseInt($("#txtTicketNum").val(),10)
+		ticketPrice = parseInt($("#ticketPrice").html(),10)
+		ticketNum += 1
+		$("#txtTicketNum").val(ticketNum)
+		$("#totalTicketPrice").html(ticketPrice * ticketNum)
+
+	$("#txtTicketNum").change -> 
+		if $(this).val() < 1 
+			$(this).val(1)
+		ticketNum = parseInt($("#txtTicketNum").val(),10)
+		ticketPrice = parseInt($("#ticketPrice").html(),10)
+		$("#totalTicketPrice").html(ticketPrice * ticketNum)
+
+	$("#txtPlayTime").cxCalendar()
 
 reset = () ->
 	$(".order_list_div").hide()

@@ -18,10 +18,10 @@
   </div>
   <div class="tourinfo">
     <span class="title2 tourdate">
-      出游日期：<input type="text" />
+      出游日期：<input type="text" id="txtPlayTime" />
     </span>
     <span class="title2">门票数量：</span>
-    <%= image_tag "num_down.png", class: "tick_num", alt: "" %><%= f.text_field :number, value: "1", class: "input_num" %><%= image_tag "num_up.png", class: "tick_num", alt: "" %>
+    <%= image_tag "num_down.png", id: "btnTicketMin", class: "tick_num", alt: "" %><%= f.text_field :number, id: "txtTicketNum", value: "1", class: "input_num" %><%= image_tag "num_up.png", id: "btnTicketAdd", class: "tick_num", alt: "" %>
     <dt class="title2 clear_both">
       配送信息：
       <input id="radio" type="radio" class="radio" checked="checked" />
@@ -29,14 +29,15 @@
     </dt>
   </div>
   <div class="payment">
+    <% ticket_price = @tour_order.ticket.price %>
     <dt>
       门票单价：
-      <span class="money">¥180</span>
+      <span class="money">¥<span id="ticketPrice"><%= ticket_price %></span></span>
     </dt>
     <dt>
       应付：
       <span class="money">
-        <strong>¥180</strong>
+      ¥<span id="totalTicketPrice">180</span>
       </span>
     </dt>
   </div>
