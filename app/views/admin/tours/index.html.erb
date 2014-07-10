@@ -1,0 +1,23 @@
+<h1>Listing admin_tours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_tours.each do |admin_tour| %>
+      <tr>
+        <td><%= link_to 'Show', admin_tour %></td>
+        <td><%= link_to 'Edit', edit_admin_tour_path(admin_tour) %></td>
+        <td><%= link_to 'Destroy', admin_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tour', new_admin_tour_path %>
