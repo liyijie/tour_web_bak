@@ -56,10 +56,9 @@
               </td>
               <td>
                 <%= link_to("查看", tour_order , class: "op_font_color") %>
-                <span class="op_font_color">|</span>
-                <a href="#" class="op_font_color">删除</a>
-                <span class="op_font_color">|</span>
-                <a href="#" class="op_font_color">退订</a>
+                <%= link_to(" | 支付", pay_tour_order_path(tour_order) , class: "op_font_color", method: "post") if tour_order.may_pay? %>
+                <%= link_to(" | 取消", cancel_tour_order_path(tour_order) , class: "op_font_color", method: "post") if tour_order.may_cancel? %>
+                <%= link_to(" | 退款", refund_tour_order_path(tour_order) , class: "op_font_color", method: "post") if tour_order.may_refund? %>
               </td>
             </tr>
             <% end %>

@@ -2,7 +2,13 @@ Rails.application.routes.draw do
 
   resources :cities
 
-  resources :tour_orders
+  resources :tour_orders do
+    member do
+      post 'pay' 
+      post 'cancel'
+      post 'refund'
+    end
+  end
 
   resources :hotels do
     resources :rooms

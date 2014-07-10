@@ -71,12 +71,14 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders/1/pay.json
   def pay
     @tour_order.pay
-    if @tour_order.save
-      format.html { redirect_to @tour_order, notice: 'Tour order was successfully paid.' }
-      format.json { render :show, status: :ok, location: @tour_order }
-    else
-      format.html { redirect_to @tour_order }
-      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully paid.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -84,12 +86,14 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders/1/cancel.json
   def cancel
     @tour_order.cancel
-    if @tour_order.save
-      format.html { redirect_to @tour_order, notice: 'Tour order was successfully canceled.' }
-      format.json { render :show, status: :ok, location: @tour_order }
-    else
-      format.html { redirect_to @tour_order }
-      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully canceled.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -97,12 +101,14 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders/1/refund.json
   def refund
     @tour_order.refund
-    if @tour_order.save
-      format.html { redirect_to @tour_order, notice: 'Tour order was successfully refunded.' }
-      format.json { render :show, status: :ok, location: @tour_order }
-    else
-      format.html { redirect_to @tour_order }
-      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully refunded.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -110,12 +116,14 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders/1/complete.json
   def complete
     @tour_order.complete
-    if @tour_order.save
-      format.html { redirect_to @tour_order, notice: 'Tour order was successfully completed.' }
-      format.json { render :show, status: :ok, location: @tour_order }
-    else
-      format.html { redirect_to @tour_order }
-      format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully completed.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
     end
   end
 

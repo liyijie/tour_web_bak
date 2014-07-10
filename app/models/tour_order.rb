@@ -21,6 +21,7 @@ class TourOrder < ActiveRecord::Base
 
   validates_presence_of :ticket
   validates_presence_of :user
+  before_create :cal_price
 
   accepts_nested_attributes_for :order_info
 
@@ -50,4 +51,9 @@ class TourOrder < ActiveRecord::Base
   def human_state
     I18n.t "order_state.#{state}"
   end
+
+  def cal_price
+    self.total_price = ticket.price * number
+  end
+
 end
