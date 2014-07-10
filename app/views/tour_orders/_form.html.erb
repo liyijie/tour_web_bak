@@ -56,12 +56,12 @@
     </dd>
     <dd class="info_item">
       * 取票人姓名：
-      <input type="text" placeholder="请输入2-15个汉字">
+      <%= info_form.text_field :notify_user, placeholder: "请输入2-15个汉字" %>
       <a class="copy_contactinfo" href="#">[复制预订人信息]</a>
     </dd>
     <dd class="info_item">
       * 取票人手机：
-      <input type="text">
+      <%= info_form.text_field :notify_tel %>
     </dd>
     <dd class="info_item intent1">
       取票人邮箱：

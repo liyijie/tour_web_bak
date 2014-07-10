@@ -6,7 +6,7 @@ class TourOrdersController < ApplicationController
   # GET /tour_orders
   # GET /tour_orders.json
   def index
-    @tour_orders = TourOrder.all
+    @tour_orders = current_user.tour_orders
   end
 
   # GET /tour_orders/1
@@ -130,14 +130,14 @@ class TourOrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tour_order
-      @tour_order = TourOrder.find(params[:id])
+      @tour_order = current_user.tour_orders.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_order_params
       params.require(:tour_order).permit(
         :total_price, :number,
-        order_info_attributes: [:id, :name, :tel, :email]
+        order_info_attributes: [:id, :name, :tel, :email, :notify_user, :notify_tel]
         )
     end
 end

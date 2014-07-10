@@ -20,6 +20,8 @@ describe OrderInfo do
   context "validation" do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:tel) }
+    it { should validate_presence_of(:notify_tel) }
+    it { should validate_presence_of(:notify_user) }
   end
 
   context "Relations" do

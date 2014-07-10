@@ -20,7 +20,7 @@
       出游日期：</span>
       2014-08-04
     <span class="title2">
-      门票数量：</span>1
+      门票数量：</span><%= @tour_order.number %>
     <dt class="title2">
       配送信息：
       <label for="radio">景区门口售票处自取</label>
@@ -30,12 +30,12 @@
   <div class="payment">
     <dt>
       门票单价：
-      <span class="money">¥180</span>
+      <span class="money">¥<%= @tour_order.ticket.price %></span>
     </dt>
     <dt>
       应付：
       <span class="money">
-        <strong>¥180</strong>
+        <strong>¥<%= @tour_order.total_price %></strong>
       </span>
     </dt>
   </div>
@@ -45,24 +45,24 @@
     <dd class="info_item">
       <span class="redstar">*</span>
       预订人姓名：
-      XXX
+      <%= @tour_order.order_info.name %>
     </dd>
     <dd class="info_item">
       <span class="redstar">*</span>
       预订人手机：
-      XXX
+      <%= @tour_order.order_info.tel %>
     </dd>
     <dd class="info_item">
       * 取票人姓名：
-      XXX
+      <%= @tour_order.order_info.notify_user %>
     </dd>
     <dd class="info_item">
       * 取票人手机：
-      xxx
+      <%= @tour_order.order_info.notify_tel %>
     </dd>
     <dd class="info_item intent1">
       取票人邮箱：
-      xxx@xxx.com
+      <%= @tour_order.order_info.email %>
     </dd>
   </div>
   <dt class="info_title">说明信息</dt>

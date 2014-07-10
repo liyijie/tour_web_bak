@@ -15,7 +15,7 @@
 #
 
 class OrderInfo < ActiveRecord::Base
-  validates_presence_of :name, :tel
+  validates_presence_of :name, :tel, :notify_user, :notify_tel
 
   belongs_to :order, polymorphic: true
 end
