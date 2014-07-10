@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707032417) do
+ActiveRecord::Schema.define(version: 20140710013727) do
 
   create_table "cities", force: true do |t|
     t.string   "provice"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 20140707032417) do
     t.datetime "updated_at"
     t.integer  "order_id"
     t.string   "order_type"
+    t.string   "notify_user"
+    t.string   "notify_tel"
   end
 
   add_index "order_infos", ["order_id", "order_type"], name: "index_order_infos_on_order_id_and_order_type"
