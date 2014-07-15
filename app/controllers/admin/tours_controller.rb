@@ -4,7 +4,7 @@ class Admin::ToursController < ApplicationController
   # GET /admin/tours
   # GET /admin/tours.json
   def index
-    @admin_tours = Admin::Tour.all
+    @admin_tours = Tour.all
   end
 
   # GET /admin/tours/1
@@ -14,7 +14,7 @@ class Admin::ToursController < ApplicationController
 
   # GET /admin/tours/new
   def new
-    @admin_tour = Admin::Tour.new
+    @admin_tour = Tour.new
   end
 
   # GET /admin/tours/1/edit
@@ -24,7 +24,7 @@ class Admin::ToursController < ApplicationController
   # POST /admin/tours
   # POST /admin/tours.json
   def create
-    @admin_tour = Admin::Tour.new(admin_tour_params)
+    @admin_tour = Tour.new(admin_tour_params)
 
     respond_to do |format|
       if @admin_tour.save
@@ -64,11 +64,16 @@ class Admin::ToursController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_tour
-      @admin_tour = Admin::Tour.find(params[:id])
+      @admin_tour = Tour.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_tour_params
-      params[:admin_tour]
+      params.require(:tour).permit(
+        :title, :sub_title, :addr, :price, :work_range, 
+        :hint, :desc, :traffic, :seq, :position, :city_id,
+        tickets_attributes: [:id, :title, :style, :desc, :price, :_destroy],
+        images_attributes: [:id, :photo, :_destroy],
+        )
     end
 end

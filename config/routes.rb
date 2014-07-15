@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :tours
+  end
+
 
 
 
