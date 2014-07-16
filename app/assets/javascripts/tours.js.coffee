@@ -19,7 +19,6 @@
 # });
 
 $ ->
-
 	$(".showall").click -> 
 		isShow = $(this).attr("isShow");
 		if isShow isnt "undefined" and isShow isnt "show"

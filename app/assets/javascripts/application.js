@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery_nested_form
-//= require_tree .
+//= require jquery.cxcalendar.min
+//= require jquery.nivo.slider.min

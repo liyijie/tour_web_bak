@@ -1,4 +1,6 @@
 class Admin::ToursController < ApplicationController
+  layout 'admin'
+
   before_action :set_admin_tour, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/tours
