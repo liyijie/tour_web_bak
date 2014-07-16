@@ -4,13 +4,14 @@
   <title>TourWeb</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag params[:controller] %>
-  
+
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render "share/head" %> 
   <%= yield %>
   <%= render "share/footer" %>
+  
+  <%= javascript_include_tag params[:controller] %>
 </body>
 </html>
