@@ -15,8 +15,10 @@ table { border-collapse: collapse;border-spacing: 0;}
 
 /** 通用属性 */
 .div {clear: both; overflow: hidden;}
+.float_left {float:left;}
 .padding5 {padding: 5px;}
 .padding10 {padding: 10px;}
+.hide {display: none;}
 
 /** */
 .jui {clear: both; width: 100%; overflow: hidden;}
@@ -143,6 +145,59 @@ table { border-collapse: collapse;border-spacing: 0;}
 .jui_table td.right {text-align: right;}
 .jui_table tr.selected {background-color:#7cc5e5;border-color:#b8d0d6;}
 .jui_table tr.hover {border-color:#dddddd; background:#F5F5F5;}
+
+/** 表单输入 */
+.form_div {
+    clear: both;
+    margin: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+.form_div .line {
+    clear: both;
+    margin-top: 10px;
+}
+.form_div .line.first {
+    margin-top: 0px;
+}
+.form_div .line .field_name {
+    display:block;
+    float:left;
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: top;
+}
+.form_div .line label {
+    color: #900; 
+    font-size: 18px; 
+    margin-right: 2px;
+}
+.form_div .line span.remark {
+    color: #777777;
+}
+.form_div .error {
+    color:#900;
+    display: none;
+}
+
+.jui_dialog {
+    clear: both;
+    overflow: hidden;
+    background: #fff;
+    display: none;
+    z-index: 999;
+}
+
+.text, .select {
+    height: 25px;
+    line-height: 25px;
+    width: 270px;
+}
+.text_area {
+    width: 260px;
+    padding: 5px;
+}
 
 /** github button css */
 .button {

@@ -2,13 +2,11 @@
 <html>
 <head>
   <title>Admin</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'jui-all', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "share/head" %> 
   <%= yield %>
-  <%= render "share/footer" %>
 </body>
 </html>

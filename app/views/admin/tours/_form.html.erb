@@ -1,17 +1,55 @@
-<%= form_for(@admin_tour) do |f| %>
-  <% if @admin_tour.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_tour.errors.count, "error") %> prohibited this admin_tour from being saved:</h2>
-
-      <ul>
-      <% @admin_tour.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+<%= nested_form_for(@admin_tour, :html => { :multipart => true }) do |f| %>
+  <div class="form_div">
+    <div class="error">错误信息</div>
+    <ul>
+      <li class="line first">
+        <span class="field_name"><label>*</label>标题:</span>
+         <%= f.text_field :title, class: "text" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>sub_title:</span>
+        <%= f.text_field :sub_title, class: "text" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>城市:</span>
+        <%= collection_select(:tour, :city_id, City.all, :id, :name,{:prompt=>true}, {:class=>'text'}) %>
+        <span class="remark">说明</span>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>地址:</span>
+        <%= f.text_field :addr, class: "text" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>价格:</span>
+        <%= f.text_field :price, class: "text" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>work_range:</span>
+        <%= f.text_field :work_range, class: "text" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>提示:</span>
+        <%= f.text_area :hint, class: "text_area" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>说明:</span>
+        <%= f.text_area :desc, class: "text_area" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>交通:</span>
+        <%= f.text_area :traffic, class: "text_area" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>seq:</span>
+        <%= f.text_field :seq, class: "text" %>
+      </li>
+      <li class="line">
+        <span class="field_name"><label>*</label>位置:</span>
+        <%= f.text_field :position, class: "text" %>
+      </li>
+      <li class="line">
+         <%= f.submit "提交", class: "button big" %>
+      </li>
+    </ul>
   </div>
 <% end %>
