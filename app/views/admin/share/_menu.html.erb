@@ -3,8 +3,8 @@
     <li>
       <%= link_to content_tag(:span, "首页管理"), admin_tours_path %>
     </li>
-    <li>
-      <%= link_to content_tag(:span, "门票管理"), admin_tours_path %>
+    <li class="selected">
+      <%= link_to content_tag(:span, "景点管理"), admin_tours_path %>
     </li>
     <li>
       <a href="#">
@@ -15,12 +15,9 @@
       <a href="#">
         <span>网站配置</span>
       </a>
-
     </li>
     <li>
-      <a href="#">
-        <span>会员管理</span>
-      </a>
+      <%= link_to content_tag(:span, "用户管理"), admin_users_path %>
     </li>
     <li>
       <a href="#">

@@ -131,15 +131,36 @@
  					$headerCheckbox.click(function(event) {
  						$(".jui_table_content .jui_table tr").each(function(index, el) {
  							$(el).children('td:first').each(function(index, e) {
- 								if($headerCheckbox.attr("checked")) {
- 									$(e).children("input[type='checkbox']").attr("checked", "checked");
+ 								if($headerCheckbox.prop("checked")) {
+ 									$(e).children("input[type='checkbox']").prop("checked", true);
  								} else {
- 									$(e).children("input[type='checkbox']").removeAttr('checked');
+ 									$(e).children("input[type='checkbox']").prop('checked', false);
  								}
  							});
  						});
  					});
  				}
+ 			},
+
+ 			// 如果有参数，则会把该参数作为ID切割符，默认为逗号
+ 			getCheckSelect: function() {
+ 				var s 	= ",",
+ 					ret = "";
+				if(arguments[0] != undefined) {
+					s = arguments[0];
+				}
+ 				$(".jui_table_content .jui_table tr").each(function(index, el) {
+					$(el).children('td:first').each(function(index, e) {
+						var $checkbox = $(e).children("input[type='checkbox']");
+						if($checkbox.prop("checked")) {
+							ret += $checkbox.attr("value") + s;
+						}
+					});
+				});
+				if(ret != "") {
+					ret = ret.substr(0, ret.length - 1);
+				}
+				return ret;
  			}
 
  		}

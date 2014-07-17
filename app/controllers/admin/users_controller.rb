@@ -62,6 +62,14 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    User.destroy(params[:user_ids]) unless params[:user_ids].blank?
+    respond_to do |format|
+      format.html { redirect_to admin_users_url, notice: "已删除." }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_user
