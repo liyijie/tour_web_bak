@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :tours do
       resources :tickets
-    en
+    end
     resources :users
   end
 
