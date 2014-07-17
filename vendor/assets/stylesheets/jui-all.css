@@ -129,18 +129,17 @@ table { border-collapse: collapse;border-spacing: 0;}
 .jui_table tbody {background-color:#fff;}
 .jui_table th {
 	background: url(images/tableth.png) repeat-x scroll 0 0 #F0EFF0;
-	height: 21px;
-	line-height: 21px;
 	border-right: solid 1px #D0D0D0; 
 	border-bottom:solid 1px #D0D0D0; 
 	font-weight:bolder;
 	text-align: left;
 	padding-left: 2px;
 }
+.jui_table tr, .jui_table td, .jui_table th {height: 21px; line-height: 21px;}
 .jui_table th.center {text-align: center;}
 .jui_table th.right {text-align: right;}
 .jui_table th:hover, .jui_table th.hover {background-position: 0px -49px;}
-.jui_table td {height:21px; line-height:21px; border: 1px solid #EDEDED; padding-left: 2px;}
+.jui_table td {border: 1px solid #EDEDED; padding-left: 2px;}
 .jui_table td.center {text-align: center;}
 .jui_table td.right {text-align: right;}
 .jui_table tr.selected {background-color:#7cc5e5;border-color:#b8d0d6;}

@@ -1,0 +1,112 @@
+<!-- 
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    < @admin_users.each do |admin_user| %>
+      <tr>
+        <td><= link_to 'Show', admin_user %></td>
+        <td><= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
+        <td><= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    < end %>
+  </tbody>
+</table>
+
+<br>
+
+<= link_to 'New User', new_admin_user_path %> -->
+
+<div class="jui">
+  <div class="jui_top"></div>
+  <div class="jui_menu">
+    <ul>
+      <li>
+        <a href="#">
+          <span>首页管理</span>
+        </a>
+      </li>
+      <li>
+        <%= link_to content_tag(:span, "门票管理"), admin_tours_path %>
+      </li>
+      <li>
+        <a href="#">
+          <span>酒店管理</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>网站配置</span>
+        </a>
+      </li>
+      <li class="selected">
+        <%= link_to content_tag(:span, "用户管理"), admin_users_path %>
+      </li>
+      <li>
+        <a href="#">
+          <span>系统设置</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="jui_content">
+    <div class="jui_left">
+      <div class="toggleCollapse">
+        <h2>主菜单</h2>
+      </div>
+      <div class="accordion">
+        <div class="accordionHeader">
+          <h2 class="collapsable">
+            <span>Folder</span>
+            用户管理
+          </h2>
+        </div>
+        <div class="accordionContent">
+          <a class="jui_menu_item selected" href="#">用户查询</a>
+        </div>
+      </div>
+    </div>
+    <div class="jui_right">
+      <div class="title">用户查询</div>
+      <div class="button-group">
+        <a href="#" class="button">新增</a>
+        <a href="#" class="button danger">删除</a>
+      </div>
+      <div class="jui_table_header">
+        <table class="jui_table">
+          <tr>
+            <th class="center">
+              <input type="checkbox" />
+            </th>
+            <th>EMail</th>
+            <th>最后登录时间</th>
+            <th>IP来源</th>
+            <th class="center">操作</th>
+          </tr>
+        </table>
+      </div>
+      <div class="jui_table_content">
+        <table class="jui_table">
+          <% @admin_users.each do |user| %>
+          <tr>
+            <td class="center" width="30px">
+              <input type="checkbox" />
+            </td>
+            <td><%= user.email %></td>
+            <td><%= user.last_sign_in_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <td><%= user.current_sign_in_ip %></td>
+            <td class="center" width="80px">
+              <%= link_to '修改', edit_admin_user_path(user) %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="jui_bottom">Copyright 2014</div>
+</div>
