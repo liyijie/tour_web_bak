@@ -27,6 +27,10 @@ class Tour < ActiveRecord::Base
   accepts_nested_attributes_for :tickets, :allow_destroy => true
   accepts_nested_attributes_for :images, :allow_destroy => true
 
+  def price
+    tickets.minimum(:price)
+  end
+
   def image_thumb
     images.first.photo.url(:medium) if images.first
   end
