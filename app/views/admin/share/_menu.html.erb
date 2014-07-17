@@ -1,10 +1,10 @@
 <div class="jui_menu">
   <ul>
     <li>
-      <span><%= link_to("首页管理", "#") %></span>
+      <%= link_to content_tag(:span, "首页管理"), admin_tours_path %>
     </li>
     <li>
-      <span><%= link_to("门票管理", admin_tours_path) %></span>
+      <%= link_to content_tag(:span, "门票管理"), admin_tours_path %>
     </li>
     <li>
       <a href="#">
@@ -15,6 +15,7 @@
       <a href="#">
         <span>网站配置</span>
       </a>
+
     </li>
     <li>
       <a href="#">
