@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tours
+    resources :tours do
+      resources :tickets
+    end
   end
 
 
