@@ -68,6 +68,7 @@ table { border-collapse: collapse;border-spacing: 0;}
 	margin-left: 5px;
 	background: #fff;
 	border:1px solid #b8d0d6;
+    overflow-y: auto;
 }
 .jui .jui_content .jui_right .title { 
 	clear:both; 
@@ -194,7 +195,8 @@ table { border-collapse: collapse;border-spacing: 0;}
     width: 270px;
 }
 .text_area {
-    width: 260px;
+    width: 500px;
+    height: 250px;
     padding: 5px;
 }
 
