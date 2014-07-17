@@ -4,7 +4,6 @@
 
 
 $ -> 
-
 	$("#txtCity").click ->
 		$cityDiv = $("#cityDiv")
 		$cityDiv.show()
