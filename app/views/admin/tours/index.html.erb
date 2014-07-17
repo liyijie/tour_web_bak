@@ -9,63 +9,25 @@
       <th class="center">
         <input type="checkbox" />
       </th>
+      <th>景点编号</th>
       <th>景点名称</th>
-      <th>价格</th>
-      <th>标题4</th>
-      <th>标题5</th>
+      <th>所属城市</th>
+      <th>子标题</th>
       <th class="center">操作</th>
     </tr>
-  </table>
-</div>
-<div class="jui_table_content">
-  <table class="jui_table">
+    <% @admin_tours.each do |tour| %>
     <tr>
       <td class="center" width="30px">
         <input type="checkbox" />
       </td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
+      <td><%= tour.id %></td>
+      <td><%= tour.title %></td>
+      <td><%= tour.city %></td>
+      <td><%= tour.sub_title %></td>
       <td class="center" width="80px">
-        <a href="#">修改</a>
+        <%= link_to("修改", edit_admin_tour_path(tour)) %>
       </td>
     </tr>
-    <tr>
-      <td class="center">
-        <input type="checkbox" />
-      </td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td class="center">
-        <a href="#">修改</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="center">
-        <input type="checkbox" />
-      </td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td class="center">
-        <a href="#">修改</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="center">
-        <input type="checkbox" />
-      </td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td class="center">
-        <a href="#">修改</a>
-      </td>
-    </tr>
+    <% end %>
   </table>
 </div>
