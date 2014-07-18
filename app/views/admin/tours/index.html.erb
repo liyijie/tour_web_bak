@@ -1,33 +1,43 @@
 <div class="title">门票管理</div>
-<div class="button-group">
-  <a href="#" class="button">新增</a>
-  <a href="#" class="button danger">删除</a>
-</div>
-<div class="jui_table_header">
-  <table class="jui_table">
-    <tr>
-      <th class="center">
-        <input type="checkbox" />
-      </th>
-      <th>景点编号</th>
-      <th>景点名称</th>
-      <th>所属城市</th>
-      <th>子标题</th>
-      <th class="center">操作</th>
-    </tr>
+<div class="content">
+  <div class="jui_layout margin">
+  <div class="menu_bar">
+    <div class="button-group">
+      <a href="#" class="button">新增</a>
+      <a href="#" class="button danger">删除</a>
+    </div>
+  </div>
+  <div class="jui_table_header">
+    <table class="jui_table">
+      <tr>
+        <th class="center">
+          <input type="checkbox" />
+        </th>
+        <th>景点编号</th>
+        <th>景点名称</th>
+        <th>所属城市</th>
+        <th>子标题</th>
+        <th class="center">操作</th>
+      </tr>
+    </table>
+  </div>
+  <div class="jui_table_content">
+    <table class="jui_table">
     <% @admin_tours.each do |tour| %>
-    <tr>
-      <td class="center" width="30px">
-        <input type="checkbox" />
-      </td>
-      <td><%= tour.id %></td>
-      <td><%= tour.title %></td>
-      <td><%= tour.city %></td>
-      <td><%= tour.sub_title %></td>
-      <td class="center" width="80px">
-        <%= link_to("修改", edit_admin_tour_path(tour)) %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+      <tr>
+        <td class="center" width="30px">
+          <input type="checkbox" />
+        </td>
+        <td width="70px"><%= tour.id %></td>
+        <td><%= tour.title %></td>
+        <td width="100px"><%= tour.city %></td>
+        <td><%= tour.sub_title %></td>
+        <td class="center" width="80px">
+          <%= link_to("修改", edit_admin_tour_path(tour)) %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 </div>

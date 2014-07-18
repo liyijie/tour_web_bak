@@ -25,14 +25,23 @@
  			if(layout.left != undefined) {
  				layout.left.height(totoalHeight);
  			}
+ 			
  			// 以下所有数字代表边框的宽度和Padding的宽度
  			if(layout.right != undefined) {
+ 				JUI._window.contentHeight = layout.right.height();
  				layout.right.height(totoalHeight - 4);
  				var leftWidth = 5;
  				if(layout.left != undefined) {
  					leftWidth += layout.left.width() + 12;
  				}
+ 				JUI._window.contentWidth = layout.right.width();
  				layout.right.width($(window).width() - leftWidth);
+ 				JUI._window.contentWidth = layout.right.width() - JUI._window.contentWidth;
+ 				if($(".jui_right .content").length > 0) {
+ 					var titleHeight = $(".jui_right .title").height();
+ 					$(".jui_right .content").height(layout.right.height() - titleHeight);
+ 					JUI._window.contentHeight = layout.right.height() - JUI._window.contentHeight;
+ 				}
  			}
 
  			/**
@@ -49,33 +58,43 @@
 
  		Accordion : {
  			init : function() {
+ 				
  				// 检查元素是否存在
  				if($(".accordion").length < 1) {
  					return;
  				}
+ 				
  				// 获得accordion的高度
  				var accHeight = $(".jui_left").height() - $(".toggleCollapse").height() - 5;
+ 				
  				// 循环获取Content
  				$(".accordionContent").each(function(index, el) {
  					if(index > 0) {
  						// 隐藏除了第一个之后的节点
  						$(el).hide();
  					}
+ 					
  					// 显示层的高度根据jui_left的高度 - 每个Hander的高度
  					accHeight = accHeight - $(el).prev().height();
  				});
+ 				
  				// 给Content设置高度
  				$(".accordionContent:first").height(accHeight);
+ 				
  				// 设置点击事件
  				$(".accordionHeader").click(function() {
+ 					
  					// 如果已经展开则取消操作
  					if($(this).children('h2').get(0).className == "collapsable") {
  						return;
  					}
+ 					
  					// 收起显示层
  					$(".collapsable").parent().next(".accordionContent:first").slideUp();
+ 					
  					// 删除原来的点击效果
  					$(".collapsable").removeClass('collapsable');
+
  					// 显示Content
  					$(this).next(".accordionContent").height(accHeight).slideDown();
  					$(this).children('h2').addClass('collapsable');
@@ -88,29 +107,34 @@
 
  			init : function() {
 
- 				// 自动调整表格高度, 累加jui_right内一级内容高度
- 				var rightHeight = 0;
- 				$(".jui_right > *").each(function(index, el) {
- 					if($(el).attr("class") == "jui_table_content") {
- 						return;
- 					}
- 					rightHeight += $(el).height();
- 				});
- 				$(".jui_table_content").height($(".jui_right").height() - rightHeight - 20);
+ 				// 设置高度
+ 				$(".jui_table_content").height($(".jui_table_content").height() + JUI._window.contentHeight);
+ 				
  				// 开始对表格进行初始化
  				var $tableHeader = $(".jui_table_header .jui_table");
  				var tableDiv = $(".jui_table_content").get(0);
+
  				// 判断是否有滚动条
  				if(tableDiv != undefined && (tableDiv.scrollHeight > tableDiv.clientHeight 
  					|| tableDiv.offsetHeight > tableDiv.clientHeight)) { 
  					// 如果产生滚动条，则标题栏减去17
  					$tableHeader.width($tableHeader.width() - 17);
  				}
+
  				// 设置标题列宽和内容列宽等宽
  				$(".jui_table_content .jui_table tr").eq(0).children('td').each(function(index, el) {
  					$(".jui_table_header .jui_table th").eq(index).width($(el).width());
  				});
+
  				// 设置表格内容选中和划过状态
+ 				this._setSelectedAndMove();
+
+ 				// 全选和全不选操作
+ 				this._setTableCheckBox();
+ 			},
+
+ 			// 设置表格内容选中和划过状态
+ 			_setSelectedAndMove : function() {
  				$(".jui_table_content .jui_table tr").click(function(event) {
  					$(".jui_table_content .jui_table tr").removeClass('selected');
  					$(this).removeClass('hover');
@@ -124,8 +148,10 @@
  				}).mouseout(function(event) {
  					$(this).removeClass('hover');
  				});
+ 			},
 
- 				// 全选和全不选操作
+ 			// 全选和全不选操作
+ 			_setTableCheckBox : function() {
  				var $headerCheckbox = $(".jui_table_header .jui_table th:first input[type='checkbox']");
  				if($headerCheckbox.length > 0) {
  					$headerCheckbox.click(function(event) {
@@ -163,8 +189,27 @@
 				return ret;
  			}
 
+ 		},
+
+ 		_window : {
+ 			// .jui_right .content 的宽度增加值
+ 			contentWidth : 0,
+ 			// .jui_right .content 的高度增加值
+ 			contentHeight : 0,
+
+ 			// 返回控件的高度，包含Margin的范围
+			_getElementHeight : function(el) {
+				var mt = parseInt(el.css("margin-top"),10) || 0,
+					mb = parseInt(el.css("margin-bottom"),10) ||0,
+					pt = parseInt(el.css("padding-top"),10) || 0,
+					pb = parseInt(el.css("padding-bottom"), 10) ||0,
+					borderTop = parseInt(el.css("border-top-width"), 10) || 0,
+					borderBottom = parseInt(el.css("border-bottom-width"), 10) || 0;
+				return el.height() + mt + mb + pt + pb + borderTop + borderBottom;
+			}
  		}
 
+ 		
  	};
 
  	// 初始化进入

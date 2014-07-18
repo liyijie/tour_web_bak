@@ -1,41 +1,49 @@
 <div class="title">用户查询</div>
-<%= form_tag destroy_multiple_admin_users_path, method: :delete do %>
-<div class="button-group">
-  <%= link_to '新增', new_admin_user_path, class: "button" %>
-  <%= submit_tag "删除", class: "button danger", data: {confirm: '是否确认删除?'}  %>
+<div class="content">
+  <div class="jui_layout margin padding">
+    EMail:
+    <input type="text" class="text" />
+    <input type="button" class="button" value="查询" />
+  </div>
+  <%= form_tag destroy_multiple_admin_users_path, method: :delete do %>
+  <div class="jui_layout margin">
+    <div class="menu_bar">
+      <div class="button-group">
+        <%= submit_tag "删除", class: "button danger", data: {confirm: '是否确认删除?'}  %></div>
+    </div>
+    <div class="jui_table_header">
+      <table class="jui_table">
+        <tr>
+          <th class="center">
+            <input type="checkbox" />
+          </th>
+          <th>用户ID</th>
+          <th>EMail</th>
+          <th>登录次数</th>
+          <th>最后登录时间</th>
+          <th>IP来源</th>
+        </tr>
+      </table>
+    </div>
+    <div class="jui_table_content">
+      <table class="jui_table">
+        <% @admin_users.each do |user| %>
+        <tr>
+          <td class="center" width="30px">
+            <%= check_box_tag "user_ids[]", user.id %></td>
+          <td width="70px">
+            <%= user.id %></td>
+          <td>
+            <%= user.email %></td>
+          <td width="70px">
+            <%= user.sign_in_count %></td>
+          <td>
+            <%= user.last_sign_in_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+          <td>
+            <%= user.current_sign_in_ip %></td>
+        </tr>
+        <% end %></table>
+    </div>
+  </div>
+  <% end %>
 </div>
-<div class="jui_table_header">
-  <table class="jui_table">
-    <tr>
-      <th class="center">
-        <input type="checkbox" />
-      </th>
-      <th>EMail</th>
-      <th>登录次数</th>
-      <th>最后登录时间</th>
-      <th>IP来源</th>
-      <th class="center">操作</th>
-    </tr>
-  </table>
-</div>
-<div class="jui_table_content">
-  <table class="jui_table">
-    <% @admin_users.each do |user| %>
-    <tr>
-      <td class="center" width="30px">
-        <%= check_box_tag "user_ids[]", user.id %></td>
-      <td>
-        <%= user.email %></td>
-      <td width="70px">
-        <%= user.sign_in_count %></td>
-      <td>
-        <%= user.last_sign_in_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-      <td>
-        <%= user.current_sign_in_ip %></td>
-      <td class="center" width="80px">
-        <%= link_to '修改', edit_admin_user_path(user) %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
-<% end %>
