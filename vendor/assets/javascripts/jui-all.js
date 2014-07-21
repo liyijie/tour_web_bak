@@ -28,20 +28,10 @@
  			
  			// 以下所有数字代表边框的宽度和Padding的宽度
  			if(layout.right != undefined) {
- 				JUI._window.contentHeight = layout.right.height();
- 				layout.right.height(totoalHeight - 4);
- 				var leftWidth = 5;
- 				if(layout.left != undefined) {
- 					leftWidth += layout.left.width() + 12;
- 				}
- 				JUI._window.contentWidth = layout.right.width();
- 				layout.right.width($(window).width() - leftWidth);
- 				JUI._window.contentWidth = layout.right.width() - JUI._window.contentWidth;
- 				if($(".jui_right .content").length > 0) {
- 					var titleHeight = $(".jui_right .title").height();
- 					$(".jui_right .content").height(layout.right.height() - titleHeight);
- 					JUI._window.contentHeight = layout.right.height() - JUI._window.contentHeight;
- 				}
+ 				JUI._layout.Right.init({
+ 					layout : layout,
+ 					totoalHeight : totoalHeight
+ 				});
  			}
 
  			/**
@@ -82,7 +72,8 @@
  				$(".accordionContent:first").height(accHeight);
  				
  				// 设置点击事件
- 				$(".accordionHeader").click(function() {
+ 				$(".accordionHeader").unbind("click");
+ 				$(".accordionHeader").bind("click", function() {
  					
  					// 如果已经展开则取消操作
  					if($(this).children('h2').get(0).className == "collapsable") {
@@ -135,17 +126,23 @@
 
  			// 设置表格内容选中和划过状态
  			_setSelectedAndMove : function() {
- 				$(".jui_table_content .jui_table tr").click(function(event) {
+ 				var $tr = $(".jui_table_content .jui_table tr");
+ 				$tr.unbind('click');
+ 				$tr.bind('click',  function(event) {
  					$(".jui_table_content .jui_table tr").removeClass('selected');
  					$(this).removeClass('hover');
  					$(this).addClass('selected');
- 				}).mouseover(function(event) {
+ 				});
+ 				$tr.unbind('mouseover');
+ 				$tr.bind('mouseover',  function(event) {
  					// 如果TR已经被选中，则不改变
  					if(this.className == "selected") {
  						return;
  					}
  					$(this).addClass('hover');
- 				}).mouseout(function(event) {
+ 				});
+ 				$tr.unbind('mouseout');
+ 				$tr.bind('mouseout',  function(event) {
  					$(this).removeClass('hover');
  				});
  			},
@@ -154,7 +151,8 @@
  			_setTableCheckBox : function() {
  				var $headerCheckbox = $(".jui_table_header .jui_table th:first input[type='checkbox']");
  				if($headerCheckbox.length > 0) {
- 					$headerCheckbox.click(function(event) {
+ 					$headerCheckbox.unbind('click');
+ 					$headerCheckbox.bind('click', function(event) {
  						$(".jui_table_content .jui_table tr").each(function(index, el) {
  							$(el).children('td:first').each(function(index, e) {
  								if($headerCheckbox.prop("checked")) {
@@ -207,6 +205,31 @@
 					borderBottom = parseInt(el.css("border-bottom-width"), 10) || 0;
 				return el.height() + mt + mb + pt + pb + borderTop + borderBottom;
 			}
+ 		}, 
+
+ 		_layout : {
+ 			
+ 			// 界面右边模块
+ 			Right : {
+
+ 				// 初始化右边菜单
+ 				init : function(p) {
+ 					JUI._window.contentHeight = p.layout.right.height();
+	 				p.layout.right.height(p.totoalHeight - 4);
+	 				var leftWidth = 5;
+	 				if(p.layout.left != undefined) {
+	 					leftWidth += p.layout.left.width() + 12;
+	 				}
+	 				JUI._window.contentWidth = p.layout.right.width();
+	 				p.layout.right.width($(window).width() - leftWidth);
+	 				JUI._window.contentWidth = p.layout.right.width() - JUI._window.contentWidth;
+	 				if($(".jui_right .content").length > 0) {
+	 					var titleHeight = $(".jui_right .title").height();
+	 					$(".jui_right .content").height(p.layout.right.height() - titleHeight);
+	 					JUI._window.contentHeight = p.layout.right.height() - JUI._window.contentHeight;
+	 				}
+ 				}
+ 			}
  		}
 
  		

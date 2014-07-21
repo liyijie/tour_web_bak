@@ -63,6 +63,14 @@ class Admin::ToursController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    Tour.destroy(params[:tour_ids]) unless params[:tour_ids].blank?
+    respond_to do |format|
+      format.html { redirect_to admin_tours_url, notice: "已删除." }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_tour

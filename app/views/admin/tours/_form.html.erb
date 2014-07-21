@@ -7,13 +7,13 @@
          <%= f.text_field :title, class: "text" %>
       </li>
       <li class="line">
-        <span class="field_name"><label>*</label>sub_title:</span>
+        <span class="field_name"><label>*</label>小标题:</span>
         <%= f.text_field :sub_title, class: "text" %>
+        <span class="remark">景点简单介绍，显示在景点详细页标题下方</span>
       </li>
       <li class="line">
         <span class="field_name"><label>*</label>城市:</span>
-        <%= collection_select(:tour, :city_id, City.all, :id, :name,{:prompt=>true}, {:class=>'text'}) %>
-        <span class="remark">说明</span>
+        <%= collection_select(:tour, :city_id, City.all, :id, :name,{:prompt=>true}, {:class=>'select'}) %>
       </li>
       <li class="line">
         <span class="field_name"><label>*</label>地址:</span>
@@ -24,7 +24,7 @@
         <%= f.text_field :price, class: "text" %>
       </li>
       <li class="line">
-        <span class="field_name"><label>*</label>work_range:</span>
+        <span class="field_name"><label>*</label>开放时间:</span>
         <%= f.text_field :work_range, class: "text" %>
       </li>
       <li class="line">

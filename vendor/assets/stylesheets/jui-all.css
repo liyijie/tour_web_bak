@@ -74,7 +74,7 @@ table { border-collapse: collapse;border-spacing: 0;}
     clear: both;
     overflow-y: auto;
 }
-.jui .jui_content .jui_right .title { 
+.jui .jui_content .jui_right > .title { 
 	clear:both; 
 	background: #D4E1F1; 
 	overflow: hidden; 
@@ -82,7 +82,11 @@ table { border-collapse: collapse;border-spacing: 0;}
 }
 .jui_left,.jui_right {float: left;overflow: hidden;}
 
-.accordion .accordionHeader, .accordion .accordionHeader h2, .accordion .accordionHeader h2 span { color:#183152; background:url(images/accordion/accordion.png);}
+.accordion .accordionHeader, 
+.accordion .accordionHeader h2, 
+.accordion .accordionHeader h2 span,
+.jui_layout > .title 
+{ color:#183152; background:url(images/accordion/accordion.png);}
 .accordion { border-color:#b8d0d6; background:#FFF;}
 .accordion .accordionHeader { background-color:#eaf4ff;}
 .accordion .accordionContent { border-color:#b8d0d6;}
@@ -187,12 +191,19 @@ table { border-collapse: collapse;border-spacing: 0;}
     border: 1px solid #BCC5D4;
 }
 .jui_layout.overflow {overflow: auto;}
-.jui_layout.padding {padding:5px;}
+.jui_layout.padding, .jui_layout > .padding {padding:5px;}
 .jui_layout.margin {margin:2px;}
 
 .jui_layout .menu_bar {
     background-color: #D4E1F1;
     padding:2px 5px 2px 5px;
+}
+
+.jui_layout > .title {
+    clear: both;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 5px;
 }
 
 .jui_dialog {
@@ -208,6 +219,12 @@ table { border-collapse: collapse;border-spacing: 0;}
     line-height: 25px;
     width: 270px;
     padding: 0px 3px 0px 3px;
+}
+.text.query {
+    width: 150px;
+}
+.text.small {
+    width: 70px;
 }
 .text_area {
     width: 500px;

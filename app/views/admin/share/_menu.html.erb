@@ -3,7 +3,7 @@
     <li>
       <%= link_to content_tag(:span, "首页管理"), admin_tours_path %>
     </li>
-    <li class="selected">
+    <li <% if params[:controller] == "admin/tours" %>class="selected"<% end %>>
       <%= link_to content_tag(:span, "景点管理"), admin_tours_path %>
     </li>
     <li>
@@ -16,7 +16,7 @@
         <span>网站配置</span>
       </a>
     </li>
-    <li>
+    <li <% if params[:controller] == "admin/users" %>class="selected"<% end %>>
       <%= link_to content_tag(:span, "用户管理"), admin_users_path %>
     </li>
     <li>

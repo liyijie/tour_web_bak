@@ -3,6 +3,7 @@
     <h2>主菜单</h2>
   </div>
   <div class="accordion">
+    <% if params[:controller] == "admin/tours" %>
     <div class="accordionHeader">
       <h2 class="collapsable">
         <span>Folder</span>
@@ -10,9 +11,9 @@
       </h2>
     </div>
     <div class="accordionContent">
-      <a class="jui_menu_item selected" href="#">景点查询</a>
+      <%= link_to "景点查询", admin_tours_path, class: "jui_menu_item selected" %>
       <br/>
-      <a class="jui_menu_item" href="#">新增景点</a>
+      <%= link_to "新增查询", new_admin_tour_path, class: "jui_menu_item " %>
     </div>
     <div class="accordionHeader">
       <h2>
@@ -26,4 +27,16 @@
       <a class="jui_menu_item" href="#">新增门票</a>
     </div>
   </div>
+  <% end %>
+  <% if params[:controller] == "admin/user" %>
+  <div class="accordionHeader">
+    <h2 class="collapsable">
+      <span>Folder</span>
+      用户管理
+    </h2>
+  </div>
+  <div class="accordionContent">
+    <%= link_to "用户查询", admin_users_path, class: "jui_menu_item selected" %>
+  </div>
+  <% end %>
 </div>
