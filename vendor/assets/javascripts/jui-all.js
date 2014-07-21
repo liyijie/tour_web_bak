@@ -21,7 +21,7 @@
  			var tHeight = layout.top != undefined ? layout.top.height() : 0,
  				tMenuHeight = layout.topBar != undefined ? layout.topBar.height() : 0,
  				bHeight = layout.bottom != undefined ? layout.bottom.height() : 0;
- 			var totoalHeight = $(window).height() - tHeight - tMenuHeight - bHeight -10;
+ 			var totoalHeight = $(window).height() - tHeight - tMenuHeight - bHeight - 10;
  			if(layout.left != undefined) {
  				layout.left.height(totoalHeight);
  			}
@@ -216,7 +216,7 @@
  				init : function(p) {
  					JUI._window.contentHeight = p.layout.right.height();
 	 				p.layout.right.height(p.totoalHeight - 4);
-	 				var leftWidth = 5;
+	 				var leftWidth = 3;
 	 				if(p.layout.left != undefined) {
 	 					leftWidth += p.layout.left.width() + 12;
 	 				}
