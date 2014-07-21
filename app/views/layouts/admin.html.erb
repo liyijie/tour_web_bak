@@ -11,8 +11,7 @@
     <div class="jui_top"></div>
     <%= render "admin/share/menu" %>
     <div class="jui_content">
-      <%= render "admin/share/left" if params[:controller] == "admin/tours" %>
-      <%= render "admin/share/admin_user" if params[:controller] == "admin/users" %>
+      <%= render "admin/share/left" %>
       <div class="jui_right">
         <%= yield %>
       </div>
