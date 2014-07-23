@@ -45,8 +45,10 @@
  			this.Table.init();
  		},
 
-
+ 		// 左边树形菜单
  		Accordion : {
+
+ 			// 初始化菜单
  			init : function() {
  				
  				// 检查元素是否存在
@@ -72,24 +74,50 @@
  				$(".accordionContent:first").height(accHeight);
  				
  				// 设置点击事件
+ 				this._setOnClickEvent(accHeight);
+
+ 				// 根据已选中节点，自动伸展
+ 				var $selected = $(".accordionContent > .selected");
+ 				if($selected.length > 0) {
+ 					this._changeMenu($selected.parent().prev(".accordionHeader"), accHeight, false);
+ 				}
+ 			},
+
+ 			// 设置点击事件
+ 			_setOnClickEvent : function(h) {
  				$(".accordionHeader").unbind("click");
  				$(".accordionHeader").bind("click", function() {
- 					
- 					// 如果已经展开则取消操作
- 					if($(this).children('h2').get(0).className == "collapsable") {
- 						return;
- 					}
- 					
- 					// 收起显示层
- 					$(".collapsable").parent().next(".accordionContent:first").slideUp();
- 					
- 					// 删除原来的点击效果
- 					$(".collapsable").removeClass('collapsable');
-
- 					// 显示Content
- 					$(this).next(".accordionContent").height(accHeight).slideDown();
- 					$(this).children('h2').addClass('collapsable');
+ 					JUI.Accordion._changeMenu($(this), h, true);
  				});
+ 			},
+
+ 			// obj: accordionHeader
+ 			// h: 内容高度
+ 			// isSlide: 是否需要slide动画
+ 			_changeMenu : function(obj, h, isSlide) {
+ 				// 如果已经展开则取消操作
+				if(obj.children('h2').get(0).className == "collapsable") {
+					return;
+				}
+				
+				// 收起显示层
+				if(isSlide) {
+					$(".collapsable").parent().next(".accordionContent:first").slideUp();
+				} else {
+					$(".collapsable").parent().next(".accordionContent:first").hide();
+				}
+				
+				// 删除原来的点击效果
+				$(".collapsable").removeClass('collapsable');
+
+				// 显示Content
+				if(isSlide) {
+					obj.next(".accordionContent").height(h).slideDown();
+				} else {
+					obj.next(".accordionContent").height(h).show();
+				}
+				
+				obj.children('h2').addClass('collapsable');
  			}
  		},
 

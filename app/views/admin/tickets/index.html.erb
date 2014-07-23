@@ -1,29 +1,54 @@
-<h1>Listing admin_tickets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @admin_tickets.each do |admin_ticket| %>
-      <tr>
-        <td><%= link_to 'Show', admin_ticket %></td>
-        <td><%= link_to 'Edit', edit_admin_ticket_path(admin_ticket) %></td>
-        <td><%= link_to 'Destroy', admin_ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Ticket', new_admin_ticket_path %>
-
-<div class="jui">
-  <div class="jui_top">
-    
+<div class="title">门票管理</div>
+<div class="content">
+  <div class="jui_layout margin padding">
+    门票编号:
+    <input type="text" class="text small" />
+    门票名称：
+    <input type="text" class="text query" />
+    <input type="button" class="button" value="查询" />
   </div>
-</div>
+  <%= form_tag destroy_multiple_admin_tours_path, method: :delete do %>
+  <div class="jui_layout margin">
+    <div class="menu_bar">
+      <div class="button-group">
+        <%= link_to("新增", new_admin_tour_path, class: "button") %>
+        <%= submit_tag "删除", class: "button danger", data: {confirm: '是否确认删除?'}  %></div>
+    </div>
+    <div class="jui_table_header">
+      <table class="jui_table">
+        <tr>
+          <th class="center">
+            <input type="checkbox" />
+          </th>
+          <th>门票编号</th>
+          <th>门票名称</th>
+          <th>价格</th>
+          <th>所属门票</th>
+          <th class="center">操作</th>
+        </tr>
+      </table>
+    </div>
+    <div class="jui_table_content">
+      <table class="jui_table">
+        <% @admin_tickets.each do |ticket| %>
+        <tr>
+          <td class="center" width="30px">
+            <%= check_box_tag "tour_ids[]", ticket.id %></td>
+          <td width="70px">
+            <%= ticket.id %></td>
+          <td>
+            <%= ticket.title %></td>
+          <td width="70px">
+            ￥
+            <%= ticket.price %></td>
+          <td width="70px">
+            <%= ticket.tour_id %>
+          </td>
+          <td class="center" width="80px">
+            <%= link_to("修改", edit_admin_ticket_path(ticket)) %>&nbsp;|&nbsp;</td>
+        </tr>
+        <% end %></table>
+    </div>
+  </div>
+
+  <% end %></div>

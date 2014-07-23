@@ -47,9 +47,20 @@
         <span class="field_name"><label>*</label>位置:</span>
         <%= f.text_field :position, class: "text" %>
       </li>
+      <li>
+        <span class="field_name">&nbsp;</span>
+        <div style="float_left">
+          <%= f.link_to_add "增加图片", :images, class: "float_left" %>
+          <%= f.fields_for :images do |image_form| %>
+            <%= image_form.file_field :photo %>
+            <%= image_form.link_to_remove "删除图片" %>
+          <% end %>
+        </div>
+      </li>
       <li class="line">
          <%= f.submit "提交", class: "button big" %>
       </li>
     </ul>
   </div>
 <% end %>
+

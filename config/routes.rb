@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :tickets
     resources :tours do
       collection do
         delete 'destroy_multiple'
