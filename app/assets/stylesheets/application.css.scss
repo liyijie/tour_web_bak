@@ -212,7 +212,7 @@ img {
 
 
 .nav { width:100%; background: #ffffff; }
-.nav li { float:left;}
+.nav li{ float:left; }
 .topbar {float:right;}
 .topbar a, .topbar li {color:#55a6c0;}
 .nav .search {clear:both; float:right; margin-top:30px; border:1px solid #000;}
@@ -228,6 +228,8 @@ img {
   padding:0px 10px 0px 10px;
   cursor: pointer;
 }
+.nav .menu li.selected,
+.nav .menu li.selected a {background-color: #ffffff; color: #55C0A5; font-weight: bold;}
 .nav .menu li a:hover {color:#ffffff; underline:none; }
 .nav .menu li a{color:#ffffff; underline:none;}
 .nav .menu .order {float:right; height: 40px; line-height: 40px; color: #ffffff;}

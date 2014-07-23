@@ -11,13 +11,10 @@
       </h2>
     </div>
     <div class="accordionContent">
-      <% if params[:controller] == "admin/tours" && params[:action] == "index" %>
-        <%= link_to "景点查询", admin_tours_path, class: "jui_menu_item"  %>
-      <% else %>
-        <%= link_to "景点查询", admin_tours_path, class: "jui_menu_item"  %>
-      <% end %>
+      <%= nav_link_to "景点查询", admin_tours_path, {class: "jui_menu_item"} %>
       <br/>
-      <%= link_to "新增景点", new_admin_tour_path, class: "jui_menu_item" %></div>
+      <%= nav_link_to "新增景点", new_admin_tour_path, {class: "jui_menu_item"} %>
+    </div>
     <div class="accordionHeader">
       <h2>
         <span>Folder</span>
@@ -25,9 +22,9 @@
       </h2>
     </div>
     <div class="accordionContent">
-      <%= link_to "门票查询", admin_tickets_path, class: "jui_menu_item"  %>
+      <%= nav_link_to "门票查询", admin_tickets_path, {class: "jui_menu_item"} %>
       <br/>
-      <%= link_to "新增门票", new_admin_ticket_path, class: "jui_menu_item selected"  %>
+      <%= nav_link_to "新增门票", new_admin_ticket_path, {class: "jui_menu_item"} %>
     </div>
     <% end %>
     <% if params[:controller] == "admin/users" %>
@@ -38,6 +35,7 @@
       </h2>
     </div>
     <div class="accordionContent">
-      <%= link_to "用户查询", admin_users_path, class: "jui_menu_item" %></div>
+      <%= nav_link_to "用户查询", admin_users_path, {class: "jui_menu_item"} %>
+    </div>
     <% end %></div>
 </div>
