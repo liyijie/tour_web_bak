@@ -47,6 +47,9 @@ gem 'rails-i18n', '~> 4.0.0'
 # handle multiple models in a single form
 gem "nested_form"
 
+# Use nav link_to to add 'selected' class
+gem 'nav_lynx'
+
 # for windows
 gem 'tzinfo-data'
 
