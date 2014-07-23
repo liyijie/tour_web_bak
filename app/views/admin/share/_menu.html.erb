@@ -1,11 +1,7 @@
 <div class="jui_menu">
   <ul>
-    <li>
-      <%= nav_link_to content_tag(:span, "首页管理"), admin_tours_path %>
-    </li>
-    <li>
-      <%= nav_link_to content_tag(:span, "景点管理"), admin_tours_path %>
-    </li>
+    <!-- <%= nav_link_to content_tag(:span, "首页管理"), admin_tours_path, {}, {:wrapper => 'li' } %> -->
+    <%= nav_link_to content_tag(:span, "景点管理"), admin_tours_path, {}, {:wrapper => 'li' } %>
     <li>
       <a href="#">
         <span>酒店管理</span>
@@ -16,9 +12,7 @@
         <span>网站配置</span>
       </a>
     </li>
-    <li>
-      <%= nav_link_to content_tag(:span, "用户管理"), admin_users_path %>
-    </li>
+    <%= nav_link_to content_tag(:span, "用户管理"), admin_users_path, {}, {:wrapper => 'li' } %>
     <li>
       <a href="#">
         <span>系统设置</span>
