@@ -1,17 +1,31 @@
-<%= form_for(@admin_ticket) do |f| %>
-  <% if @admin_ticket.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_ticket.errors.count, "error") %> prohibited this admin_ticket from being saved:</h2>
-
-      <ul>
-      <% @admin_ticket.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_for([:admin, @tour, @admin_ticket]) do |f| %>
+<div class="form_div">
+	<div class="error">错误信息</div>
+	<ul>
+		<li class="line first">
+      <span class="field_name"><label>*</label>标题:</span>
+       <%= f.text_field :title, class: "text" %>
+    </li>
+    <li class="line">
+    	<span class="field_name"><label>*</label>门票类型:</span>
+    	<%= f.text_field :style, class: "text" %>
+    	<span class="remark">(如特价票，学生票)</span>
+    </li>
+    <li class="line">
+    	<span class="field_name"><label>*</label>说明:</span>
+    	<%= f.text_area :desc, class: "text_area" %>
+    </li>
+    <li class="line">
+    	<span class="field_name"><label>*</label>价格:</span>
+    	<%= f.text_field :price, class: "text" %>
+    </li>
+    <li class="line">
+    	<span class="field_name"><label>*</label>位置:</span>
+    	<%= f.text_field :position, class: "text" %>
+    </li>
+    <li class="line">
+	    <%= f.submit "提交", class: "button big" %>
+	  </li>
+	</ul>
+</div>
 <% end %>

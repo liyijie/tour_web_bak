@@ -1,4 +1,4 @@
-<%= nested_form_for(@admin_tour, :html => { :multipart => true }) do |f| %>
+<%= nested_form_for([:admin, @admin_tour], :html => { :multipart => true }) do |f| %>
   <div class="form_div">
     <div class="error">错误信息</div>
     <ul>

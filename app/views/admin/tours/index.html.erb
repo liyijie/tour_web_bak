@@ -46,8 +46,10 @@
           <td>
             ￥
             <%= tour.price %></td>
-          <td class="center" width="80px">
-            <%= link_to("修改", edit_admin_tour_path(tour)) %>&nbsp;|&nbsp;</td>
+          <td class="center" width="120px">
+            <%= link_to("增加门票", new_admin_tour_ticket_path(tour)) %>
+            &nbsp;|&nbsp;
+            <%= link_to("修改", edit_admin_tour_path(tour)) %></td>
         </tr>
         <% end %></table>
     </div>

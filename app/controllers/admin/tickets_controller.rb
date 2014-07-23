@@ -16,7 +16,8 @@ class Admin::TicketsController < ApplicationController
 
   # GET /admin/tickets/new
   def new
-    @admin_ticket = Ticket.new
+    @tour = Tour.find(params[:tour_id])
+    @admin_ticket = @tour.tickets.build
   end
 
   # GET /admin/tickets/1/edit
@@ -26,11 +27,12 @@ class Admin::TicketsController < ApplicationController
   # POST /admin/tickets
   # POST /admin/tickets.json
   def create
-    @admin_ticket = Ticket.new(admin_ticket_params)
+    @tour = Tour.find(params[:tour_id])
+    @admin_ticket = @tour.tickets.create(admin_ticket_params)
 
     respond_to do |format|
       if @admin_ticket.save
-        format.html { redirect_to @admin_ticket, notice: 'Ticket was successfully created.' }
+        format.html { redirect_to [:admin, @tour], notice: 'Ticket was successfully created.' }
         format.json { render :show, status: :created, location: @admin_ticket }
       else
         format.html { render :new }
@@ -63,6 +65,14 @@ class Admin::TicketsController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    Ticket.destroy(params[:ticket_ids]) unless params[:ticket_ids].blank?
+    respond_to do |format|
+      format.html { redirect_to admin_tickets_url, notice: "已删除." }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_ticket
@@ -71,6 +81,6 @@ class Admin::TicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_ticket_params
-      params[:admin_ticket]
+      params[:ticket].permit(:style, :title, :desc, :price, :position)
     end
 end
