@@ -1,0 +1,17 @@
+<%= form_for(@admin_tour_order) do |f| %>
+  <% if @admin_tour_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_tour_order.errors.count, "error") %> prohibited this admin_tour_order from being saved:</h2>
+
+      <ul>
+      <% @admin_tour_order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
