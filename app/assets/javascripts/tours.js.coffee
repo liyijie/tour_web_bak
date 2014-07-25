@@ -19,6 +19,13 @@
 # });
 
 $ ->
+	myFocus.set
+					id:'boxID' 
+					pattern:'mF_fancy'
+					width:460
+					height:230
+					txtHeight:0
+
 	$(".showall").click -> 
 		isShow = $(this).attr("isShow");
 		if isShow isnt "undefined" and isShow isnt "show"
