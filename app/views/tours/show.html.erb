@@ -5,10 +5,13 @@
       <div class="left">
         <div id="boxID">
           <div class="pic">
+            <div class="loading">
+              <%= image_tag("load.gif", alt: "") %>
+            </div>
             <ul>
               <% @tour.images.each do |image| %>
                 <li>
-                  <%= image_tag image.photo.url, class: "tour_show_img" %>
+                  <%= image_tag image.photo.url, class: "tour_show_img", alt: "", text: "" %>
                 </li>
               <% end %>
             </ul>
