@@ -17,3 +17,4 @@
 //= require jquery_nested_form
 //= require jquery.cxcalendar.min
 //= require myfocus-2.0.1.min
+//= require mf-pattern/mF_fancy
