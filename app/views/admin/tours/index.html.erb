@@ -7,12 +7,16 @@
     <input type="text" class="text query" />
     <input type="button" class="button" value="查询" />
   </div>
-  <%= form_tag destroy_multiple_admin_tours_path, method: :delete do %>
+  <%= form_tag destroy_multiple_admin_tours_path, method: :delete do 
+
+%>
   <div class="jui_layout margin">
     <div class="menu_bar">
       <div class="button-group">
         <%= link_to("新增", new_admin_tour_path, class: "button") %>
-        <%= submit_tag "删除", class: "button danger", data: {confirm: '是否确认删除?'}  %></div>
+        <%= submit_tag "删除", class: "button danger", data: {confirm: 
+
+'是否确认删除?'}  %></div>
     </div>
     <div class="jui_table_header">
       <table class="jui_table">
@@ -47,7 +51,7 @@
             ￥
             <%= tour.price %></td>
           <td class="center" width="120px">
-            <%= link_to("增加门票", new_admin_tour_ticket_path(tour)) %>
+            <%= link_to("查看门票", [:admin, tour, :tickets]) %>
             &nbsp;|&nbsp;
             <%= link_to("修改", edit_admin_tour_path(tour)) %></td>
         </tr>

@@ -47,6 +47,7 @@ Rails.application.routes.draw do
         delete 'destroy_multiple'
       end
     end
+    resources :tour_orders
   end
 
 

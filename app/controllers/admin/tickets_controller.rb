@@ -3,10 +3,12 @@ class Admin::TicketsController < ApplicationController
 
   before_action :set_admin_ticket, only: [:show, :edit, :update, :destroy]
 
+  # GET /admin/tour/:tour_id/ticket
   # GET /admin/tickets
   # GET /admin/tickets.json
   def index
-    @admin_tickets = Ticket.all
+    @tour = Tour.find(params[:tour_id]) if params[:tour_id]
+    @admin_tickets = @tour ?  @tour.tickets : Ticket.all
   end
 
   # GET /admin/tickets/1
@@ -14,10 +16,10 @@ class Admin::TicketsController < ApplicationController
   def show
   end
 
-  # GET /admin/tickets/new
+  # GET /admin/tickets/new/:tour_id
   def new
-    @tour = Tour.find(params[:tour_id])
-    @admin_ticket = @tour.tickets.build
+    @tour = Tour.find(params[:tour_id]) if params[:tour_id]
+    @admin_ticket = @tour.tickets.build if @tour
   end
 
   # GET /admin/tickets/1/edit
@@ -32,7 +34,7 @@ class Admin::TicketsController < ApplicationController
 
     respond_to do |format|
       if @admin_ticket.save
-        format.html { redirect_to [:admin, @tour], notice: 'Ticket was successfully created.' }
+        format.html { redirect_to @tour, notice: 'Ticket was successfully created.' }
         format.json { render :show, status: :created, location: @admin_ticket }
       else
         format.html { render :new }

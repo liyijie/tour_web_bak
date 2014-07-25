@@ -3,11 +3,15 @@
   <div class="layout margintop10">
     <div class="content">
       <div class="left">
-        <div class="slider-wrapper theme-default">
-          <div id="slider" class="nivoSlider">
-            <% @tour.images.each do |image| %>
-              <%= image_tag image.photo.url, class: "tour_show_img" %>
-            <% end %>
+        <div id="boxID">
+          <div class="pic">
+            <ul>
+              <% @tour.images.each do |image| %>
+                <li>
+                  <%= image_tag image.photo.url, class: "tour_show_img" %>
+                </li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
@@ -146,12 +150,7 @@
 </div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
 <script type="text/javascript">
-    
-
-    $('#slider').nivoSlider({
-      controlNav: false
-    });
-
+    myFocus.set({id:'boxID',pattern:'mF_fancy',width:480,height:250});
     $(".tab_link").click(function(event) {
       $(".tab_link").removeClass('li_hover');
       $(this).addClass('li_hover');

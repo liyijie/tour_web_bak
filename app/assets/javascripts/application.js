@@ -16,4 +16,4 @@
 //= require turbolinks
 //= require jquery_nested_form
 //= require jquery.cxcalendar.min
-//= require jquery.nivo.slider.min
+//= require myfocus-2.0.1.min

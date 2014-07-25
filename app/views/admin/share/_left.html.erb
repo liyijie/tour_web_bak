@@ -35,5 +35,16 @@
     <div class="accordionContent">
       <%= nav_link_to "用户查询", admin_users_path, {class: "jui_menu_item"} %>
     </div>
-    <% end %></div>
+    <% end %>
+    <% if params[:controller] == "admin/tour_orders" %>
+      <div class="accordionHeader">
+        <h2 class="collapsable">
+          <span>Folder</span>订单管理
+        </h2>
+      </div>
+      <div class="accordionContent">
+        <%= nav_link_to "订单查询", admin_tour_orders_path, {class: "jui_menu_item"} %>
+      </div>
+    <% end %>
+    </div>
 </div>

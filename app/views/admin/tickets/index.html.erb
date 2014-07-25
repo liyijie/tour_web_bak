@@ -11,7 +11,9 @@
   <div class="jui_layout margin">
     <div class="menu_bar">
       <div class="button-group">
-        <%= link_to("新增", new_admin_ticket_path, class: "button") %>
+        <% if @tour %>
+          <%= link_to("新增", new_admin_tour_ticket_path(@tour), class: "button") %>
+        <% end %>
         <%= submit_tag "删除", class: "button danger", data: {confirm: '是否确认删除?'}  %></div>
     </div>
     <div class="jui_table_header">

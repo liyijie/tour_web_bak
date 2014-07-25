@@ -1,10 +1,11 @@
 class Admin::TourOrdersController < ApplicationController
+  layout 'admin'
   before_action :set_admin_tour_order, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/tour_orders
   # GET /admin/tour_orders.json
   def index
-    @admin_tour_orders = Admin::TourOrder.all
+    @admin_tour_orders = TourOrder.all
   end
 
   # GET /admin/tour_orders/1
@@ -14,7 +15,7 @@ class Admin::TourOrdersController < ApplicationController
 
   # GET /admin/tour_orders/new
   def new
-    @admin_tour_order = Admin::TourOrder.new
+    @admin_tour_order = TourOrder.new
   end
 
   # GET /admin/tour_orders/1/edit
@@ -24,7 +25,7 @@ class Admin::TourOrdersController < ApplicationController
   # POST /admin/tour_orders
   # POST /admin/tour_orders.json
   def create
-    @admin_tour_order = Admin::TourOrder.new(admin_tour_order_params)
+    @admin_tour_order = TourOrder.new(admin_tour_order_params)
 
     respond_to do |format|
       if @admin_tour_order.save
@@ -64,7 +65,7 @@ class Admin::TourOrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_tour_order
-      @admin_tour_order = Admin::TourOrder.find(params[:id])
+      @admin_tour_order = TourOrder.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

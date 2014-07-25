@@ -1,23 +1,46 @@
-<h1>Listing admin_tour_orders</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @admin_tour_orders.each do |admin_tour_order| %>
-      <tr>
-        <td><%= link_to 'Show', admin_tour_order %></td>
-        <td><%= link_to 'Edit', edit_admin_tour_order_path(admin_tour_order) %></td>
-        <td><%= link_to 'Destroy', admin_tour_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tour order', new_admin_tour_order_path %>
+<div class="title">订单管理</div>
+<div class="content">
+  <div class="jui_layout margin">
+    <div class="jui_table_header">
+      <table class="jui_table">
+        <tr>
+          <th>订单编号</th>
+          <th>所属门票</th>
+          <th>门票数量</th>
+          <th>订单价格</th>
+          <th>订单状态</th>
+          <th>所属用户</th>
+          <th>订单时间</th>
+        </tr>
+      </table>
+    </div>
+    <div class="jui_table_content">
+      <table class="jui_table">
+        <% @admin_tour_orders.each do |order| %>
+        <tr>
+          <td width="70px">
+            <%= order.id %></td>
+          <td>
+            <%= order.ticket.title %>
+          </td>
+          <td width="70px">
+            <%= order.number %>
+          </td>
+          <td>
+            ￥<%= order.total_price %>
+          </td>
+          <td>
+            <%= order.state %>
+          </td>
+          <td>
+            <%= order.user.email %>
+          </td>
+          <td>
+            <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
