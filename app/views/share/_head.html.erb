@@ -14,9 +14,9 @@
   <div class="menu">
     <div class="window">
       <ul class="topmenu">
-        <%= nav_link_to '首页', root_path, {}, {:wrapper => 'li' } %>
-        <%= nav_link_to "景点", tours_path, {}, {:wrapper => 'li'} %>
-        <%= nav_link_to("酒店", hotels_path, {}, {:wrapper => 'li'} ) %>
+        <%= nav_link_to '首页', root_path, {}, {:wrapper => 'li', :url_segment => 1 } %>
+        <%= nav_link_to "景点", tours_path, {}, {:wrapper => 'li', :url_segment => 1} %>
+        <%= nav_link_to("酒店", hotels_path, {}, {:wrapper => 'li', :url_segment => 1} ) %>
         <li>美食</li>
       </ul>
       <div class="order">

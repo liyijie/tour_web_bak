@@ -19,14 +19,8 @@
 # });
 
 $ ->
-	myFocus.set
-		id:'boxID' 
-		pattern:'mF_fancy'
-		width:460
-		height:230
-		txtHeight:0
-
 	$(".showall").click -> 
+		alert "test1"
 		isShow = $(this).attr("isShow");
 		if isShow isnt "undefined" and isShow isnt "show"
 			$(this).parent().parent().children(".list:gt(1)").slideDown(300)

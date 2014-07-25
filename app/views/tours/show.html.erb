@@ -1,13 +1,23 @@
+<script type="text/javascript">
+  myFocus.set({
+    id:'boxID',
+    pattern:'mF_fancy',
+    width:460,
+    height:230,
+    txtHeight:0
+  });
+</script>
+
 <div class="window">
   <%= image_tag "013.jpg" %>
   <div class="layout margintop10">
     <div class="content">
       <div class="left">
         <div id="boxID">
+          <div class="loading">
+            <%= image_tag("load.gif", alt: "") %>
+          </div>
           <div class="pic">
-            <div class="loading">
-              <%= image_tag("load.gif", alt: "") %>
-            </div>
             <ul>
               <% @tour.images.each do |image| %>
                 <li>
