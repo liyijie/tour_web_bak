@@ -19,6 +19,9 @@
 #
 
 class Tour < ActiveRecord::Base
+  # paginate
+  self.per_page = 4
+
   has_many :tickets
   has_many :images, as: :imageable
 

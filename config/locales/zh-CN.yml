@@ -4,3 +4,6 @@ zh-CN:
     paid: 已支付
     canceled: 已取消
     completed: 已完成
+  will_paginate:
+    previous_label: 上一页
+    next_label: 下一页
