@@ -1,11 +1,7 @@
-json.array!(@tours) do |tour|
+json.set! :total_pages, @tours.total_pages
+json.set! :current_page, @tours.current_page
+json.tours @tours do |tour|
   json.extract! tour, :id, :title, :sub_title, :addr, :price
-  json.image tour.image_thumb
-  # json.url tour_url(tour, format: :json)
-  json.tickets tour.tickets do |ticket|
-    json.id ticket.id
-    json.style ticket.style
-    json.title ticket.title
-    json.price ticket.price
-  end
+  json.image_thumb image_url(tour.image_thumb)
+  json.image_large image_url(tour.image_large)
 end
