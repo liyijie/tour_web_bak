@@ -35,7 +35,9 @@ class Tour < ActiveRecord::Base
   searchable do
     text :title, boost: 5
     text :sub_title, :addr
-    integer :city_id
+    string :city do
+      city.name unless city.blank?
+    end
   end
 
   def price
