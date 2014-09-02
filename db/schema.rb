@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710013727) do
+ActiveRecord::Schema.define(version: 20140902052521) do
 
   create_table "cities", force: true do |t|
     t.string   "provice"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20140710013727) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
+    t.integer  "level"
   end
 
   add_index "tours", ["city_id"], name: "index_tours_on_city_id"
