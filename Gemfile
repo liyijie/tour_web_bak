@@ -59,6 +59,12 @@ gem 'annotate', ">=2.6.0"
 # Paginate
 gem 'will_paginate', '~> 3.0'
 
+# Search
+gem 'sunspot_rails'
+group :development do
+  gem 'sunspot_solr'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end

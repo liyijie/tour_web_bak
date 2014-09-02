@@ -4,8 +4,11 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.paginate(:page => params[:page])
-    # @tours = Tour.all
+    search = Tour.search do
+      fulltext params[:search]
+      paginate page: params[:page], per_page: 4
+    end
+    @tours = search.results
   end
 
   # GET /tours/1

@@ -6,6 +6,7 @@ capybara-*.html
 /tmp
 /db/*.sqlite3
 /public/system
+/solr
 /coverage/
 /spec/tmp
 **.orig
