@@ -20,7 +20,6 @@
 
 $ ->
 	$(".showall").click -> 
-		alert "test1"
 		isShow = $(this).attr("isShow");
 		if isShow isnt "undefined" and isShow isnt "show"
 			$(this).parent().parent().children(".list:gt(1)").slideDown(300)
