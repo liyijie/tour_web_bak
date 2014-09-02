@@ -6,6 +6,7 @@ class ToursController < ApplicationController
   def index
     search = Tour.search do
       fulltext params[:search]
+      with :city_id, params[:city] if params[:city] 
       paginate page: params[:page], per_page: 4
     end
     @tours = search.results

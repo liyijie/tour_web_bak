@@ -16,7 +16,6 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  city_id    :integer
-#  level      :integer
 #
 
 class Tour < ActiveRecord::Base
@@ -28,12 +27,15 @@ class Tour < ActiveRecord::Base
 
   belongs_to :city
 
+  scope :city, -> (city) { where city: city }
+
   accepts_nested_attributes_for :tickets, :allow_destroy => true
   accepts_nested_attributes_for :images, :allow_destroy => true
 
   searchable do
     text :title, boost: 5
     text :sub_title, :addr
+    integer :city_id
   end
 
   def price
