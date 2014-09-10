@@ -16,6 +16,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  city_id    :integer
+#  level      :integer
 #
 
 class Tour < ActiveRecord::Base

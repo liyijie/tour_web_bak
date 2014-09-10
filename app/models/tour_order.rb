@@ -10,6 +10,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  ticket_id   :integer
+#  token       :string(255)
 #
 
 class TourOrder < ActiveRecord::Base
@@ -54,6 +55,14 @@ class TourOrder < ActiveRecord::Base
 
   def cal_price
     self.total_price = ticket.price * number
+  end
+
+  # 共 24 位(8 位当前日期 + 9 位纳秒 + 1 位随机数)
+  def generate_token
+    time = Time.now
+    if self.token.blank?
+      self.token = time.to_s(:number) + time.nsec.to_s + Random.new.rand(1..9).to_s
+    end
   end
 
 end

@@ -10,6 +10,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  ticket_id   :integer
+#  token       :string(255)
 #
 
 require 'rails_helper'
