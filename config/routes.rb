@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :tour_orders do
     member do
-      get 'pay' 
-      
+      post 'pay' 
+
       post 'cancel'
       post 'refund'
 

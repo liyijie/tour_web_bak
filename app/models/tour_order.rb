@@ -23,6 +23,7 @@ class TourOrder < ActiveRecord::Base
   validates_presence_of :ticket
   validates_presence_of :user
   before_create :cal_price
+  before_save :generate_token
 
   accepts_nested_attributes_for :order_info
 
