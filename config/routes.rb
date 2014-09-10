@@ -4,9 +4,13 @@ Rails.application.routes.draw do
 
   resources :tour_orders do
     member do
-      post 'pay' 
+      get 'pay' 
+      
       post 'cancel'
       post 'refund'
+
+      get 'alipay_done'
+      post 'alipay_notify'
     end
   end
 
