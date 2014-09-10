@@ -3,6 +3,9 @@
     <span class="falls_title">黄果树瀑布</span>
     <span class="online_payment">（网上支付）</span>
   </div>
+  <div>
+    <%= link_to("支付", pay_tour_order_path(@tour_order) , class: "op_font_color", method: "post") if @tour_order.may_pay? %>
+  </div>
   <div class="book_attention">
     <dt>预订须知：</dt>
     <dt>

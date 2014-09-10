@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/chloerei/alipay.git
+  revision: 2ff702fa1472012f8e0b0721e262ddf7857f6a74
+  specs:
+    alipay (0.1.0)
+
+GIT
   remote: git://github.com/collectiveidea/awesome_nested_set.git
   revision: f823ffb304ccf5ca9c4f14b60ff1f45ad2c3f440
   specs:
@@ -204,6 +210,7 @@ PLATFORMS
 DEPENDENCIES
   aasm
   acts_as_commentable_with_threading
+  alipay!
   annotate (>= 2.6.0)
   awesome_nested_set!
   coffee-rails (~> 4.0.0)

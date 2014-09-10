@@ -1,4 +1,5 @@
 class TourOrdersController < ApplicationController
+  include AlipayGeneratable
   before_action :set_tour_order, only: [:show, :edit, :update, :destroy, 
             :pay, :cancel, :refund, :complete]
   
@@ -72,18 +73,12 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders/1/pay
   # POST /tour_orders/1/pay.json
   def pay
-    @tour_order.pay
-    respond_to do |format|
-      if @tour_order.save
-        format.html { redirect_to @tour_order, notice: 'Tour order was successfully paid.' }
-        format.json { render :show, status: :ok, location: @tour_order }
-      else
-        format.html { redirect_to @tour_order }
-        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
-      end
+    if @tour_order.in_progress?
+      puts "url is:#{generate_pay_link_by_order(@tour_order)}"
+      redirect_to generate_pay_link_by_order(@tour_order)
     end
   end
-
+@tour_
   # POST /tour_orders/1/cancel
   # POST /tour_orders/1/cancel.json
   def cancel

@@ -34,6 +34,9 @@ gem 'devise'
 # gem 'state_machine'
 gem 'aasm'
 
+# Payment
+gem 'alipay', :github => 'chloerei/alipay'
+
 # commentable
 gem "awesome_nested_set", :git => "git://github.com/collectiveidea/awesome_nested_set.git"
 gem 'acts_as_commentable_with_threading'
