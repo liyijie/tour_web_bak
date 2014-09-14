@@ -1,4 +1,4 @@
-zh-CN:
+zh_CN:
   order_state:
     in_progress: 待付款
     paid: 已支付
