@@ -7,4 +7,4 @@
 .mF_YSlider .num li{position:relative;float:left;width:20px;height:20px;overflow:hidden;text-align:center;margin-right:4px;cursor:pointer;}
 .mF_YSlider .num li a,.mF_YSlider .num li b{display:block;width:18px;height:18px;border:1px solid #dedede;line-height:18px;position:absolute;z-index:2;top:0;left:0;color:#333; text-decoration:none;}/*按钮样式*/
 .mF_YSlider .num li b{z-index:1;background:#fff;filter:alpha(opacity=60);opacity:0.6;}
-.mF_YSlider .num li.current a,.mF_YSlider .num li.hover a{border-color:#E63003;color:#fff;background:#F66E08;-webkit-transition:all 0.4s;-moz-transition:all 0.4s;-o-transition:all 0.4s;}/*当前/悬停按钮
+.mF_YSlider .num li.current a,.mF_YSlider .num li.hover a{border-color:#E63003;color:#fff;background:#F66E08;-webkit-transition:all 0.4s;-moz-transition:all 0.4s;-o-transition:all 0.4s;}

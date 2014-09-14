@@ -13,7 +13,7 @@ myFocus.pattern.extend({//*********************mF_slide3D******************
 		//PLAY
 		var w=settings.width,
 			h=settings.height,
-			d=Math.ceil(settings.height/6),//立体深度
+			d=Math.ceil(settings.height/6),
 			halfW=w/2;
 		$focus.play(function(i){
 			$m11[0].style.cssText=$m12[0].style.cssText='border-width:0px '+halfW+'px;';
