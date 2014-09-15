@@ -74,11 +74,33 @@ class TourOrdersController < ApplicationController
   # POST /tour_orders/1/pay.json
   def pay
     if @tour_order.in_progress?
-      puts "url is:#{generate_pay_link_by_order(@tour_order)}"
       redirect_to generate_pay_link_by_order(@tour_order)
     end
   end
-@tour_
+
+  def alipay_done
+    callback_params = params.except(*request.path_parameters.keys)
+    if callback_params.any? && Alipay::Sign.verify?(callback_params) && params[:trade_status] == 'TRADE_SUCCESS'
+      @tour_order = current_user.tour_orders.find params[:id]
+      @tour_order.pay!(params[:trade_no]) if @tour_order.pending?
+    end
+  end
+
+  def alipay_notify
+    notify_params = params.except(*request.path_parameters.keys)
+    if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
+      @order = EventOrder.find params[:id]
+      if ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
+        @order.pay!(params[:trade_no]) if @order.pending?
+      elsif params[:trade_status] == 'TRADE_CLOSED'
+        @order.cancel!
+      end
+      render text: 'success'
+    else
+      render text: 'fail'
+    end
+  end
+
   # POST /tour_orders/1/cancel
   # POST /tour_orders/1/cancel.json
   def cancel
