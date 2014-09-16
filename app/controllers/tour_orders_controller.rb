@@ -80,18 +80,18 @@ class TourOrdersController < ApplicationController
 
   def alipay_done
     callback_params = params.except(*request.path_parameters.keys)
-    if callback_params.any? && Alipay::Sign.verify?(callback_params) && params[:trade_status] == 'TRADE_SUCCESS'
-      @tour_order = current_user.tour_orders.find params[:id]
-      @tour_order.pay!(params[:trade_no]) if @tour_order.pending?
+    if callback_params.any? && Alipay::Sign.verify?(callback_params) && ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
+      @order = current_user.tour_orders.find params[:id]
+      @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
     end
   end
 
   def alipay_notify
     notify_params = params.except(*request.path_parameters.keys)
     if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
-      @order = EventOrder.find params[:id]
+      @order = TourOrder.find params[:id]
       if ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
-        @order.pay!(params[:trade_no]) if @order.pending?
+        @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
       elsif params[:trade_status] == 'TRADE_CLOSED'
         @order.cancel!
       end
