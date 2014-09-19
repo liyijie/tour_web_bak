@@ -7,8 +7,10 @@
       <%= render "devise/menu/login_items" %>
     </ul>
     <div class="search">
-      <input type="text" />
-      <%= image_tag "search.jpg" %>
+      <%= form_tag(tours_path, method: "get") do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag "搜索", name: nil %>
+      <% end %>
     </div>
   </div>
   <div class="menu">

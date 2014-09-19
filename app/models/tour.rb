@@ -35,6 +35,7 @@ class Tour < ActiveRecord::Base
 
   searchable do
     text :title, boost: 5
+    text :city
     text :sub_title, :addr
     string :city do
       city.name unless city.blank?
