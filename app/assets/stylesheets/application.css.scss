@@ -219,6 +219,8 @@ img {
 .topbar a, .topbar li {color:#55a6c0;}
 .nav .search {clear:both; float:right; margin-top:30px; border:1px solid #000;}
 .nav .search input {border:0px; height:29px;}
+.nav .search .query {border: 0px; height: 29px; width: 29px; background: url(search.jpg)}
+
 .nav .menu { clear:both; width:100%; background-color: #55C0A5; height:40px; line-height: 40px; }
 .nav .menu li { 
   background-color: #55C0A5; 
