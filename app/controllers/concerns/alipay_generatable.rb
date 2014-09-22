@@ -22,4 +22,18 @@ module AlipayGeneratable
     }
     Alipay::Service.trade_create_by_buyer_url(options)
   end
+
+  def generate_wap_pay_link_by_order order
+    options = {
+      :req_data => {
+        :out_trade_no  =>  order.token,
+        :subject       => "#{order.ticket.title} 门票",
+        :total_fee     => order.total_price,
+        :notify_url    => alipay_notify_tour_order_url(order),
+        :call_back_url => tour_order_url(order)
+      }
+    }
+    token = Alipay::Service::Wap.trade_create_direct_token(options)
+    Alipay::Service::Wap.auth_and_execute(request_token: token)
+  end
 end
