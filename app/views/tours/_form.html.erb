@@ -28,6 +28,14 @@
     <%= f.text_field :addr %>
   </div>
   <div class="field">
+    <%= f.label :lon %><br>
+    <%= f.number_field :lon, :class => 'text_field', :step => 0.01 %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br>
+    <%= f.number_field :lat, :class => 'text_field', :step => 0.01 %>
+  </div>
+  <div class="field">
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
