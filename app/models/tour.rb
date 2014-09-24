@@ -17,6 +17,8 @@
 #  updated_at :datetime
 #  city_id    :integer
 #  level      :integer
+#  lon        :float
+#  lat        :float
 #
 
 class Tour < ActiveRecord::Base
