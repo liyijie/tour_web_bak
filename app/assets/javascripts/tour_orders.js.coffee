@@ -48,6 +48,10 @@ $ ->
 		$("#txtNUser").val($("#txtName").val());
 		$("#txtNTel").val($("#txtTel").val());
 
+	$(".accordion .item div").click ->
+		$(this).next().show();
+
+
 reset = () ->
 	$(".order_list_div").hide()
 	$(".first .org").removeClass("active")
