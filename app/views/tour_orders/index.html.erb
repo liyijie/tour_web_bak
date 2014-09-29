@@ -1,13 +1,24 @@
 <div class="window">
   <table class="order_table margintop10" cellspacing="0" cellpadding="0">
     <tr>
-      <td class="left" valign="top">
+      <td class="left accordion" valign="top">
         <ul>
-          <li>
-            <a href="#" class="org active menu_font_size">我的订单</a>
+          <li class="item">
+            <div>
+              <span class="menu_font_size">我的订单</span>
+              <span class="arrow"></span>
+            </div>
+            <ul>
+              <li>
+                <a href="#" class="org active">景点订单</a>
+              </li>
+              <li>
+                <a href="#" class="org">酒店订单</a>
+              </li>
+            </ul>
           </li>
-          <li>
-            <a href="#" class="org menu_font_size">个人信息</a>
+          <li class="item">
+              <span class="menu_font_size">个人信息</span>
           </li>
         </ul>
       </td>
@@ -16,19 +27,36 @@
       <td class="right">
         <div class="menu">
           <ul>
-            <li class="first">
-              <a id="btnAll" class="org active menu_font_size">所有订单</a>
+            <li>
+              开始时间 <input type="text" /> 
             </li>
             <li>
-              <a id="btnTour" class="org menu_font_size">景点订单</a>
+              结束时间 <input type="text" /> 
             </li>
             <li>
-              <a id="btnHotel" class="org menu_font_size">酒店订单</a>
+              订单状态 
+              <select>
+                <option value="0"></option>
+                <option value="1">未支付</option>
+                <option value="2">已完成</option>
+              </select> 
             </li>
-            <li class="last">
-              <a href="#"><%= image_tag "icon_del.png" %>订单回收站</a>
+            <li>
+              <input type="button" id="btnQuery" value="查询" />
             </li>
           </ul>
+        </div>
+        <div class="status">
+          <select>
+            <option value="0">最近一个月</option>
+            <option value="1">最近三个月</option>
+            <option value="2">最近六个月</option>
+            <option value="3">最近一年</option>
+          </select> 
+          <a href="#" class="float_right">
+            <img src="assets/icon_del.png" />
+            订单回收站
+          </a>
         </div>
         <div id="orderDiv" class="order_list_div">
           <table class="order_list_table" cellpadding="0" cellspacing="0">

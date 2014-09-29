@@ -12,10 +12,35 @@
 		padding-bottom: 20px;
 		border: 1px solid #cacaca;
 		background-color: #fff;
-		li {
-			margin-top: 10px;
+		.item {
+			clear: both;
+			padding: 5px 0px 5px 0px;
+			border-bottom: 1px solid #e1e1e1;
+			margin-left: 10px; 
+			margin-right: 10px;
+			ul {
+				clear: both;
+				border-top: 1px solid #e1e1e1;
+				margin-top: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				li {
+					height: 25px;
+					line-height: 25px;
+				}
+			}
+			.arrow {
+				float: right;
+				width: 13px;
+				height: 9px;
+				background: url(arrow_d.png) no-repeat center center;
+			}
+		}
+		.item:last {
+			border-bottom: 1px solid #000;
 		}
 	}
+	span {cursor: pointer;}
 	td.right {
 		margin-left: 5px;
 		border: 1px solid #cacaca;
@@ -32,17 +57,35 @@
 			}
 			li {
 				float: left;
-				border-left: 1px solid #b5b5b5;
 				padding: 5px 20px 5px 20px;
-			}
-			li.first {
-				border-left: 0px;
-			}
-			li.last {
-				float: right;
-				border-left: 0px;
+				input {
+					width: 100px;
+					height: 20px;
+				}
+				#btnQuery {
+					background: #55c0a5;
+					color: #fff;
+					height: 25px;
+					line-height: 25px;
+					font-size: 12px;
+					width: 70px;
+					border: 0px;
+					cursor: pointer;
+				}
+				select {
+					height: 25px;
+				}
 			}
 		}
+	}
+	.status {
+		clear: both;
+		overflow: hidden;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 20px;
+		padding-right: 20px;
+		
 	}
 	td.split {
 		width: 5px;
@@ -68,11 +111,13 @@
 		text-align: center;
 		height: 30px;
 		line-height: 30px;
-		border: 1px solid #cacaca;
+		border-top: 1px solid #cacaca;
+		border-bottom: 1px solid #cacaca;
 	}
 	td {
 		text-align: center;
-		border: 1px solid #cacaca;
+		border-top: 1px solid #cacaca;
+		border-bottom: 1px solid #cacaca;
 		img {
 			width: 84px;
 			height: 60px;
@@ -217,3 +262,8 @@
 	text-align: center;
 	vertical-align: top;
 }
+
+
+
+
+
