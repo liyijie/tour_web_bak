@@ -27,6 +27,11 @@ class TourOrder < ActiveRecord::Base
 
   accepts_nested_attributes_for :order_info
 
+  searchable do
+    string :state
+    time :created_at
+  end
+
   aasm :column => :state do
     state :in_progress, :initial => true
     state :completed

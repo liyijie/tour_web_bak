@@ -9,7 +9,18 @@ class TourOrdersController < ApplicationController
   # GET /tour_orders
   # GET /tour_orders.json
   def index
-    @tour_orders = current_user.tour_orders
+    # @tour_orders = current_user.tour_orders
+    search = current_user.tour_orders.search do
+      with :state, params[:state] unless params[:state].blank?
+      with(:created_at).greater_than(1.month.ago) if params[:range].to_i == 1
+      with(:created_at).greater_than(3.month.ago) if params[:range].to_i == 2
+      with(:created_at).greater_than(6.month.ago) if params[:range].to_i == 3
+      with(:created_at).greater_than(1.year.ago) if params[:range].to_i == 4
+      order_by(:created_at, :desc)
+      paginate page: params[:page], per_page: 10
+    end
+
+    @tour_orders = search.results
   end
 
   # GET /tour_orders/1
