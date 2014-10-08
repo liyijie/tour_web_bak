@@ -11,7 +11,7 @@ class TourOrdersController < ApplicationController
   def index
     # @tour_orders = current_user.tour_orders
     search = current_user.tour_orders.search do
-      with :state, params[:state] unless params[:state].blank?
+      with :state, params[:state] unless (params[:state].blank? || params[:state] == "all")
       with(:created_at).greater_than(1.month.ago) if params[:range].to_i == 1
       with(:created_at).greater_than(3.month.ago) if params[:range].to_i == 2
       with(:created_at).greater_than(6.month.ago) if params[:range].to_i == 3
