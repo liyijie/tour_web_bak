@@ -52,10 +52,10 @@ $ ->
 		$(this).next().show();
 
 
-	$("#slsOrderStatus").change ->
+	$("#range").change ->
 		document.getElementById("queryForm").submit();
 
-	$("#slsOrderTime").change ->
+	$("#status").change ->
 		document.getElementById("queryForm").submit();
 
 

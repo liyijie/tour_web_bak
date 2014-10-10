@@ -37,23 +37,12 @@
           <ul>
             <li>
               订单状态：
-              <select id="slsOrderStatus" name="status">
-                <option value="all">全部</option>
-                <% states = TourOrder.aasm.states.map(&:name) %>
-                <% states.each do |state| %>
-                  <option value=<%= state.to_s %>><%= I18n.t "order_state.#{state.to_s}" %></option>
-                <% end %>
-              </select> 
+              <%= select_tag "status", options_for_select([['全部','all'], ['待付款','in_progress'], ['已完成','completed'], ['已支付', 'paid'],['已取消', 'canceled']], params[:status]) %> 
             </li>
           </ul>
         </div>
-        <div class="status">
-          <select id="slsOrderTime" name="created_at">
-            <option value="1">最近一个月</option>
-            <option value="2">最近三个月</option>
-            <option value="3">最近六个月</option>
-            <option value="4">最近一年</option>
-          </select>
+        <div class="status"> 
+          <%= select_tag "range", options_for_select([['最近一个月','1'], ['最近三个月','2'], ['最近六个月','3'], ['最近一年', '4']], params[:range]) %> 
           <a href="#" class="float_right">
             <img src="assets/icon_del.png" />
             订单回收站
