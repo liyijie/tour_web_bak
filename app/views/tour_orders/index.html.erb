@@ -32,41 +32,34 @@
       <td class="split">
       </td>
       <td class="right">
+        <%= form_tag(tour_orders_path, method: "get", id: "queryForm") do %>
         <div class="menu">
           <ul>
             <li>
-              开始时间 <input type="text" /> 
-            </li>
-            <li>
-              结束时间 <input type="text" /> 
-            </li>
-            <li>
-              订单状态 
-              <select>
-                <option value="all"></option>
+              订单状态：
+              <select id="slsOrderStatus" name="status">
+                <option value="all">全部</option>
                 <% states = TourOrder.aasm.states.map(&:name) %>
                 <% states.each do |state| %>
                   <option value=<%= state.to_s %>><%= I18n.t "order_state.#{state.to_s}" %></option>
                 <% end %>
               </select> 
             </li>
-            <li>
-              <input type="button" id="btnQuery" value="查询" />
-            </li>
           </ul>
         </div>
         <div class="status">
-          <select>
-            <option value="0">最近一个月</option>
-            <option value="1">最近三个月</option>
-            <option value="2">最近六个月</option>
-            <option value="3">最近一年</option>
-          </select> 
+          <select id="slsOrderTime" name="created_at">
+            <option value="1">最近一个月</option>
+            <option value="2">最近三个月</option>
+            <option value="3">最近六个月</option>
+            <option value="4">最近一年</option>
+          </select>
           <a href="#" class="float_right">
             <img src="assets/icon_del.png" />
             订单回收站
           </a>
         </div>
+        <% end %>
         <div id="orderDiv" class="order_list_div">
           <table class="order_list_table" cellpadding="0" cellspacing="0">
             <tr>

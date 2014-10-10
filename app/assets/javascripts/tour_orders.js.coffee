@@ -52,6 +52,13 @@ $ ->
 		$(this).next().show();
 
 
+	$("#slsOrderStatus").change ->
+		document.getElementById("queryForm").submit();
+
+	$("#slsOrderTime").change ->
+		document.getElementById("queryForm").submit();
+
+
 reset = () ->
 	$(".order_list_div").hide()
 	$(".first .org").removeClass("active")
