@@ -37,7 +37,7 @@
           <ul>
             <li>
               订单状态：
-              <%= select_tag "status", options_for_select([['全部','all'], ['待付款','in_progress'], ['已完成','completed'], ['已支付', 'paid'],['已取消', 'canceled']], params[:status]) %> 
+              <%= select_tag "state", options_for_select([['全部','all'], ['待付款','in_progress'], ['已完成','completed'], ['已支付', 'paid'],['已取消', 'canceled']], params[:state]) %> 
             </li>
           </ul>
         </div>
