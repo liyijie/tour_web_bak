@@ -47,6 +47,20 @@ ul,ol,li {
   outline: none;
 }
 
+input {
+  padding-left: 3px;
+}
+
+.input_focus {
+  border-radius: 3px;
+  border: 1px solid #909090;
+}
+.input_focus:focus {
+  outline:none;
+  border:#87C6F9 1px solid;
+  box-shadow: 0 0 8px rgba(103, 166, 217, 1);
+}
+
 a {
   color:#000000;
   text-decoration: none;
@@ -237,7 +251,7 @@ img {
 }
 .nav .menu li.selected,
 .nav .menu li.selected a {background-color: #ffffff; color: #55C0A5; font-weight: bold;}
-.nav .menu li a:hover {color:#ffffff; underline:none; }
+.nav .menu li a:hover {underline:none; }
 .nav .menu li a{color:#ffffff; underline:none;}
 .nav .menu .order {float:right; height: 40px; line-height: 40px; color: #ffffff;}
 .nav .menu .order a {color: #ffffff;}
@@ -464,4 +478,18 @@ input {
 }
 .full_image {
   width: 100%
+}
+
+.tour_city {
+  float:right;
+  padding-right: 10px;
+  li {
+    float: left;
+    padding-left: 2px;
+    padding-right: 2px;
+    a {
+      color: #55C0A5;
+      underline:none;
+    }
+  }
 }

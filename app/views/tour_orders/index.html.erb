@@ -61,8 +61,8 @@
             <% @tour_orders.each do |tour_order| %>
             <tr>
               <td>
-                <%= image_tag tour_order.ticket.tour.image_thumb %>
-                <span>订单号：<%= tour_order.id %></span>
+                <%= link_to image_tag(tour_order.ticket.tour.image_thumb), tour_order.ticket.tour %>
+                <span>订单号：<%= link_to(tour_order.id, tour_order) %></span>
               </td>
               <td>
                 <%= tour_order.created_at.strftime("%Y-%m-%d %H:%M:%S") %>

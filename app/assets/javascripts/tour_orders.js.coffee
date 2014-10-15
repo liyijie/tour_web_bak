@@ -43,6 +43,10 @@ $ ->
 		$("#totalTicketPrice").html(ticketPrice * ticketNum)
 
 	$("#txtPlayTime").cxCalendar()
+	playDate = new Date()
+	playDate.setTime(playDate.getTime() + (1000 * 60 * 60 * 24))
+	$("#txtPlayTime").val(playDate.getFullYear() + "-" + (playDate.getMonth() + 1) + "-" + playDate.getDay());
+
 
 	$("#btnCopy").click ->
 		$("#txtNUser").val($("#txtName").val());
