@@ -59,7 +59,7 @@ $ ->
 	$("#range").change ->
 		document.getElementById("queryForm").submit();
 
-	$("#status").change ->
+	$("#state").change ->
 		document.getElementById("queryForm").submit();
 
 
