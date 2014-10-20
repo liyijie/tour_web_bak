@@ -89,6 +89,17 @@ a:hover {
   cursor: pointer;
 }
 
+.link {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  color: #000000;
+}
+.link:hover, .link:active
+.link.hover, .link.active {
+ color: #55c0a5; 
+}
+
 a.org, a.org:visited, a.org:link {
   cursor: pointer;
   background: transparent;
@@ -487,9 +498,5 @@ input {
     float: left;
     padding-left: 2px;
     padding-right: 2px;
-    a {
-      color: #55C0A5;
-      underline:none;
-    }
   }
 }
