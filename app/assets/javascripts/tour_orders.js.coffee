@@ -42,6 +42,8 @@ $ ->
 		ticketPrice = parseFloat($("#ticketPrice").html(),10)
 		$("#totalTicketPrice").html(ticketPrice * ticketNum)
 
+	$("#txtTicketNum").change()
+
 	$("#txtPlayTime").cxCalendar()
 	playDate = new Date()
 	playDate.setTime(playDate.getTime() + (1000 * 60 * 60 * 24))
