@@ -98,6 +98,7 @@ class TourOrdersController < ApplicationController
     if callback_params.any? && Alipay::Sign.verify?(callback_params) && ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
       @order = current_user.tour_orders.find params[:id]
       @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
+      redirect_to @order, notice: 'Tour order was successfully paid.'
     end
   end
 
