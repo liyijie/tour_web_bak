@@ -7,7 +7,7 @@
       <div class="tour_city">
         <ul>
           <% @cities.each do |city| %>
-            <li><%= link_to(city.name, tours_path(search: city.name)) %></li>
+            <li><%= link_to(city.name, tours_path(search: city.name), class: "link") %></li>
           <% end %>
         </ul>
       </div>
