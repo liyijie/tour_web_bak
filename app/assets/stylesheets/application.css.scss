@@ -491,12 +491,21 @@ input {
   width: 100%
 }
 
-.tour_city {
-  float:right;
+.area_bar {
+  float: right;
   padding-right: 10px;
   li {
     float: left;
-    padding-left: 2px;
-    padding-right: 2px;
+    margin-left: 10px;
+  }
+  a {
+    color: #747474;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+  }
+  a:hover, a.hover {
+    color: #55c0a5;
   }
 }

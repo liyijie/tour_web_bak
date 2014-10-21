@@ -22,21 +22,6 @@
 	}
 }
 
-.area_bar {
-	float: right;
-	padding-right: 10px;
-	li {
-		float: left;
-		margin-left: 10px;
-		color: #747474;
-		cursor: pointer;
-		font-weight: bold;
-	}
-	li:hover, li.hover {
-		color: #55c0a5;
-	}
-}
-
 .hotels_list {
 	clear: both;
 	width: 100%;

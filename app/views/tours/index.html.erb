@@ -4,10 +4,10 @@
     <div class="p_title">
       <%= image_tag "icon_jd.png" %>
       <span>旅游景点</span>
-      <div class="tour_city">
+      <div class="area_bar">
         <ul>
           <% @cities.each do |city| %>
-            <li><%= link_to(city.name, tours_path(search: city.name), class: "link") %></li>
+            <li><%= link_to(city.name, tours_path(search: city.name), class: "city_link") %></li>
           <% end %>
         </ul>
       </div>
