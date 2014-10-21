@@ -10,6 +10,7 @@ class ToursController < ApplicationController
       paginate page: params[:page], per_page: 4
     end
     @tours = search.results
+    @cities = City.all
   end
 
   # GET /tours/1
