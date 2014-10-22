@@ -3,15 +3,14 @@
     <%= image_tag "002.jpg" %>
     <ul class="topbar">
       <%= render "devise/menu/registration_items" %>
-      <li>&nbsp;|&nbsp;</li>
+      <li>&nbsp;&nbsp;</li>
       <%= render "devise/menu/login_items" %>
-    </ul>
-    <div class="search">
-      <%= form_tag(tours_path, method: "get") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "请输入景点名、城市或相关描述" %>
-        <%= submit_tag " ", name: nil, class: "query" %>
-      <% end %>
-    </div>
+      <li>&nbsp;&nbsp;</li>
+      <li>
+        <%= image_tag "icon_order.png" %>
+        <%= link_to "我的订单", tour_orders_path %>
+      </li>
+    </ul> 
   </div>
   <div class="menu">
     <div class="window">
@@ -22,8 +21,10 @@
         <li>美食</li>
       </ul>
       <div class="order">
-        <%= link_to("我的订单", tour_orders_path) %>
-        &nbsp;|&nbsp;<a href="#">手机APP</a>
+          <%= form_tag(tours_path, method: "get") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "请输入景点名、城市或相关描述" %>
+            <%= submit_tag " ", name: nil, class: "query" %>
+          <% end %>
       </div>
     </div>
   </div>

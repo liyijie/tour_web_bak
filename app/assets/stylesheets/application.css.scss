@@ -264,8 +264,10 @@ img {
 .nav .menu li.selected a {background-color: #ffffff; color: #55C0A5; font-weight: bold;}
 .nav .menu li a:hover {underline:none; }
 .nav .menu li a{color:#ffffff; underline:none;}
-.nav .menu .order {float:right; height: 40px; line-height: 40px; color: #ffffff;}
+.nav .menu .order {float:right; height: 30px; line-height: 30px; color: #ffffff; background: #ffffff; margin-top: 5px;}
 .nav .menu .order a {color: #ffffff;}
+.nav .menu .order input {border:0px; height:29px;}
+.nav .menu .order .query {border: 0px; height: 29px; width: 29px; background: url(search.jpg)}
 
 .top {overflow: hidden;}
 .top li {color: #ffffff;}
