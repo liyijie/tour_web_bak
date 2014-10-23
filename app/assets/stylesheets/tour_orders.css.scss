@@ -138,7 +138,7 @@
 .falls_title,
 .online_paymen,
 .huangguoshu_falls{
-	padding: 0px 0px 10px 0px;	
+	padding: 20px 0px 10px 0px;	
 }
 
 .book_attention{	
@@ -146,8 +146,6 @@
 	font-size: 12px;
 	padding: 5px 10px 5px 10px;
 	margin-top: 10px;
-	margin-left: 20px;
-	margin-right: 20px;
 	background-color: #ECECEA;	
 	border-left:  2px solid #72D0B8;
 }
@@ -168,7 +166,7 @@
 .payment{
 	line-height: 30px;
 	font-size: 12px;
-	padding: 5px 0px 0px 20px;
+	padding: 5px 0px 0px 0px;
 }
 .tourinfo .tourdate{
 	float:left;
@@ -261,6 +259,29 @@
 	width: 35px;
 	text-align: center;
 	vertical-align: top;
+}
+
+.order_status {
+	clear: both;
+	overflow: hidden;
+	margin-top: 20px;
+	li {
+		float: left;
+		height: 33px;
+		line-height: 33px;
+		width: 320px;
+		text-align: center;
+		font-weight: bold;
+	}
+}
+.order_status.step1 {
+	background: url('order_status_1.png');
+}
+.order_status.step2 {
+	background: url('order_status_2.png');
+}
+.order_status.step3 {
+	background: url('order_status_3.png');
 }
 
 
