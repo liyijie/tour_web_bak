@@ -20,7 +20,7 @@ module AlipayGeneratable
         :return_url        => alipay_done_tour_order_url(order), # localhost isn't work http://bit.ly/1cwKbsw
         :notify_url        => alipay_notify_tour_order_url(order)
     }
-    Alipay::Service.trade_create_by_buyer_url(options)
+    Alipay::Service.create_direct_pay_by_user_url(options)
   end
 
   def generate_wap_pay_link_by_order order
