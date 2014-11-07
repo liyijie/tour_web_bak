@@ -87,7 +87,7 @@ class TourOrdersController < ApplicationController
     if @tour_order.in_progress?
       respond_to do |format|
         format.html { redirect_to generate_pay_link_by_order(@tour_order) }
-        format.json { render json: {url: generate_pay_link_by_order(@tour_order)} }
+        format.json { render json: {url: generate_wap_pay_link_by_order(@tour_order)} }
       end
       
     end
